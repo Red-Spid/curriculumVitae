@@ -39,8 +39,14 @@
   color: #948c76;
   text-align: center;
 }
+.list ul li a:hover {
+  color: blue;
+}
 .list ul .active {
   text-decoration: underline;
+}
+.list ul .active a:hover {
+  color: #666;
 }
 .body-list {
   width: 70%;
