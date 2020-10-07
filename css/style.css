@@ -27,9 +27,9 @@
   line-height: 0.24rem;
 }
 .list {
-  width: 30%;
   margin: 0 auto;
-  min-width: 120px;
+  max-width: 140px;
+  min-width: 140px;
 }
 .list ul {
   display: flex;
@@ -83,6 +83,7 @@
 }
 .body-list .content > div div:first-child {
   width: 22%;
+  min-width: 114px;
 }
 .body-list .content > div div:nth-child(2) {
   width: 48%;
