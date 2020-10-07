@@ -64,13 +64,15 @@
   }
 }
 @media screen and (max-width: 575px) {
-  .clo-12 {
+  .clo-12,
+  .clo-6 {
     min-width: 100%;
     text-align: left !important;
   }
 }
 @media screen and (max-width: 588px) {
-  .clo-12 {
+  .clo-12,
+  .clo-6 {
     min-width: 100% !important;
     text-align: left !important;
   }
