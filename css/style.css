@@ -82,14 +82,14 @@
   padding: 10px 0;
 }
 .body-list .content > div div:first-child {
-  width: 25%;
+  width: 22%;
 }
 .body-list .content > div div:nth-child(2) {
-  width: 50%;
+  width: 48%;
   text-align: center;
 }
 .body-list .content > div div:nth-child(3) {
-  width: 25%;
+  width: 30%;
 }
 .body-list .bg-gray-lightest {
   width: 100% !important;
