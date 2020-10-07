@@ -44,11 +44,14 @@
 }
 .body-list {
   width: 70%;
-  padding: 20px;
+  padding: 0 20px;
   max-width: 800px;
   margin: 20px auto;
   box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.15);
   background-color: white;
+}
+.body-list .head-sass {
+  padding-top: 20px;
 }
 .body-list .head-sass h1 {
   font-weight: 900;
@@ -76,8 +79,21 @@
   padding: 10px 0;
 }
 .body-list .content > div div {
-  width: 33.33333333%;
+  padding: 10px 0;
+}
+.body-list .content > div div:first-child {
+  width: 25%;
+}
+.body-list .content > div div:nth-child(2) {
+  width: 50%;
+  text-align: center;
+}
+.body-list .content > div div:nth-child(3) {
+  width: 25%;
 }
 .body-list .bg-gray-lightest {
   width: 100% !important;
+}
+.body-list div:last-child {
+  padding-bottom: 20px;
 }
