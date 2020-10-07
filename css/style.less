@@ -99,3 +99,29 @@
     padding-bottom: 20px;
   }
 }
+.install {
+  position: fixed;
+  top: 50%;
+  right: 10%;
+  height: 20vh;
+  width: 40px;
+  div {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    border-radius: 50%;
+    background-color: white;
+    left: 0;
+    box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.15);
+    &:first-child {
+      top: 0;
+    }
+    &:last-child {
+      bottom: 0;
+      img {
+        margin: 25% auto;
+        display: block;
+      }
+    }
+  }
+}

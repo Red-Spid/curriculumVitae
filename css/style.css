@@ -96,3 +96,29 @@
 .body-list .margin {
   padding-bottom: 20px;
 }
+.install {
+  position: fixed;
+  top: 50%;
+  right: 10%;
+  height: 20vh;
+  width: 40px;
+}
+.install div {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  border-radius: 50%;
+  background-color: white;
+  left: 0;
+  box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.15);
+}
+.install div:first-child {
+  top: 0;
+}
+.install div:last-child {
+  bottom: 0;
+}
+.install div:last-child img {
+  margin: 25% auto;
+  display: block;
+}
