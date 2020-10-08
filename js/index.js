@@ -2,6 +2,7 @@ var list, tar, url_, htmlName;
 window.onload = function () {
     list = document.getElementsByClassName("list");
     tar = list[0].getElementsByTagName("ul")[0].getElementsByTagName("li");
+    fun(tar);
     // console.log(tar)
     // console.log(
     //     window.location.pathname
@@ -23,8 +24,16 @@ function moduleTarget(index_) {
         }
     }
 }
-function replace() {
-    console.log('执行')
+function fun(dom) {
+    for (let i = 0; i < dom.length; i++) {
+        dom[i].index_ = i;
+        dom[i].addEventListener("click", function () {
+            replace(this.index_);
+        })
+    }
+}
+function replace(a) {
+    moduleTarget(a);
 }
 /*
     白屏时间first paint 和可交互时间dom ready的关系
