@@ -3,7 +3,83 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Vue生命周期钩子</title>
+    <style>
+      [v-cloak] {
+        display: none;
+      }
+    </style>
   </head>
-  <body></body>
+
+  <body>
+    <div id="app" v-cloak>
+      <p v-html="message" ref="msg" v-once :style="setStyle"></p>
+      <p><button type="button" @click="changeMessage()">修改</button></p>
+      <p><button type="button" @click.once="destoryVue()">销毁</button></p>
+    </div>
+  </body>
+  <script src="https://vuejs.org/js/vue.min.js"></script>
+  <script>
+    var vm = new Vue({
+      data: {
+        message:
+          "听闻远方有你 动身跋涉千里<br/> 我吹过你吹过的风 这算不算相拥<br/> 我踏过你踏过的路 这算不算相逢<br/> 我还是喜欢你 认真且怂 从一而终",
+        count: 0,
+      },
+      methods: {
+        changeMessage() {
+          this.message = this.$refs.msg.innerHTML + this.count++;
+          console.log("成功修改数据");
+        },
+        destoryVue() {
+          this.$destroy();
+          console.log("成功销毁Vue实例");
+        },
+      },
+      computed: {
+        setStyle() {
+          return {
+            "font-family": "Times New Roman, Times, serif",
+            color: "darkblue",
+            "font-size": "large",
+          };
+        },
+      },
+      watch: {
+        message: function (newValue, oldValue) {
+          console.log(
+            "监视数据变化：原值：" + newValue + "------新值：" + oldValue
+          );
+        },
+      },
+      beforeCreate() {
+        console.log("beforeCreate-------创建实例之前执行的钩子事件");
+      },
+      created() {
+        console.log("created-------实例创建完成后执行的钩子");
+      },
+      beforeMount() {
+        console.log(
+          "beforeMount--------将编译完成的HTML挂载到对应虚拟DOM时触发的钩子（此时页面并没有内容）"
+        );
+      },
+      mounted() {
+        console.log(
+          "mounted-------编译好的HTML挂载到页面完成后执行的事件钩子，此时钩子函数中一般会做一些ajax请求获取数据，进行数据初始化（mounted在整个实例中只会执行一次）"
+        );
+      },
+      beforeUpdate() {
+        console.log("beforeUpdate-----更新视图之前的钩子");
+      },
+      updated() {
+        console.log("updated------更新视图之后的钩子");
+      },
+      beforeDestroy() {
+        console.log("beforeDestroy----实例销毁之前执行的钩子");
+      },
+      destroyed() {
+        console.log("destroyed---------实例销毁完成执行的钩子");
+      },
+    }).$mount("#app");
+  </script>
 </html>
