@@ -198,43 +198,19 @@ var htmlTarget = [
         ``
     ]
 ]
-
-
-
-
-
 var list, tar, url_, htmlName;
 window.onload = function () {
     list = document.getElementsByClassName("list");
     tar = list[0].getElementsByTagName("ul")[0].getElementsByTagName("li");
     fun(tar);
-    // console.log(tar)
-    // console.log(
-    //     window.location.pathname
-    // )
-    // url_ = window.location.pathname.split("?")
-    // if (url_.length == 1) {
     htmlTag(htmlTarget[1], styleClass[1])
     tar[1].setAttribute("class", 'active');
-    // }
-    htmlName = document.getElementsByClassName("bodyHtml");
-    console.log(htmlName)
-    moduleTarget(1)
 }
 function htmlTag(html_, class_) {
     var div = document.createElement("div");
     div.setAttribute("class", class_);
     div.innerHTML = html_;
     document.body.appendChild(div);
-}
-function moduleTarget(index_) {
-    for (let i = 0; i < htmlName.length; i++) {
-        if (i == index_) {
-            htmlName[i].setAttribute("style", 'display:block')
-        } else {
-            htmlName[i].setAttribute("style", 'display:none')
-        }
-    }
 }
 function fun(dom) {
     for (let i = 0; i < dom.length; i++) {
@@ -245,7 +221,13 @@ function fun(dom) {
     }
 }
 function replace(a) {
-    moduleTarget(a);
+    remove();
+    htmlTag(htmlTarget[a], styleClass[a])
+}
+function remove() {
+    var list = document.body.childNodes;
+    list[list.length - 1].remove();
+    console.log(list);
 }
 /*
     白屏时间first paint 和可交互时间dom ready的关系
