@@ -205,6 +205,7 @@ window.onload = function () {
     fun(tar);
     htmlTag(htmlTarget[1], styleClass[1])
     listStyle(1);
+    pdfImg(1);
 }
 function listStyle(index_) {
     for (let i = 0; i < tar.length; i++) {
@@ -227,15 +228,41 @@ function fun(dom) {
     }
 }
 function replace(a) {
+    pdfImg(a)
     remove();
     listStyle(a);
     htmlTag(htmlTarget[a], styleClass[a])
+}
+function pdfImg(a) {
+    var pdf = document.getElementsByClassName("pfd")[0];
+    if (a == 0) {
+        pdf.setAttribute("style", 'display:block')
+    } else {
+        pdf.setAttribute("style", 'display:none')
+    }
 }
 function remove() {
     var list = document.body.childNodes;
     list[list.length - 1].remove();
     // console.log(list);
 }
+function eventStop(event) {
+    var e = event || window.event
+    e.preventDefault()
+    document.body.scrollIntoView()
+    document.body.scrollTop = document.documentElement.scrollTop = 0
+}
+function updateNav() {
+    if (document.body.scrollHeight <= window.screen.height + document.body.scrollTop) {
+        console.log('小于')
+    } else {
+        console.log('大于')
+    }
+}
+
+
+window.addEventListener('scroll', updateNav);
+
 /*
     白屏时间first paint 和可交互时间dom ready的关系
     白屏时间 = 开始渲染时间(首字节时间 + HTML下载完成时间) + 头部资源加载时间
