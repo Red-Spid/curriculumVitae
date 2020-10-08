@@ -204,7 +204,22 @@ window.onload = function () {
     tar = list[0].getElementsByTagName("ul")[0].getElementsByTagName("li");
     fun(tar);
     htmlTag(htmlTarget[1], styleClass[1])
-    tar[1].setAttribute("class", 'active');
+    listStyle(1);
+}
+function listStyle(a) {
+    console.log(tar)
+    console.log(tar[a])
+    console.log(a)
+    for (let i = 0; i < tar.length; i++) {
+        if (i == a) {
+            tar[a].className = 'active';
+            console.log(
+                tar[a], '等于'
+            )
+        } else {
+            tar[a].classList.remove("active");
+        }
+    }
 }
 function htmlTag(html_, class_) {
     var div = document.createElement("div");
@@ -222,12 +237,13 @@ function fun(dom) {
 }
 function replace(a) {
     remove();
+    listStyle(a);
     htmlTag(htmlTarget[a], styleClass[a])
 }
 function remove() {
     var list = document.body.childNodes;
     list[list.length - 1].remove();
-    console.log(list);
+    // console.log(list);
 }
 /*
     白屏时间first paint 和可交互时间dom ready的关系
