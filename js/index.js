@@ -253,11 +253,20 @@ function eventStop(event) {
     document.body.scrollTop = document.documentElement.scrollTop = 0
 }
 function updateNav() {
-    if (document.body.scrollHeight <= window.screen.height + document.body.scrollTop) {
-        console.log('小于')
-    } else {
-        console.log('大于')
-    }
+    console.log(
+        document.body.scrollHeight, '--------1'
+    )
+    console.log(
+        window.screen.height, '-----------2222222'
+    )
+    console.log(
+        document.body.scrollTop
+    )
+    // if (document.body.scrollHeight <= window.screen.height + document.body.scrollTop) {
+    //     console.log('小于')
+    // } else {
+    //     console.log('大于')
+    // }
 }
 
 
