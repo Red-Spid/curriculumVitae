@@ -103,14 +103,14 @@ button,
 textarea,
 select,
 input:focus,
-textarea:focus {
+/* textarea:focus */ {
   background: none;
   outline: none;
 }
-textarea {
+/* textarea {
   resize: none;
   overflow: auto;
-}
+} */
 select {
   border: none;
 }
@@ -138,7 +138,7 @@ button,
 input,
 optgroup,
 select,
-textarea {
+/* textarea  */ {
   -webkit-appearance: none;
 }
 /* 去掉a、input和button点击时的蓝色外边框和灰色半透明背景 */
@@ -147,7 +147,7 @@ button,
 input,
 optgroup,
 select,
-textarea {
+/* textarea */ {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 /* 禁止长按链接与图片弹出菜单 */
