@@ -206,20 +206,11 @@ window.onload = function () {
     htmlTag(htmlTarget[1], styleClass[1])
     listStyle(1);
 }
-function listStyle(a) {
-    console.log(tar)
-    console.log(tar[a])
-    console.log(a)
+function listStyle(index_) {
     for (let i = 0; i < tar.length; i++) {
-        if (i == a) {
-            tar[a].className = 'active';
-            console.log(
-                tar[a], '等于'
-            )
-        } else {
-            tar[a].classList.remove("active");
-        }
+        tar[i].className = '';
     }
+    tar[index_].setAttribute("class", 'active');
 }
 function htmlTag(html_, class_) {
     var div = document.createElement("div");

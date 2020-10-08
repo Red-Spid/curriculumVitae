@@ -47,7 +47,7 @@
         </svg>
       </div>
       <div title="返回顶部">
-        <a href="">
+        <a href="#" onclick="eventStop()">
           <svg t="1565238236954" fill="currentColor" viewBox="0 0 1024 1024" version="1.1"
             xmlns="http://www.w3.org/2000/svg" p-id="3644" width="200" height="200">
             <path d="M483.875 230.75a28.125 28.125 0 0 1 56.25 0v590.625a28.125 28.125 0 0 1-56.25 0z" p-id="3645"></path>
@@ -60,5 +60,13 @@
     </div>
     <script language="JavaScript" src="./js/import.js"></script>
     <script src="./js/index.js"></script>
+    <script>
+      function eventStop(){
+        var e=event||window.event
+        e.preventDefault()
+        document.body.scrollIntoView()
+        document.body.scrollTop = document.documentElement.scrollTop = 0
+      }
+    </script>
   </body>
 </html>
