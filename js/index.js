@@ -1,9 +1,9 @@
 
 
-var styleClass = [['body-list bodyHtml clo-w'], ["bodyHtml bodyList"], ['bodyHtml']];
+var styleClass = [['body-list bodyHtml clo-w'], ["bodyHtml bodyList"], ['MessageBoard']];
 var htmlTarget = [
-    [
-        `<div class="head-sass head-left">
+  [
+    `<div class="head-sass head-left">
         <h1 class="btn">个人信息</h1>
         <div class="content pa">
           <div class="clo-w">
@@ -80,8 +80,8 @@ var htmlTarget = [
           </div>
         </div>
       </div>`
-    ],
-    [`
+  ],
+  [`
     <div class="artical">
         <div class="dotts"></div>
         <a class="date" href="/detail?id=5e9efd26601bd82819211a1e">
@@ -193,80 +193,141 @@ var htmlTarget = [
             </div>
           </div>
         </div>`
-    ],
-    [
-        ``
-    ]
+  ],
+  [
+    `<h1>留言板</h1>
+      <div class="Bjq">
+        <div class="editor_toolbar">
+            <i class="iconfont icon-moon"></i>
+            <span>先登录吧！</span> 
+            <span class="fr">登录</span>
+        </div>
+        <div class="editor_textarea">
+          <textarea class="ant-input"></textarea>
+        </div>
+      </div>
+      <div class="CommentList">
+        <div>
+          <div><small>71楼</small></div>
+          <div class="ant-comment">
+            <div class="ant-comment-inner">
+              <div>
+                <div class="redius">
+                  <div>新</div>
+                </div>
+                <div class="right">
+                  <span>新</span> 
+                  <span>3 天前</span>
+                  <div>真棒 优秀的前端工程师</div>
+                  <div><a href="">回复</a></div>
+                </div>
+              </div>
+              <div class="ceng">
+                <div class="redius">
+                  <div>新</div>
+                </div>
+                <div class="right">
+                  <span>新</span>
+                  <span>3 天前</span>
+                  <div>真棒 优秀的前端工程师</div>
+                  <div><a href="">回复</a></div>
+                </div>
+              </div>  
+            </div>
+            <div class="ant-comment-content"></div>
+            <div class="ant-comment-nested"></div>
+          </div>
+          <div class="ant-divider ant-divider-horizontal"></div>
+          </div>
+          <div class="ant-divider"> 
+            <div class="b1">
+              <button type="button" class="ant-btn">
+                <span>加载更多</span>
+              </button>
+            </div>
+          </div>
+        </div>`
+  ]
 ]
-var list, tar, url_, htmlName;
+var list, tar, url_, htmlName, audio;
 window.onload = function () {
-    list = document.getElementsByClassName("list");
-    tar = list[0].getElementsByTagName("ul")[0].getElementsByTagName("li");
-    fun(tar);
-    htmlTag(htmlTarget[1], styleClass[1])
-    listStyle(1);
-    pdfImg(1);
+  list = document.getElementsByClassName("list");
+  tar = list[0].getElementsByTagName("ul")[0].getElementsByTagName("li");
+  fun(tar);
+  htmlTag(htmlTarget[2], styleClass[2])
+  listStyle(2);
+  pdfImg(2);
+  audio = document.getElementsByClassName("audio");
+  var a = 1;
+  setInterval(() => {
+    a++;
+    if (a >= 360) {
+      a = 1;
+    }
+    audio[0].setAttribute("style", "transform: rotate(" + a + "deg);")
+  }, 10)
+  console.log(audio)
 }
 function listStyle(index_) {
-    for (let i = 0; i < tar.length; i++) {
-        tar[i].className = '';
-    }
-    tar[index_].setAttribute("class", 'active');
+  for (let i = 0; i < tar.length; i++) {
+    tar[i].className = '';
+  }
+  tar[index_].setAttribute("class", 'active');
 }
 function htmlTag(html_, class_) {
-    var div = document.createElement("div");
-    div.setAttribute("class", class_);
-    div.innerHTML = html_;
-    document.body.appendChild(div);
+  var div = document.createElement("div");
+  div.setAttribute("class", class_);
+  div.innerHTML = html_;
+  document.body.appendChild(div);
 }
 function fun(dom) {
-    for (let i = 0; i < dom.length; i++) {
-        dom[i].index_ = i;
-        dom[i].addEventListener("click", function () {
-            replace(this.index_);
-        })
-    }
+  for (let i = 0; i < dom.length; i++) {
+    dom[i].index_ = i;
+    dom[i].addEventListener("click", function () {
+      replace(this.index_);
+    })
+  }
 }
 function replace(a) {
-    pdfImg(a)
-    remove();
-    listStyle(a);
-    htmlTag(htmlTarget[a], styleClass[a])
+  pdfImg(a)
+  remove();
+  listStyle(a);
+  htmlTag(htmlTarget[a], styleClass[a])
 }
 function pdfImg(a) {
-    var pdf = document.getElementsByClassName("pfd")[0];
-    if (a == 0) {
-        pdf.setAttribute("style", 'display:block')
-    } else {
-        pdf.setAttribute("style", 'display:none')
-    }
+  var pdf = document.getElementsByClassName("pfd")[0];
+  if (a == 0) {
+    pdf.setAttribute("style", 'display:block')
+  } else {
+    pdf.setAttribute("style", 'display:none')
+  }
 }
 function remove() {
-    var list = document.body.childNodes;
-    list[list.length - 1].remove();
-    // console.log(list);
+  var list = document.body.childNodes;
+  list[list.length - 1].remove();
+  // console.log(list);
 }
 function eventStop(event) {
-    var e = event || window.event
-    e.preventDefault()
-    document.body.scrollIntoView()
-    document.body.scrollTop = document.documentElement.scrollTop = 0
+  var e = event || window.event
+  e.preventDefault()
+  document.body.scrollIntoView()
+  document.body.scrollTop = document.documentElement.scrollTop = 0
 }
 function updateNav() {
-    console.log(
-        document.body.scrollHeight, '--------1'
-    )
-    console.log(
-        window.screen.height, '-----------2222222'
-    )
-    console.log(
-        document.body.scrollTop
-    )
-    // if (document.body.scrollHeight <= window.screen.height + document.body.scrollTop) {
-    //     console.log('小于')
-    // } else {
-    //     console.log('大于')
-    // }
+  console.log(
+    document.body.scrollHeight, '--------1'
+  )
+  console.log(
+    window.screen.height, '-----------2222222'
+  )
+  console.log(
+    document.body.scrollTop
+  )
+  // if (document.body.scrollHeight <= window.screen.height + document.body.scrollTop) {
+  //     console.log('小于')
+  // } else {
+  //     console.log('大于')
+  // }
 }
 
 
@@ -278,9 +339,9 @@ window.addEventListener('scroll', updateNav);
     window.chrome.loadTimes().firstPaintTime
 */
 function to() {
-    //  document.getElementById("body").src
-    // var frame1 = document.getElementById("rFrame")
-    // console.log("执行", frame1)
+  //  document.getElementById("body").src
+  // var frame1 = document.getElementById("rFrame")
+  // console.log("执行", frame1)
 
-    // .src = "./html/AlittleBit.html"
+  // .src = "./html/AlittleBit.html"
 }

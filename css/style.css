@@ -134,6 +134,17 @@
   margin-top: 25%;
   height: 50%;
 }
+.install .audio {
+  cursor: pointer;
+  width: 48px;
+  height: 48px;
+  background-color: none;
+  box-shadow: none;
+}
+.install .audio img {
+  width: 100%;
+  height: 100%;
+}
 .bodyList {
   padding-left: 15%;
   margin-top: 3em;
@@ -276,6 +287,7 @@
 .MessageBoard .CommentList {
   width: 95%;
   margin: 0 auto;
+  width: 90%;
 }
 .MessageBoard .CommentList div .ant-comment {
   margin-top: 15px;
@@ -333,7 +345,7 @@
 .MessageBoard .CommentList div .ant-comment .ant-comment-inner .ceng {
   padding-left: 20px;
 }
-.MessageBoard .CommentList .b1 {
+.MessageBoard .CommentList .ant-divider .b1 {
   line-height: 1.499;
   position: relative;
   display: inline-block;
@@ -359,6 +371,6 @@
   border: 1px solid #d9d9d9;
   line-height: 34px;
 }
-.MessageBoard .CommentList .b1 .ant-btn {
+.MessageBoard .CommentList .ant-divider .b1 .ant-btn {
   background: none;
 }
