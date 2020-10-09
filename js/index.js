@@ -249,7 +249,7 @@ var htmlTarget = [
         </div>`
   ]
 ]
-var list, tar, url_, htmlName, audio;
+var list, tar, url_, htmlName, audio, interTrans, a = 1;;
 window.onload = function () {
   list = document.getElementsByClassName("list");
   tar = list[0].getElementsByTagName("ul")[0].getElementsByTagName("li");
@@ -257,16 +257,28 @@ window.onload = function () {
   htmlTag(htmlTarget[2], styleClass[2])
   listStyle(2);
   pdfImg(2);
+  trans();
+  interTrans = true;
+}
+function trans() {
+  interTrans = !interTrans;
   audio = document.getElementsByClassName("audio");
-  var a = 1;
-  setInterval(() => {
-    a++;
-    if (a >= 360) {
-      a = 1;
+  audio[0].addEventListener('click', function () {
+    if (interTrans) {
+      clearInterval(interval)
+    } else {
+      setInterval(func, 10)
     }
-    audio[0].setAttribute("style", "transform: rotate(" + a + "deg);")
-  }, 10)
-  console.log(audio)
+  })
+  var interval = setInterval(func, 10); //启动,func不能使用括号
+}
+function func() {
+  a++;
+  if (a >= 360) {
+    a = 1;
+  }
+  audio[0].setAttribute("style", "transform: rotate(" + a + "deg);")
+  // console.log(audio)
 }
 function listStyle(index_) {
   for (let i = 0; i < tar.length; i++) {
