@@ -258,17 +258,23 @@ window.onload = function () {
   listStyle(2);
   pdfImg(2);
   trans();
-  interTrans = true;
 }
 function trans() {
-  interTrans = !interTrans;
   audio = document.getElementsByClassName("audio");
+
   audio[0].addEventListener('click', function () {
-    if (interTrans) {
-      clearInterval(interval)
-    } else {
-      setInterval(func, 10)
+    var music = document.getElementById("music");
+    if (music !== null) {
+      //检测播放是否已暂停.audio.paused 在播放器播放时返回false.
+      if (music.paused) {
+        music.play();//audio.play();// 这个就是播放
+        setInterval(func, 10)
+      }else {
+        clearInterval(interval)
+        music.pause();// 这个就是暂停
+      }
     }
+    console.log(music)
   })
   var interval = setInterval(func, 10); //启动,func不能使用括号
 }
@@ -277,9 +283,15 @@ function func() {
   if (a >= 360) {
     a = 1;
   }
+
   audio[0].setAttribute("style", "transform: rotate(" + a + "deg);")
   // console.log(audio)
 }
+
+// function clearInterval(a){
+//   console.log(a);
+// }
+
 function listStyle(index_) {
   for (let i = 0; i < tar.length; i++) {
     tar[i].className = '';
