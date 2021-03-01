@@ -261,7 +261,6 @@ window.onload = function () {
 }
 function trans() {
   audio = document.getElementsByClassName("audio");
-
   audio[0].addEventListener('click', function () {
     var music = document.getElementById("music");
     if (music !== null) {
@@ -277,14 +276,19 @@ function trans() {
     // console.log(music)
   })
   var interval = setInterval(func, 10); //启动,func不能使用括号
-}
-function func() {
-  a++;
-  if (a >= 360) {
-    a = 1;
+
+  function func() {
+    a++;
+    if (a >= 360) {
+      a = 1;
+      clearInterval(interval)
+      interval = setInterval(func, 10);
+    }
+    audio[0].setAttribute("style", "transform: rotate(" + a + "deg);")
+    // console.log(audio)
+    console.log('aaa')
   }
-  audio[0].setAttribute("style", "transform: rotate(" + a + "deg);")
-  // console.log(audio)
+
 }
 
 // function clearInterval(a){
