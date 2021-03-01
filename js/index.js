@@ -274,7 +274,7 @@ function trans() {
         music.pause();// 这个就是暂停
       }
     }
-    console.log(music)
+    // console.log(music)
   })
   var interval = setInterval(func, 10); //启动,func不能使用括号
 }
