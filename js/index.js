@@ -283,7 +283,6 @@ function func() {
   if (a >= 360) {
     a = 1;
   }
-
   audio[0].setAttribute("style", "transform: rotate(" + a + "deg);")
   // console.log(audio)
 }
