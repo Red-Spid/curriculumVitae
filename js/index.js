@@ -249,10 +249,12 @@ var htmlTarget = [
         </div>`
   ]
 ]
-var list, tar, url_, htmlName, audio, interTrans, a = 1;;
+var list, tar, url_, htmlName, audio, interTrans, a = 1;
+var id_top = document.getElementById("topReurn");
 window.onload = function () {
   list = document.getElementsByClassName("list");
   tar = list[0].getElementsByTagName("ul")[0].getElementsByTagName("li");
+  id_top.setAttribute("style","display:none")
   fun(tar);
   htmlTag(htmlTarget[2], styleClass[2])
   listStyle(2);
@@ -267,7 +269,8 @@ function trans() {
       //检测播放是否已暂停.audio.paused 在播放器播放时返回false.
       if (music.paused) {
         music.play();//audio.play();// 这个就是播放
-        setInterval(func, 10)
+        clearInterval(interval)
+        interval = setInterval(func, 10);
       }else {
         clearInterval(interval)
         music.pause();// 这个就是暂停
@@ -275,6 +278,7 @@ function trans() {
     }
     // console.log(music)
   })
+
   var interval = setInterval(func, 10); //启动,func不能使用括号
 
   function func() {
@@ -286,14 +290,10 @@ function trans() {
     }
     audio[0].setAttribute("style", "transform: rotate(" + a + "deg);")
     // console.log(audio)
-    console.log('aaa')
+    // console.log('aaa')
   }
 
 }
-
-// function clearInterval(a){
-//   console.log(a);
-// }
 
 function listStyle(index_) {
   for (let i = 0; i < tar.length; i++) {
@@ -340,25 +340,21 @@ function eventStop(event) {
   document.body.scrollIntoView()
   document.body.scrollTop = document.documentElement.scrollTop = 0
 }
-function updateNav() {
-  console.log(
-    document.body.scrollHeight, '--------1'
-  )
-  console.log(
-    window.screen.height, '-----------2222222'
-  )
-  console.log(
-    document.body.scrollTop
-  )
-  // if (document.body.scrollHeight <= window.screen.height + document.body.scrollTop) {
-  //     console.log('小于')
-  // } else {
-  //     console.log('大于')
-  // }
-}
 
+var scrollReturn = document.body.scrollHeight;
+window.addEventListener("scroll", function(event) {
+  // 页面高度 window.screen.scrollHeight
+  // 设配屏幕高度 window.screen.height
+    var scrollTop = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
+    // console.log(scrollTop);
+    if(scrollTop > (scrollReturn/2)){
+      console.log('xxxxxxxxxxxxxxxxxxx');
+      id_top.setAttribute("style","display:block")
+    }else{
+      id_top.setAttribute("style","display:none")
+    }
+});
 
-window.addEventListener('scroll', updateNav);
 
 /*
     白屏时间first paint 和可交互时间dom ready的关系
