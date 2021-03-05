@@ -355,7 +355,6 @@ window.addEventListener("scroll", function(event) {
     }
 });
 
-
 /*
     白屏时间first paint 和可交互时间dom ready的关系
     白屏时间 = 开始渲染时间(首字节时间 + HTML下载完成时间) + 头部资源加载时间
