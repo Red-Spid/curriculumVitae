@@ -1,5 +1,4 @@
 
-
 var styleClass = [['body-list bodyHtml clo-w'], ["bodyHtml bodyList"], ['MessageBoard']];
 var htmlTarget = [
   [
