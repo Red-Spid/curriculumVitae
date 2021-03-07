@@ -250,6 +250,7 @@ var htmlTarget = [
 ]
 var list, tar, url_, htmlName, audio, interTrans, a = 1;
 var id_top = document.getElementById("topReurn");
+
 window.onload = function () {
   list = document.getElementsByClassName("list");
   tar = list[0].getElementsByTagName("ul")[0].getElementsByTagName("li");
@@ -260,6 +261,7 @@ window.onload = function () {
   pdfImg(2);
   trans();
 }
+
 function trans() {
   audio = document.getElementsByClassName("audio");
   audio[0].addEventListener('click', function () {
