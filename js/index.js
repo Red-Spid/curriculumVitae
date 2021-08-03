@@ -259,12 +259,12 @@ window.onload = function () {
   htmlTag(htmlTarget[2], styleClass[2])
   listStyle(2);
   pdfImg(2);
-  trans();
+  // trans();
 }
-
+  trans();
 function trans() {
-  audio = document.getElementsByClassName("audio");
-  audio[0].addEventListener('click', function () {
+  audio = document.getElementById("audio");
+  audio.addEventListener('click', function () {
     var music = document.getElementById("music");
     if (music !== null) {
       //检测播放是否已暂停.audio.paused 在播放器播放时返回false.
@@ -289,7 +289,7 @@ function trans() {
       clearInterval(interval)
       interval = setInterval(func, 10);
     }
-    audio[0].setAttribute("style", "transform: rotate(" + a + "deg);")
+    audio.setAttribute("style", "transform: rotate(" + a + "deg);")
     // console.log(audio)
     // console.log('aaa')
   }
