@@ -50,7 +50,59 @@ var api = {
 
 
 // api.letConst.passes
-console.log( typeof api.letConst.passes,api.letConst.passes )
-eval(api.letConst.passes);
-eval("aa = 10;bb=20")
-console.log(aa,bb)
+// console.log( typeof api.letConst.passes,api.letConst.passes )
+// eval(api.letConst.passes);
+// eval("aa = 10;bb=20")
+// console.log(aa,bb)
+
+
+/*
+上面代码定义了一个ColorPoint类，该类通过extends关键字，继承了Point类的所有属性和方法。但是由于没有部署任何代码，所以这两个类完全一样，等于复制了一个Point类。下面，我们在ColorPoint内部加上代码。
+*/
+function Point1(x,y){
+    this.x = x;
+    this.y = y;
+}
+Point1.prototype.toString = function(){
+    return '(' + this.x + ', ' + this.y + ')';
+};
+var p = new Point1(1,2);
+
+console.log( p )
+
+//定义类
+class Point2{
+    constructor(x,y){
+        this.x = x;
+        this.y = y;
+    }
+    toString(){
+        return '(' + this.x + ', ' + this.y + ')';
+    }
+}
+
+class A {
+  constructor() {
+    console.log(new.target.name);
+  }
+}
+class B extends A {
+  constructor() {
+    super();
+  }
+}
+new A() // A
+new B() // B代码
+
+class test1 {
+	
+	constructor(){
+		console.log("默认执行")
+	}
+	
+	a(){
+		console.log("默认执行aaa----------")
+	}
+}
+new test1()
+new test1().a()
