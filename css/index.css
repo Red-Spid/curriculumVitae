@@ -251,6 +251,8 @@ html {
   font-size: 100px;
   font-family: "Microsoft Yahei";
   width: 100%;
+  -webkit-font-feature-settings: "tnum","tnum";
+  font-feature-settings: "tnum","tnum";
   height: auto;
 }
 body {
@@ -258,6 +260,14 @@ body {
   height: auto;
   background: #f2f2f2;
   color: #787978;
+  -webkit-font-smoothing: antialiased;
   background: url(../img/bg.3e86f279.jpg);
   font-size: 0.14rem;
+}
+*, :after, :before {
+  box-sizing: border-box;
+}
+a:active, a:hover {
+  text-decoration: none;
+  outline: 0;
 }

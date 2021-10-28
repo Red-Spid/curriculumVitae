@@ -1,0 +1,457 @@
+.pt0 {
+  padding-top: 0 !important;
+}
+.pb0 {
+  padding-bottom: 0 !important;
+}
+.pl0 {
+  padding-left: 0 !important;
+}
+.pr0 {
+  padding-right: 0 !important;
+}
+.cflex {
+  display: flex;
+  flex-direction: column;
+}
+.rflex {
+  display: flex;
+  flex-direction: row;
+}
+.ycenter {
+  justify-content: center;
+}
+.xcenter {
+  align-items: center;
+}
+.cflex {
+  display: flex;
+  flex-direction: column;
+}
+.fspacebetwen {
+  justify-content: space-between;
+}
+.fspacearound {
+  justify-content: space-around;
+}
+.relative {
+  position: relative;
+}
+.absolute {
+  position: absolute;
+}
+body {
+  max-width: 8rem;
+  margin: 0.5rem auto 0;
+}
+#app {
+  display: flex;
+  flex-direction: column;
+  font-family: Microsoft Yahei;
+  justify-content: center;
+  align-items: center;
+}
+.left-top {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 99999;
+}
+.fadein {
+  width: 100%;
+  text-align: center;
+}
+.fadein img {
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+}
+.fadein p {
+  background: black;
+  color: white;
+  margin: 0.2rem auto;
+  width: 120px;
+  line-height: 0.24rem;
+}
+.list ul {
+  display: flex;
+}
+.list ul li {
+  flex: 1;
+  color: #948c76;
+  text-align: center;
+  margin: 0 0.14rem;
+}
+.list ul li a:hover {
+  text-decoration: underline;
+}
+.list ul .active {
+  text-decoration: underline;
+}
+.list ul .active a:hover {
+  color: #666;
+}
+.bodylist {
+  padding: 2.5%;
+  width: 100%;
+  max-width: 8rem;
+  color: #3f1c1c;
+  margin: 0.2rem 0;
+  box-shadow: 0.01rem 0.01rem 0.08rem rgba(0, 0, 0, 0.15);
+  background-color: white;
+}
+.bodylist .head-sass {
+  padding-top: 0.2rem;
+}
+.bodylist .head-sass h1 {
+  font-weight: 900;
+  font-size: 0.18rem;
+}
+.bodylist .head-sass:first-child {
+  padding-top: 0;
+}
+.bodylist .head-left h1 {
+  margin-left: -21px;
+  padding-left: 15px;
+  border-left: 5px solid black;
+  text-align: left;
+}
+.bodylist .btn {
+  margin-bottom: 0.2rem;
+}
+.bodylist .bg-gray-lightest {
+  padding: 0.15rem;
+}
+.bodylist .content {
+  margin-bottom: 0.2rem;
+  border: 0.02rem solid transparent;
+}
+.bodylist .content > div {
+  background-color: #f5f5f5;
+}
+.bodylist .content .pd {
+  padding: 0px 15px;
+  margin-top: 0.2rem;
+}
+.bodylist .content .pd .row {
+  margin-right: -0.15rem;
+  margin-left: -0.15rem;
+  border-top-left-radius: 0.03rem !important;
+  border-top-right-radius: 0.03rem !important;
+  display: flex;
+  flex-direction: row;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+.bodylist .content .pd .row:last-child {
+  border-bottom-left-radius: 0.03rem !important;
+  border-bottom-right-radius: 0.03rem !important;
+}
+.bodylist .content .pd .line3 {
+  padding: 0.1rem 0.15rem;
+  -webkit-flex: 0 0 33.33333%;
+  flex: 0 0 33.33333%;
+  max-width: 33.33333%;
+  min-height: 0.01rem;
+  width: 100%;
+}
+.bodylist .content .pd .bg-gray-lightest {
+  max-width: 100% !important;
+  flex: 0 0 100%;
+}
+.bodylist .content .pd .bg-gray-lightest .row {
+  display: flex;
+  flex-direction: row;
+  margin-left: -0.15rem;
+  margin-right: -0.15rem;
+}
+.bodylist .content .pd a:hover {
+  color: #333;
+  text-decoration: underline;
+}
+.bodylist .content .pd b {
+  font-weight: 700;
+}
+.bodylist .content .pd .Website {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.bodylist .content .pd:first-child {
+  margin-top: 0;
+}
+.bodylist .margin {
+  padding-bottom: 0.2rem;
+}
+.install {
+  position: fixed;
+  top: 50%;
+  right: 10%;
+  height: 20vh;
+  width: 40px;
+  z-index: 9999;
+}
+.install div {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  border-radius: 50%;
+  background-color: white;
+  left: 0;
+  box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.15);
+}
+.install div svg {
+  margin: 30% auto;
+  display: block;
+}
+.install div:first-child {
+  top: 0;
+}
+.install div:last-child {
+  bottom: 0;
+}
+.install div:last-child svg {
+  width: 100%;
+  margin-top: 25%;
+  height: 50%;
+}
+.install .audio {
+  cursor: pointer;
+  width: 48px;
+  height: 48px;
+  background-color: none;
+  box-shadow: none;
+}
+.install .audio img {
+  width: 100%;
+  height: 100%;
+}
+.bodyList {
+  padding-left: 15%;
+  margin-top: 3em;
+}
+.bodyList .artical {
+  width: 100%;
+  position: relative;
+  min-height: 0.3rem;
+}
+.bodyList .artical .dotts {
+  left: 1.2%;
+  width: 1.2em;
+  height: 1.2em;
+  border: 0.143em solid #e2e0dc;
+  position: absolute;
+  top: 0;
+  line-height: 0;
+  border-radius: 50%;
+  background: #fff;
+  margin-left: -0.6em;
+  z-index: 10;
+}
+.bodyList .artical .date {
+  display: block;
+  position: absolute;
+  top: -0.5em;
+  margin-left: 3.5em;
+  height: 2.14em;
+  color: #948c76;
+  z-index: 10;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+.bodyList .artical .date .trig {
+  position: absolute;
+  left: -1.14em;
+  top: 0;
+  border-right: 16px solid #f7f3ee;
+  border-top: 15px dashed transparent;
+  border-bottom: 15px dashed transparent;
+  width: 0;
+  height: 0;
+  line-height: 0;
+}
+.bodyList .artical .date .dates {
+  display: inline-block;
+  padding: 0 1em;
+  height: 30px;
+  background: #f7f3ee;
+  font-size: 0.8em;
+  vertical-align: top;
+  line-height: 2.5em;
+}
+.bodyList .artical .art-container {
+  width: 99%;
+  padding: 0 0 0 1%;
+  position: relative;
+}
+.bodyList .artical .art-container .line {
+  width: 0.143em;
+  height: 100%;
+  background: #f7f3ee;
+  position: absolute;
+  z-index: 0;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+.bodyList .artical .art-container .art-content {
+  width: 94%;
+  padding: 0 0 6% 6%;
+  overflow: hidden;
+}
+.bodyList .artical .art-container .art-content .art-title {
+  margin: 3em 0 2em;
+  font-size: 1em;
+}
+.bodyList .artical .art-container .art-content .art-img {
+  width: 30%;
+}
+.bodyList .artical .art-container .art-content .art-img img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+}
+.bodyList .artical .art-container .art-content .art-detail {
+  width: 85%;
+  line-height: 1.5em;
+  margin-top: 2em;
+  font-size: 0.8em;
+}
+.bodyList .artical .art-container .line {
+  width: 0.143em;
+  height: 100%;
+  background: #f7f3ee;
+  position: absolute;
+  z-index: 0;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+.MessageBoard {
+  margin-top: 2em;
+}
+.MessageBoard h1 {
+  color: #111;
+  text-align: center;
+  margin-bottom: 2em;
+  font-size: 16px;
+  font-weight: 400;
+}
+.MessageBoard .Bjq {
+  width: 95%;
+  margin: 0 auto;
+  position: relative;
+}
+.MessageBoard .Bjq .editor_toolbar {
+  padding: 0 2%;
+  background: #f7f3ee;
+  line-height: 40px;
+  width: 95%;
+  padding: 0 2.5%;
+  margin: 0 1px;
+  position: absolute;
+  z-index: 2;
+  top: 1px;
+  border-radius: 10px 10px 0 0;
+}
+.MessageBoard .Bjq .editor_textarea {
+  height: 210px;
+}
+.MessageBoard .Bjq .editor_textarea .ant-input {
+  width: 95%;
+  z-index: 1;
+  position: absolute;
+  padding: 50px 2.5% 0;
+  height: 150px;
+  border: solid 1px #ccc;
+  border-radius: 10px;
+}
+.MessageBoard .CommentList {
+  width: 95%;
+  margin: 0 auto;
+  width: 90%;
+}
+.MessageBoard .CommentList div .ant-comment {
+  margin-top: 15px;
+}
+.MessageBoard .CommentList div .ant-comment .ant-comment-inner {
+  border-bottom: 1px solid #e8e8e8;
+  padding-bottom: 24px;
+  margin-bottom: 24px;
+}
+.MessageBoard .CommentList div .ant-comment .ant-comment-inner div {
+  display: flex;
+  width: 100%;
+}
+.MessageBoard .CommentList div .ant-comment .ant-comment-inner div .redius {
+  background-color: #ed6f6d;
+  position: relative;
+  border-radius: 50%;
+  margin-right: 10px;
+  width: 32px;
+  height: 30px;
+  flex-shrink: 0;
+}
+.MessageBoard .CommentList div .ant-comment .ant-comment-inner div .redius div {
+  text-align: center;
+  line-height: 32px;
+  width: 100%;
+  color: white;
+  cursor: default;
+  position: absolute;
+  top: 0;
+}
+.MessageBoard .CommentList div .ant-comment .ant-comment-inner div div {
+  display: inline-block;
+}
+.MessageBoard .CommentList div .ant-comment .ant-comment-inner div .right {
+  width: 90%;
+}
+.MessageBoard .CommentList div .ant-comment .ant-comment-inner div .right span:first-child {
+  color: rgba(0, 0, 0, 0.45);
+  width: 5%;
+}
+.MessageBoard .CommentList div .ant-comment .ant-comment-inner div .right span:nth-child(2) {
+  width: 5%;
+  color: #ccc;
+  white-space: nowrap;
+  cursor: auto;
+}
+.MessageBoard .CommentList div .ant-comment .ant-comment-inner div .right div:nth-child(3) {
+  line-height: 24px;
+}
+.MessageBoard .CommentList div .ant-comment .ant-comment-inner div .right div:nth-child(4) {
+  padding: 0.2rem 0 0.2rem 10%;
+  width: 90%;
+}
+.MessageBoard .CommentList div .ant-comment .ant-comment-inner .ceng {
+  padding-left: 0.2rem;
+}
+.MessageBoard .CommentList .ant-divider .b1 {
+  line-height: 1.499;
+  position: relative;
+  display: inline-block;
+  font-weight: 400;
+  white-space: nowrap;
+  text-align: center;
+  background-image: none;
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.015);
+  cursor: pointer;
+  -webkit-transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  touch-action: manipulation;
+  height: 32px;
+  padding: 0 15px;
+  font-size: 14px;
+  border-radius: 4px;
+  color: rgba(0, 0, 0, 0.65);
+  background-color: #fff;
+  border: 1px solid #d9d9d9;
+  line-height: 34px;
+}
+.MessageBoard .CommentList .ant-divider .b1 .ant-btn {
+  background: none;
+}

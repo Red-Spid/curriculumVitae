@@ -1,4 +1,4 @@
-
+ 
 var api = {
   letConst: { passes: "'use strict'; let a; const b = 2;" },
   letLoop: { passes: "'use strict'; for(let i in {}){}; for(let i=0;;){break}" },
