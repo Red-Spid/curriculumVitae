@@ -51,7 +51,7 @@
   <div id="app">
 
     <github :my="$store.state.my" class="github-corner"></github>
-    <curriculumvitae :infor="$store.state.personalInformation"></curriculumvitae>
+    <router-view></router-view>
 
   </div>
 
@@ -78,9 +78,10 @@
         
       <div class="list">
         <ul>
-          <li><a class="active" href="javaScript:;">简历</a></li>
-          <li><a href="www.baidu.com">点滴</a></li>
-          <li><a href="www.bai.com/cn">留言</a></li>
+          <li>
+            <router-link to="/" class="active">简历</router-link></li>
+          <li><router-link to="/about">点滴</router-link></li>
+          <li><router-link to="/about">留言</router-link></li>
         </ul>
       </div>
     </div>
@@ -137,6 +138,7 @@
     </script>
 
   <script src="./js/vue3/vue3x.js"></script>
+  <script src="./js/vue3/vue-router.js"></script>
   <script src="./js/vue3/mount.js"></script>
   <script>
 

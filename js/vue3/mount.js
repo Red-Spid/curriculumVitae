@@ -29,14 +29,9 @@ console.log(this)
 	)
 }
 
-// const router = VueRouter.createRouter({
-	// ...
-//   })
-
-console.log( VueRouter.createRouter  )
 // console.log( VueRouter )
 function newVue( id ){ //挂载 元素
-	return app.use(store).mount('#'+id);
+	return app.use(router).use(store).mount('#'+id);
 }
 
 var vuedata = {
