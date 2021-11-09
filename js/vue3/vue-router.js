@@ -24,10 +24,10 @@ const Home = {
 const About = { template: '<tpl :data="$store.state.dropBYdrop"></tpl>' }
 
 const routes = [
-  { path: '/', component: About,
+  { path: '/', component: Home,
   
   },
-  { path: '/about', component: Home },
+  { path: '/about', component: About },
 ]
 
 // 3. 创建路由实例并传递 `routes` 配置
