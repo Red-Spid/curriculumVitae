@@ -66,6 +66,7 @@
 }
 body{
   max-width: 8rem;
+  width:100%;
   margin: .5rem auto 0;
 }
 
@@ -76,7 +77,12 @@ body{
   .xcenter();
 }
 
-
+.github-corner{
+  width:100%;
+  .cflex();
+  .ycenter();
+  .xcenter();
+}
 .left-top {
   position: fixed;
   top: 0;
@@ -85,6 +91,8 @@ body{
 }
 .fadein {
   width: 100%;
+  .cflex();
+  .xcenter();
   // padding-top: 0.2rem;
   text-align: center;
     img {
@@ -96,8 +104,10 @@ body{
       background: black;
       color: white;
       margin: 0.2rem auto;
-      width: 120px;
-      line-height: 0.24rem;
+      padding:0 0.1rem;
+      font-size:0.18rem;
+      display:inline-block;
+      line-height: 0.36rem;
     }
 }
 .list {
@@ -125,9 +135,9 @@ body{
   }
 }
 .bodylist {
-  padding:2.5%;
+  padding:0.2rem;
   width:100%;
-  max-width:8rem;
+  // max-width:8rem;
   color:#3f1c1c;
   margin:0.2rem 0;
   box-shadow: 0.01rem 0.01rem 0.08rem rgb(0 0 0 / 15%);
@@ -145,9 +155,9 @@ body{
 
   .head-left {
     h1 {
-      margin-left: -21px;
-      padding-left: 15px;
-      border-left: 5px solid black;
+      margin-left: -0.21rem;
+      padding-left: 0.15rem;
+      border-left: .05rem solid black;
       text-align: left;
     }
   }
@@ -182,7 +192,6 @@ body{
         border-bottom-left-radius: 0.03rem !important;
         border-bottom-right-radius: 0.03rem !important;
       }
-
       .line3{
         padding: 0.10rem 0.15rem;
         -webkit-flex: 0 0 33.33333%;
@@ -190,6 +199,20 @@ body{
         max-width: 33.33333%;
         min-height: 0.01rem;
         width:100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+      @media screen and (max-width: 700px) {
+        .line3{
+          max-width: 100% !important;
+          flex: 0 0 100%;
+          .row{
+            .rflex();
+            margin-left: -0.15rem;
+            margin-right: -0.15rem;
+          }
+        }
       }
       .bg-gray-lightest {
         max-width: 100% !important;
@@ -201,7 +224,11 @@ body{
         }
       }
       a:hover{
+        cursor:default;
+      }
+      .hrefurl:hover{
         color: #333;
+        cursor: pointer;
         text-decoration: underline;
       }
       b{
@@ -294,6 +321,15 @@ body{
       z-index: 10;
       -webkit-transition: 0.3s;
       transition: 0.3s;
+      &:hover{
+        margin-left: 2.8em;
+      }
+      &:hover .dates {
+        background: #948c76;
+      }
+      &:hover .trig {
+        border-right: 16px solid #948c76;
+      }
       .trig {
         position: absolute;
         left: -1.14em;
@@ -335,6 +371,11 @@ body{
         .art-title {
           margin: 3em 0 2em;
           font-size: 1em;
+          a{
+            &:hover{
+              text-decoration: underline;
+            }
+          }
         }
         .art-img {
           width: 30%;

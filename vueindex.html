@@ -50,7 +50,7 @@
 <body>
   <div id="app">
 
-    <github :my="$store.state.my" class="github-corner"></github>
+    <github :my="$store.state.my" :list="$store.state.list" class="github-corner"></github>
     <router-view></router-view>
 
   </div>
@@ -75,21 +75,21 @@
           <img :src="my.headportrait" />
           <p v-text="my.name"></p>
       </div>
-        
+
       <div class="list">
         <ul>
-          <li>
-            <router-link to="/" class="active">简历</router-link></li>
-          <li><router-link to="/about">点滴</router-link></li>
-          <li><router-link to="/about">留言</router-link></li>
+          <li v-for="(item,index) in list " :key="index" :class="[ item.active ? 'active' : '11']" @click="this.$store.dispatch('forlist',index)">
+            <router-link :to="item.url" v-text="item.text"></router-link>
+          </li>
         </ul>
       </div>
+
     </div>
   </script>
 
   <script type="text/template" id="curriculumvitae">
-
-    <main class="bodylist bodyHtml">
+    <!-- {{wis}}----> -->
+    <main class="bodylist bodyHtml" ref="add">
       
       <section class="head-sass head-left" v-for="( val,index  ) in infor" :key="index">
         <h1 class="btn" v-text="val.name"></h1>
@@ -99,17 +99,19 @@
           <div class="pd" v-for="( jacketed, layer ) in val.arr" :key="layer">
                 
             <div :class="['row']" v-for="( pirce, bolt ) in jacketed" :key="bolt">
-
-              <div :class="[ pirce.length == 1 ? 'bg-gray-lightest' : 'line3']" v-for="( value,key  ) in pirce" :key="key">
+<!-- wis ? 'line3' : 'bg-gray-lightest'  -->
+              <div :class="[ pirce.length == 1 ? 'bg-gray-lightest' : 'line3' ]" v-for="( value,key  ) in pirce" :key="key">
 
                 <span v-if="!value.url && value.bold != true ">
-                  {{ value.tips + (value.sex ? val.push + value.sex + val.push : value.push ? value.push : val.push) + value.val }}
+                  <a :title="value.tips + (value.sex ? val.push + value.sex + val.push : value.push ? value.push : val.push) + value.val">
+                    {{ value.tips + (value.sex ? val.push + value.sex + val.push : value.push ? value.push : val.push) + value.val }}
+                  </a>
                 </span>
 
                 <span v-else-if="value.url && value.bold != true  ">
 
                   {{ value.tips + (value.sex ? val.push + value.sex + val.push : value.push ? value.push : val.push) }}
-                  <a :href="value.url" target="_blank"> {{value.val}}</a>
+                  <a :href="value.url" target="_blank" class="hrefurl" :title="value.val"> {{value.val}}</a>
 
                 </span>
 
@@ -132,10 +134,33 @@
   </script>
 
   <script type="text/template" id="tpl">
-        <div style="font-size:2rem;max-width:8rem;">
-            aaaaaaa
-        </div>
-    </script>
+    <div class="bodyList">
+      <div class="artical" v-for="(item,index) in data" :key="index">
+        <div class="dotts"></div>
+          <a class="date" :href="item.url">
+              <span class="trig"></span>
+              <span class="dates" v-text="item.date"></span>
+          </a>
+          <div class="art-container">
+            <div class="line"></div>
+            <div class="art-content">
+              <p class="art-title">
+                <a href="/detail?id=5e9efd26601bd82819211a1e"
+                  v-text="item.tips"></a>
+              </p>
+              <div class="art-img">
+                <img :src="item.img" :alt="item.alt" />
+              </div>
+              <div class="art-detail">
+                <p v-text="item.introduce"></p>
+              </div>
+            </div>
+          </div>
+      </div>
+
+    </div>
+    
+  </script>
 
   <script src="./js/vue3/vue3x.js"></script>
   <script src="./js/vue3/vue-router.js"></script>
