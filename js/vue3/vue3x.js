@@ -6,11 +6,31 @@ const state = {
         { id: 2, text: '...', done: false }
     ],
 
+    list:[
+
+        {
+            text:"简历",
+            url:"/",
+            active:true,
+        },
+        {
+            text:"点滴",
+            url:"/about",
+            active:false,
+        },
+        {
+            text:"留言",
+            url:"",
+            active:false,
+        }
+
+    ],
+
     my:{
 		url:"https://github.com/Red-Spid",
 		title:"Fork me on GitHub",
 		headportrait:"https://avatars.githubusercontent.com/u/67768597?v=4",
-		name:"simon"
+		name:"Simon"
 	},
 
     personalInformation: {
@@ -30,7 +50,7 @@ const state = {
                         {
                             tips: "专科",
                             sex: "国家开放大学",
-                            val: "网络技术",
+                            val: "计算机网络技术",
                             // 计算机网络技术
                         },
                         {
@@ -38,6 +58,8 @@ const state = {
                             sex: "1",
                             val: " 年工作经验"
                         },
+                    ],
+                    [
                         {
                             tips: "期望职位",
                             push: "：",
@@ -372,7 +394,47 @@ const state = {
 
         },
 
-    }
+    },
+
+    dropBYdrop:[
+        {
+            date:"2019.03.20",
+            url:"/detail?id=5e9efd26601bd82819211a1e",
+            img:"./img/uploads1.jpg",
+            alt:"文章配图",
+            tips:"ubuntu 从零搭建环境，部署项目",
+            introduce:"从零开始搭建服务器环境的步骤"
+        },
+        {
+            date:"2017.07.25",
+            url:"/detail?id=5e9efd26601bd82819211a1e",
+            img:"./img/uploads2.jpg",
+            alt:"文章配图",
+            tips:"express+mongoDB建立与前端通信的数据库",
+            introduce:"学习过程中所记录的笔记，按着步骤来可以自己搭建一个能通信的服务器，遇到不懂的地方问度娘。在 我的码云和github上有搭建完成后的代码，前端用的Vue框架。 不完善的地方还在修改ing~"
+        },
+        {
+            date:"2019.03.20",
+            url:"/detail?id=5e9efd26601bd82819211a1e",
+            img:"./img/uploads3.jpg",
+            tips:"神奇的Cordova -- 利用H5进行APP开发",
+            introduce:" 一直以来app的开发都分为android版本和ios版本,同一款app需要写两种版本，版本有差异不说，耗费的成本加成。cordova的出现就是一股清流，它能实现将h5页面打包成android或ios版本，实现了android、ios、pc端页面的统一。"
+        },
+        {
+            date:"2019.03.20",
+            url:"/detail?id=5e9efd26601bd82819211a1e",
+            img:"./img/uploads4.jpg",
+            tips:"谷歌地图初触电",
+            introduce:"最近的项目里面用到了谷歌地图，以前开发过百度地图，但是都涉足很浅很浅，虽然这次也只用到了drawingManager下面几个画图组件。氮素！写几百行的代码实现出功能，这样充实的学习过程很令人满足讷。"
+        },
+        {
+            date:"2019.03.20",
+            url:"/detail?id=5e9efd26601bd82819211a1e",
+            img:"./img/uploads5.jpg",
+            tips:"快一个月没写文章总结了",
+            introduce:"最近换工作，忙着找房子+搬家+努力生活，忙得已经近一个月没写总结了，虽然没写，但是我对前端滴热情一如以往。最近在学习微信小程序，微信小程序是个坑啊，才推出一两个月，api已经废除了好多了。"
+        }
+    ]
 
 };
 
@@ -386,10 +448,23 @@ const mutations = {
     increment(state) {
         // 变更状态
         state.count++
+    },
+    forlist(state,a){
+      Object.keys(state.list).forEach(function(key){
+        if(key == a){
+            state.list[key].active = true;
+
+        }else{
+            state.list[key].active = false
+        }
+      })
     }
 }
 
 const actions = {
+    forlist(context,a){
+        context.commit("forlist",a);
+    },
     increment(context) {
         context.commit('increment')
     }
