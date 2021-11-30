@@ -90,7 +90,7 @@ tempDom("dropBYdrop", ["data"], "#dropBYdrop" );
 
 tempDom("comments", ["data","list"], "#comments" );
 
-tempDom("signin", ["data","list"], "#signIn" );
+// tempDom("signin", ["data","list"], "#signIn" );
 	
 // console.log(Vuex.Store)
 
