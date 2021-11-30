@@ -70,7 +70,7 @@ function tempDom( name = '', props = [], template = '', a = null){ // 挂载 组
 				a.apply(this)
 			}
 			
-		},	
+		}
 	})
 }
 
@@ -86,8 +86,11 @@ function a1( ) {
 
 tempDom("curriculumvitae", ["infor"], "#curriculumvitae",a1 );
 
-tempDom("tpl", ["data"], "#tpl" );
+tempDom("dropBYdrop", ["data"], "#dropBYdrop" );
 
+tempDom("comments", ["data","list"], "#comments" );
+
+tempDom("signin", ["data","list"], "#signIn" );
 	
 // console.log(Vuex.Store)
 

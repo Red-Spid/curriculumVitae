@@ -1,5 +1,5 @@
 
-const Home = { 
+const curriculumvitae = { 
   template: '<curriculumvitae :infor="$store.state.personalInformation" ></curriculumvitae>',
   data() {
     return {
@@ -21,13 +21,18 @@ const Home = {
 
   },
 }
-const About = { template: '<tpl :data="$store.state.dropBYdrop"></tpl>' }
+
+const dropBYdrop = { template: '<dropBYdrop :data="$store.state.dropBYdrop"></dropBYdrop>' };
+
+const comments = { template: '<comments :data="$store.state.comments" :list=" $store.state.commentsUer "></comments><signin></signin>' };
 
 const routes = [
-  { path: '/', component: Home,
+  { path: '/', component: curriculumvitae,
   
   },
-  { path: '/about', component: About },
+  { path: '/dropBYdrop', component: dropBYdrop },
+  { path: '/comments', component: comments }
+
 ]
 
 // 3. 创建路由实例并传递 `routes` 配置

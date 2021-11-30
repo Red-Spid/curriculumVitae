@@ -15,12 +15,12 @@ const state = {
         },
         {
             text:"点滴",
-            url:"/about",
+            url:"/dropBYdrop",
             active:false,
         },
         {
             text:"留言",
-            url:"",
+            url:"/comments",
             active:false,
         }
 
@@ -434,21 +434,196 @@ const state = {
             tips:"快一个月没写文章总结了",
             introduce:"最近换工作，忙着找房子+搬家+努力生活，忙得已经近一个月没写总结了，虽然没写，但是我对前端滴热情一如以往。最近在学习微信小程序，微信小程序是个坑啊，才推出一两个月，api已经废除了好多了。"
         }
+    ],
+
+    commentsUer:{
+        name:"昵称必填",
+        mailbox:"xx@xx.xx",
+        www:"http(s)://xx.xx",
+        tips:"留言板",
+        userIs:false,
+        stateFalse:[
+            "先登录吧！",
+            "登录"
+        ],
+        stateTrue:[
+            "谢谢你的留言",
+            "退出"
+        ]
+    },
+
+    comments:[
+
+        {
+            floor:{
+                text:"楼",
+                reply:"回复",
+                num:1
+            },
+            
+            user:{
+                name:"simon",
+                mailbox:"xx@xx.xx",
+                www:"http(s)://xx.xx",
+                content:"1111",
+                releaseTime:"2021-11-12",
+                is:true
+            },
+
+            antComment:[
+                {
+                    floor:{
+                        reply:"回复",
+                        num:1
+                    },
+                    
+                    user:{
+                        name:"simon",
+                        mailbox:"xx@xx.xx",
+                        www:"http(s)://xx.xx",
+                        content:"2222---回复",
+                        releaseTime:"2021-11-12",
+                        is:true
+                    },
+                }
+            ]
+
+        },
+
+        {
+            floor:{
+                text:"楼",
+                reply:"回复",
+                num:2
+            },
+            
+            user:{
+                name:"simon",
+                mailbox:"xx@xx.xx",
+                www:"http(s)://xx.xx",
+                content:"222222",
+                releaseTime:"2021-11-12",
+                is:true
+            },
+
+            antComment:[
+                {
+                    floor:{
+                        reply:"回复",
+                        num:1
+                    },
+                    
+                    user:{
+                        name:"simon",
+                        mailbox:"xx@xx.xx",
+                        www:"http(s)://xx.xx",
+                        content:" 333333  ---回复",
+                        releaseTime:"2021-11-12",
+                        is:true
+                    },
+                },
+                {
+                    floor:{
+                        reply:"回复",
+                        num:1
+                    },
+                    
+                    user:{
+                        name:"simon",
+                        mailbox:"xx@xx.xx",
+                        www:"http(s)://xx.xx",
+                        content:" 4444444  ---回复",
+                        releaseTime:"2021-11-12",
+                        is:true
+                    },
+                }
+            ]
+
+        }
+        
     ]
 
 };
 
 const getters = {
+
     doneTodos: state => {
         return state.todos.filter(todo => todo.done)
     }
 }
 
 const mutations = {
+
+    computedDate(state,val){
+        //如果时间格式是正确的，那下面这一步转化时间格式就可以不用了
+        val.is = false;
+        let dateBegin = new Date(val.releaseTime.replace(/-/g, "/"));//将-转化为/，使用new Date
+        let dateEnd = new Date();//获取当前时间
+        let dateDiff = dateEnd.getTime() - dateBegin.getTime();//时间差的毫秒数
+        let dayDiff = Math.floor(dateDiff / (24 * 3600 * 1000));//计算出相差天数
+        let leave1=dateDiff%(24*3600*1000) //计算天数后剩余的毫秒数
+        let hours=Math.floor(leave1/(3600*1000))//计算出小时数
+        //计算相差分钟数
+        let leave2=leave1%(3600*1000) //计算小时数后剩余的毫秒数
+        let minutes=Math.floor(leave2/(60*1000))//计算相差分钟数
+        //计算相差秒数
+        let leave3=leave2%(60*1000) //计算分钟数后剩余的毫秒数
+        let seconds=Math.round(leave3/1000);
+
+        //这里的dayDiff就是上文计算出的天数差
+        let monthDiff=Math.floor(dayDiff/30);//以30天为一个月不够精准严谨
+
+
+        let yearDiff=Math.floor(monthDiff/12);//获取相差的年份
+        if(yearDiff>=1){
+            val.interpolation=yearDiff+"年前";
+            console.log( val.interpolation )
+            return val.interpolation
+        }
+        
+        //获取相差的月份
+        if (monthDiff<12 && monthDiff > 0){
+            val.interpolation=monthDiff+"个月前";//获取相差的月份
+            console.log( val.interpolation )
+            return val.interpolation
+        }
+
+        // 获取相差的天数
+        if( dayDiff>=1 ){
+            val.interpolation = dayDiff + "天前";
+            console.log( val.interpolation )
+            return val.interpolation
+            console.log(" 相差 "+dayDiff+"天 "+hours+"小时 "+minutes+" 分钟"+seconds+" 秒")
+        }
+
+        // 获取相差的小时
+        if( hours >=1 ){
+            val.interpolation = hours + "小时前";
+            console.log( val.interpolation )
+            return val.interpolation
+        }
+
+        if( minutes >= 1){
+            val.interpolation = minutes + "小时前";
+            console.log( val.interpolation )
+            return val.interpolation
+        }
+
+        if( seconds >=1 ){
+            val.interpolation = "刚刚发布";
+            console.log( val.interpolation )
+            return val.interpolation;
+            // console.log(dateDiff+"时间差的毫秒数",dayDiff+"计算出相差天数",leave1+"计算天数后剩余的毫秒数"
+            // ,hours+"计算出小时数",minutes+"计算相差分钟数",seconds+"计算相差秒数");
+        }
+
+    },
+
     increment(state) {
         // 变更状态
         state.count++
     },
+
     forlist(state,a){
       Object.keys(state.list).forEach(function(key){
         if(key == a){
@@ -462,6 +637,11 @@ const mutations = {
 }
 
 const actions = {
+
+    computedDate(context,a){
+        context.commit("computedDate",a);
+    },
+
     forlist(context,a){
         context.commit("forlist",a);
     },

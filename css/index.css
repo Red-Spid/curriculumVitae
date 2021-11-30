@@ -102,8 +102,7 @@ input,
 button,
 textarea,
 select,
-input:focus,
-/* textarea:focus */ {
+input:focus/* textarea:focus */ {
   background: none;
   outline: none;
 }
@@ -117,6 +116,11 @@ select {
 a,
 button {
   cursor: pointer;
+  -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        touch-action: manipulation;
 }
 blockquote,
 q {
@@ -137,7 +141,7 @@ table {
 button,
 input,
 optgroup,
-select,
+select
 /* textarea  */ {
   -webkit-appearance: none;
 }
@@ -146,7 +150,7 @@ a,
 button,
 input,
 optgroup,
-select,
+select
 /* textarea */ {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }

@@ -371,55 +371,72 @@ body {
 }
 .MessageBoard {
   margin-top: 2em;
+  width: 100%;
 }
 .MessageBoard h1 {
   color: #111;
   text-align: center;
-  margin-bottom: 2em;
-  font-size: 16px;
+  font-size: 0.16rem;
   font-weight: 400;
 }
 .MessageBoard .Bjq {
-  width: 95%;
-  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-height: 2.1rem;
   position: relative;
+  margin-bottom: 0.14rem;
 }
 .MessageBoard .Bjq .editor_toolbar {
-  padding: 0 2%;
   background: #f7f3ee;
-  line-height: 40px;
+  line-height: 0.4rem;
   width: 95%;
-  padding: 0 2.5%;
-  margin: 0 1px;
+  padding-left: 0.1rem;
   position: absolute;
   z-index: 2;
-  top: 1px;
-  border-radius: 10px 10px 0 0;
+  top: 0.32rem;
+  border-width: 0.01rem;
+  border-style: solid;
+  border-color: #ccc #ccc transparent #ccc;
+  border-top-left-radius: 0.1rem;
+  border-top-right-radius: 0.1rem;
+}
+.MessageBoard .Bjq .editor_toolbar .userText {
+  padding: 0 0.15rem;
+}
+.MessageBoard .Bjq .editor_toolbar .userText:hover {
+  text-decoration: underline;
 }
 .MessageBoard .Bjq .editor_textarea {
-  height: 210px;
+  margin-top: 0.32rem;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 .MessageBoard .Bjq .editor_textarea .ant-input {
   width: 95%;
   z-index: 1;
-  position: absolute;
-  padding: 50px 2.5% 0;
-  height: 150px;
-  border: solid 1px #ccc;
-  border-radius: 10px;
+  padding: 0.5rem 2.5% 0;
+  height: 1.5rem;
+  border: solid 0.01rem #ccc;
+  border-radius: 0.1rem;
 }
 .MessageBoard .CommentList {
   width: 95%;
   margin: 0 auto;
   width: 90%;
 }
+.MessageBoard .CommentList .spacing {
+  padding-right: 0.08rem;
+}
 .MessageBoard .CommentList div .ant-comment {
-  margin-top: 15px;
+  margin-top: 0.15rem;
 }
 .MessageBoard .CommentList div .ant-comment .ant-comment-inner {
   border-bottom: 1px solid #e8e8e8;
-  padding-bottom: 24px;
-  margin-bottom: 24px;
 }
 .MessageBoard .CommentList div .ant-comment .ant-comment-inner div {
   display: flex;
@@ -429,14 +446,14 @@ body {
   background-color: #ed6f6d;
   position: relative;
   border-radius: 50%;
-  margin-right: 10px;
-  width: 32px;
-  height: 30px;
+  margin-right: 0.1rem;
+  width: 0.32rem;
+  height: 0.3rem;
   flex-shrink: 0;
 }
 .MessageBoard .CommentList div .ant-comment .ant-comment-inner div .redius div {
   text-align: center;
-  line-height: 32px;
+  line-height: 0.32rem;
   width: 100%;
   color: white;
   cursor: default;
@@ -469,7 +486,22 @@ body {
 .MessageBoard .CommentList div .ant-comment .ant-comment-inner .ceng {
   padding-left: 0.2rem;
 }
-.MessageBoard .CommentList .ant-divider .b1 {
+.MessageBoard .CommentList div .ant-comment .ant-divider-horizontal {
+  display: block;
+  clear: both;
+  width: 100%;
+  min-width: 100%;
+  height: 0.01rem;
+  margin: 0.24rem 0;
+}
+.MessageBoard .ant-divider {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0.14rem;
+}
+.MessageBoard .ant-divider .b1 {
   line-height: 1.499;
   position: relative;
   display: inline-block;
@@ -477,24 +509,106 @@ body {
   white-space: nowrap;
   text-align: center;
   background-image: none;
-  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.015);
-  cursor: pointer;
+  box-shadow: 0 0.02rem 0 rgba(0, 0, 0, 0.015);
   -webkit-transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
   transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  touch-action: manipulation;
-  height: 32px;
-  padding: 0 15px;
-  font-size: 14px;
+  height: 0.32rem;
+  padding: 0 0.15rem;
+  font-size: 0.14rem;
   border-radius: 4px;
   color: rgba(0, 0, 0, 0.65);
   background-color: #fff;
   border: 1px solid #d9d9d9;
-  line-height: 34px;
+  line-height: 0.34rem;
 }
-.MessageBoard .CommentList .ant-divider .b1 .ant-btn {
+.MessageBoard .ant-divider .b1 .ant-btn {
   background: none;
+}
+.signIn {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+  overflow: auto;
+  outline: 0;
+  -webkit-overflow-scrolling: touch;
+}
+.signIn .ant-modal-mask {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.65);
+}
+.signIn .ant-modal-mask .ant-modal-content {
+  position: relative;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 0;
+  border-radius: 0.04rem;
+  box-shadow: 0 0.04rem 0.12rem rgba(0, 0, 0, 0.15);
+  width: 5.2rem;
+  margin: 1rem auto;
+}
+.signIn .ant-modal-mask .ant-modal-content .ant-modal-header {
+  padding: 0.16rem 0.24rem;
+  color: rgba(0, 0, 0, 0.65);
+  background: #fff;
+  border-bottom: 0.01rem solid #e8e8e8;
+  border-radius: 0.04rem 0.04rem 0 0;
+  font-size: 0.16rem;
+}
+.signIn .ant-modal-mask .ant-modal-content .ant-modal-body {
+  padding: 0.24rem;
+  box-sizing: border-box;
+  font-variant: tabular-nums;
+  display: flex;
+  flex-direction: column;
+}
+.signIn .ant-modal-mask .ant-modal-content .ant-modal-body div {
+  display: flex;
+  flex-direction: row;
+}
+.signIn .ant-modal-mask .ant-modal-content .ant-modal-body div .ant-input-group-addon {
+  padding: 0 0.11rem;
+  color: rgba(0, 0, 0, 0.65);
+  font-weight: 400;
+  font-size: 0.14rem;
+  line-height: 0.3rem;
+  background-color: #fafafa;
+  border: 0.01rem solid #d9d9d9;
+  border-right: none;
+  border-radius: 0.04rem 0 0 0.04rem;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  display: inline-block;
+  margin-bottom: 0.14rem;
+}
+.signIn .ant-modal-mask .ant-modal-content .ant-modal-body div .ant-input {
+  padding: 0.04rem 0.11rem;
+  line-height: 0.22rem;
+  height: 0.32rem;
+  border: 0.01rem solid #d9d9d9;
+  border-radius: 0 0.04rem 0.04rem 0;
+  text-align: inherit;
+  flex: 1 auto;
+}
+.signIn .ant-modal-mask .ant-modal-content .ant-modal-body div .ant-input:hover {
+  border-color: #40a9ff;
+  border-right-width: 0.01rem !important;
+}
+.signIn .ant-modal-mask .ant-modal-content .ant-modal-body div .ant-input:focus {
+  outline: 0;
+  box-shadow: 0 0 0 0.02rem rgba(24, 144, 255, 0.2);
+}
+.signIn .ant-modal-mask .ant-modal-content .ant-modal-body .has-error .ant-input {
+  border-color: #ff4d4f;
+  border-right-width: 0.01rem !important;
+  outline: 0;
+  box-shadow: 0 0 0 0.01rem rgba(245, 34, 45, 0.2);
 }
