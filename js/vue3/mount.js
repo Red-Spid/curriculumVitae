@@ -68,27 +68,61 @@ function tempDom( name = '', props = [], template = '', a = null){ // 挂载 组
 			// console.log( this.$refs.add )
 			if(a!= null){
 				a.apply(this)
+				a.call(this)
+				a.bind(this)();
+				a(this);
+				console.log(this)
 			}
-			
 		}
 	})
 }
 
-tempDom("github", ["my","list"], "#github" );
+// function a1( ) {
+// 	console.log( this.$refs.add, 1111 )
+// 	// console.log( this.$refs.add.clinetWidth )
+// 	// console.log( this.$refs.add.clinetHeight )
+// 	// console.log( this.$refs.clinetWidth )
+// 	// console.log( this.$refs.add.$el.offsetWidth )
+// }
 
-function a1( ) {
-	console.log( this.$refs.add )
-	// console.log( this.$refs.add.clinetWidth )
-	// console.log( this.$refs.add.clinetHeight )
-	// console.log( this.$refs.clinetWidth )
-	// console.log( this.$refs.add.$el.offsetWidth )
-}
+// 循环组件创建
+var componentApi = [
+	{
+		name:"github", props:["my","list"], id:"#github"
+	},
+	{
+		name:"curriculumvitae",
+		props:["infor"], 
+		id:"#curriculumvitae",
+		function: ( _self ) => {
+			console.log( this )
+			// console.log( _self.$refs.add, 1111 )
+		}
 
-tempDom("curriculumvitae", ["infor"], "#curriculumvitae",a1 );
+	},
+	{
+		name:"dropBYdrop", props:["data"], id:"#dropBYdrop"
+	},
+	{
+		name:"comments", props:["data","list","isdom"], id:"#comments"
+	},
+	{
+		name:"signin", props:["data","list"], id:"#signIn"
+	}
+]
 
-tempDom("dropBYdrop", ["data"], "#dropBYdrop" );
+componentApi.forEach(element => {
+	// console.log(element)
+	tempDom(
+		element.name, element.props, element.id, element.function
+	)	
+})
+// tempDom("github", ["my","list"], "#github" );
+// tempDom("curriculumvitae", ["infor"], "#curriculumvitae",a1 );
 
-tempDom("comments", ["data","list"], "#comments" );
+// tempDom("dropBYdrop", ["data"], "#dropBYdrop" );
+
+// tempDom("comments", ["data","list"], "#comments" );
 
 // tempDom("signin", ["data","list"], "#signIn" );
 	

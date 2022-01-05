@@ -541,7 +541,13 @@ const state = {
 
         }
         
-    ]
+    ],
+
+    signIn:{
+        is:true,
+        loadMore:"加载更多",
+        loadOnly:5
+    }
 
 };
 

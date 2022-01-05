@@ -24,7 +24,7 @@ const curriculumvitae = {
 
 const dropBYdrop = { template: '<dropBYdrop :data="$store.state.dropBYdrop"></dropBYdrop>' };
 
-const comments = { template: '<comments :data="$store.state.comments" :list=" $store.state.commentsUer "></comments><signin></signin>' };
+const comments = { template: '<comments :data="$store.state.comments" :list=" $store.state.commentsUer " :isdom=" $store.state.signIn "></comments>' };
 
 const routes = [
   { path: '/', component: curriculumvitae,
