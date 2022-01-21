@@ -1,15 +1,5 @@
 
-// import Vue from "../vue/vue.js";
-// import VueRouter from "../vue/vue-router.js";
-// import Vuex from "../vue/vuex.js";
-
-
-
-
-
-
-
-const state = {
+const xState = {
     count: 0,
     todos: [
         { id: 1, text: '...', done: true },
@@ -679,8 +669,8 @@ const moduleB = {
     actions: {}
 }
 
-const store = new Vuex.Store({
-    state: state,
+const xStore = new Vuex.Store({
+    state: xState,
     getters: getters,
     mutations: mutations,
     actions: actions,
@@ -689,3 +679,7 @@ const store = new Vuex.Store({
         b: moduleB
     }
 });
+
+export {
+    xStore,xState
+}

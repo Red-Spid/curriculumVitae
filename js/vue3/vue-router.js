@@ -26,7 +26,7 @@ const dropBYdrop = { template: '<dropBYdrop :data="$store.state.dropBYdrop"></dr
 
 const comments = { template: '<comments :data="$store.state.comments" :list=" $store.state.commentsUer " :isdom=" $store.state.signIn "></comments>' };
 
-const routes = [
+const xRoutes = [
   { path: '/', component: curriculumvitae,
   
   },
@@ -41,5 +41,9 @@ const routes = [
 const router = VueRouter.createRouter({
   // 4. 内部提供了 history 模式的实现。为了简单起见，我们在这里使用 hash 模式。
   history: VueRouter.createWebHashHistory(),
-  routes, // `routes: routes` 的缩写
+  routes:xRoutes, // `routes: routes` 的缩写
 })
+
+export {
+  xRoutes,router
+};
