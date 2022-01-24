@@ -1,58 +1,34 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-    <title></title>
-    <!-- <script src="js/mui.min.js"></script>
-    <link href="css/mui.min.css" rel="stylesheet"/>
-    <script type="text/javascript" charset="utf-8">
-      	mui.init();
-    </script> -->
-	<!-- <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script> -->
+<meta charset="utf-8">
+<title>Vue 测试实例 - 菜鸟教程(runoob.com)</title>
+<script src="https://unpkg.com/vue@next"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
 <body>
-	<!-- https://es6.ruanyifeng.com/#docs/class-extends  es6 -->
-	<div id="app">
-		{{messages}}
-	</div>
-	
-	<div id="app1">
-		{{messages}}
-	</div>
-	
-	<!-- <script type="text/javascript">
-		
-		var vueApp = "#app"
-		
-	</script>
-	<script type="text/javascript" src="./js/mount.js"></script>
-	<script type="text/javascript" src="./js/higherOrder.js"></script> -->
-	<script type="module">
+<div id="app">
+  {{ info }}
+</div>
 
-		import App from './App'
+<script>
+const app = {
+  data() {
+    return {
+      info: 'Ajax 测试!!'
+    }
+  },
+  mounted () {
+    axios
+      .post('https://www.runoob.com/try/ajax/demo_axios_post.php')
+      .then(response => (this.info = response))
+      .catch(function (error) { // 请求失败处理
+        console.log(error);
+      });
+  }
+}
 
-		// #ifndef VUE3
-		import Vue from 'vue'
-		Vue.config.productionTip = false
-		App.mpType = 'app'
-		const app = new Vue({
-			...App
-		})
-		app.$mount()
-		// #endif
-
-		// #ifdef VUE3
-		import { createSSRApp } from 'vue'
-		export function createApp() {
-			const app = createSSRApp(App)
-			return {
-				app
-			}
-		}
-		// #endif
-
-	</script>	
-	
+Vue.createApp(app).mount('#app')
+</script>
 </body>
 </html>

@@ -2,8 +2,9 @@
 import { cluster } from '../vue3/class.js';
 import { xRoutes,router } from '../vue3/vue-router.js';
 import { xStore,xState } from '../vue3/vue3x.js';
+// import { axiosHtpps } from '../https/axios.js';
 
-console.log(xStore,xState)
+// console.log(xStore,xState)
 
 var vdata = {
     message: 'Hello Vue!!',
@@ -13,6 +14,7 @@ var vdata = {
     },
 
 }
+
 const _this = cluster.createApp(vdata);
 
 var componentApi = [
@@ -46,5 +48,33 @@ componentApi.forEach(element => {
     )
 })
 
-const _sed = cluster.newVue(_this, "app",[router,xStore])
-console.log(_sed.$router);
+const _sed = cluster.newVue(_this, "app",[router,xStore]);
+_this.config.globalProperties.$http = axios;
+// console.log(_sed.$router);
+// console.log(_sed.$http)
+
+
+// const instance = axios.create({
+//     baseURL: 'https://www.runoob.com/',
+//     timeout: 1000,
+//     headers: {'X-Custom-Header': 'foobar'}
+// });
+// instance({
+//     url:"try/ajax/json_demo.json",
+// }).then(res=>{
+//     console.log(res);
+// })
+// _sed.$http.get('try/ajax/json_demo.json')
+// .then(response => (this.info = response))
+// .catch(function (error) { // 请求失败处理
+//   console.log(error);
+// });
+axios.defaults.withCredentials=true
+axios.defaults.crossDomain=true
+axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded'
+axios
+      .get('https://www.runoob.com/try/ajax/json_demo.json')
+      .then(response => (this.info = response))
+      .catch(function (error) { // 请求失败处理
+        console.log(error);
+    })

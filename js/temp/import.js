@@ -1,9 +1,4 @@
-console.log( "1111" )
 
-import "../vue/vue.js";
-
-console.log( "222" )
-
-
-import "../vue/vuex.js";
-import "../vue/vue-router.js";
+// import { Vue } from "../vue/vue.js";
+// import { Vuex } from "../vue/vuex.js";
+// import { VueRouter } from "../vue/vue-router.js";
