@@ -45,35 +45,24 @@ class methodCluster {
         return app.use( arr[0] ).use( arr[1] ).mount('#'+id);
     }
 
-    tempDom( app="", name = '', props = [], template = '', a = null){ // 挂载 组件
-
-        app.component( name, {
-            props: props,
-            template: template,
-            mounted() {
-                // console.log( this.$refs.add.$el.clinetWidth )
-                // console.log( this.$refs.add.$el.clinetHeight )
-                // console.log( this.$refs.add )
-                if(a!= null){
-                    a.apply(this)
-                    a.call(this)
-                    a.bind(this)();
-                    a(this);
-                    // console.log(this)
-                }
-            }
-        })
+    tempDom( app="", name = '', obj = {} ){ // 挂载 组件
+        obj.template = "#"+name;
+        app.component( name, obj )
     }
 
+    dtype( data="", condition="" ){// Data type prototype 数据类型 原型is true/false
+        /*
+            data = 数据类型
+            condition = 条件为真
+        */
+        var x = "";
+        switch ( Object.prototype.toString.call( data ) == condition ) { 
+            case true : x="是对的"; 
+            break; 
+            default: x = "不是字符串和数组假的";
+        }
 
-}
-
-var vuedata = {
-	message: 'Hello Vue!!',
-
-	personalInformation:{
-		
-	},
+    }
 
 }
 

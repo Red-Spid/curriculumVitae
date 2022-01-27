@@ -17,39 +17,104 @@ var vdata = {
 
 const _this = cluster.createApp(vdata);
 
-var componentApi = [
+/*
+    生命周期 life cycle ----- 简写 lc
+    组件列队 componentApi queue ----- cq
+*/
+var cApi = [
     {
-        name: "github", props: ["my", "list"], id: "#github"
+        name: "github", 
+        lc:{
+            props: ["my", "list"], 
+        }
     },
     {
         name: "curriculumvitae",
-        props: ["infor"],
-        id: "#curriculumvitae",
+        lc:{
+            props: ["infor"],
+        },
         function: (_self) => {
             // console.log( _self.$refs.add, 1111 )
         }
 
     },
     {
-        name: "dropBYdrop", props: ["data"], id: "#dropBYdrop"
+        name: "dropBYdrop",
+        lc:{
+            props: ["data"], 
+        },
     },
     {
-        name: "comments", props: ["data", "list", "isdom"], id: "#comments"
+        name: "comments",
+        lc:{
+            props: ["data", "list", "isdom"],
+        }
     },
     {
-        name: "signin", props: ["data", "list"], id: "#signIn"
+        name: "signin",
+        lc:{
+            props: ["data", "list"],
+        }
+    },
+    {
+        name:"abgm",
+        lc:{
+            props:[],
+            data(){
+                return {
+                    router:false
+                }
+            },
+            mounted() {
+              console.log( this.$router.options.history.location,this.$route )  
+            },
+        }
     }
 ]
 
-componentApi.forEach(element => {
-    // console.log(element)
+const vueApi = {
+    componentName : "",
+    props : "",
+    beforeCreate:{
+
+    },
+    created:{
+        
+    },
+    beforeMount:{
+
+    },
+    mounted:{
+
+    },
+    data(){
+        return{
+
+        }
+    },
+    methods: {
+        
+    },
+    beforeUpdate:{
+
+    },
+    updated:{
+
+    },
+    beforeDestroy:{
+
+    }
+}
+
+cApi.forEach( value => {
     cluster.tempDom(
-        _this, element.name, element.props, element.id, element.function
+        _this, value.name, value.lc
     )
 })
 
 const _sed = cluster.newVue(_this, "app",[router,xStore]);
-_this.config.globalProperties.$http = axios;
+
+// _this.config.globalProperties.$http = axios;
 // console.log(_sed.$router);
 // console.log(_sed.$http)
 
@@ -69,12 +134,12 @@ _this.config.globalProperties.$http = axios;
 // .catch(function (error) { // 请求失败处理
 //   console.log(error);
 // });
-axios.defaults.withCredentials=true
-axios.defaults.crossDomain=true
-axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded'
-axios
-      .get('https://www.runoob.com/try/ajax/json_demo.json')
-      .then(response => (this.info = response))
-      .catch(function (error) { // 请求失败处理
-        console.log(error);
-    })
+// axios.defaults.withCredentials=true
+// axios.defaults.crossDomain=true;
+// axios.defaults.withCredentials = false;
+// axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded'
+// axios.get('https://www.runoob.com/try/ajax/json_demo.json')
+//     .then(response => (this.info = response))
+//     .catch(function (error) { // 请求失败处理
+//     console.log(error);
+// })

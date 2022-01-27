@@ -27,11 +27,19 @@ const dropBYdrop = { template: '<dropBYdrop :data="$store.state.dropBYdrop"></dr
 const comments = { template: '<comments :data="$store.state.comments" :list=" $store.state.commentsUer " :isdom=" $store.state.signIn "></comments>' };
 
 const xRoutes = [
-  { path: '/', component: curriculumvitae,
-  
+  { path: '/', name:"home",redirect:"/personal/dropBYdrop"},
+  {
+    name:"personal", path:"/personal", component:{
+      template: "<div><router-view></router-view></div>"
+    },
+    children: [
+      { path: 'resume', name:"resume", component: curriculumvitae },
+      { path: 'dropBYdrop', name:"LeavingAmessage", component: dropBYdrop },
+      { path: 'comments', name:"shareExperience", component: comments }
+    ]
   },
-  { path: '/dropBYdrop', component: dropBYdrop },
-  { path: '/comments', component: comments }
+  
+  
 
 ]
 

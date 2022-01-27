@@ -4,13 +4,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content= "ie=edge">
   <title>点滴 » RedSpite Simon个人学习小站</title>
   <link rel="stylesheet" href="./css/main/media.css">
   <script src="./js/vue/vue.js"></script>
   <script src="./js/vue/vuex.js"></script>
   <script src="./js/vue/vue-router.js"></script>
-  <script src="./js/https/axios.js"></script>
-
+  <!-- <script src="./js/https/axios.js"></script> -->
+  <!-- <script src="./js/https/request.js" type="module"></script> -->
+  
+  <!-- 导入样式 -->
+  <link rel="stylesheet" href="//unpkg.com/element-plus/dist/index.css" />
+  <!-- 导入组件库 -->
+  <script src="//unpkg.com/element-plus"></script>
   <!-- <script src="./js/temp/import.js" type="module"></script> -->
   <style>
     .github-corner:hover .octo-arm {
@@ -50,12 +56,41 @@
 <body>
   <div id="app">
 
-    <signin :data="$store.state.signIn"></signin>
+    <!-- <signin :data="$store.state.signIn"></signin> -->
     <github :my="$store.state.my" :list="$store.state.list" class="github-corner"></github>
+    <abgm></abgm>
     <router-view></router-view>
 
   </div>
-  <div id="app1"></div>
+
+  <script type="text/template" id="abgm">
+    <div class="install">
+      <div title="下载PDF简历" class="pfd">
+        <svg viewBox="64 64 892 892" focusable="false" data-icon="download" width="1em" height="1em" fill="currentColor"
+          aria-hidden="true">
+          <path
+            d="M505.7 661a8 8 0 0 0 12.6 0l112-141.7c4.1-5.2.4-12.9-6.3-12.9h-74.1V168c0-4.4-3.6-8-8-8h-60c-4.4 0-8 3.6-8 8v338.3H400c-6.7 0-10.4 7.7-6.3 12.9l112 141.8zM878 626h-60c-4.4 0-8 3.6-8 8v154H214V634c0-4.4-3.6-8-8-8h-60c-4.4 0-8 3.6-8 8v198c0 17.7 14.3 32 32 32h684c17.7 0 32-14.3 32-32V634c0-4.4-3.6-8-8-8z">
+          </path>
+        </svg>
+      </div>
+      <div class="audio" id="audio">
+        <img src="./img/ins.png"/>
+        <!-- <audio src="./music/bgm.mp3" autoplay="" loop="" hidden="" id="music"></audio> -->
+      </div>
+      <div id="topReurn">
+        <a href="#" onclick="eventStop()" title="返回顶部">
+          <svg t="1565238236954" fill="currentColor" viewBox="0 0 1024 1024" version="1.1"
+            xmlns="http://www.w3.org/2000/svg" p-id="3644" width="200" height="200">
+            <path d="M483.875 230.75a28.125 28.125 0 0 1 56.25 0v590.625a28.125 28.125 0 0 1-56.25 0z" p-id="3645"></path>
+            <path
+              d="M512 242.28125l-205.03125 205.3125a28.125 28.125 0 1 1-39.9375-39.9375l225-225a28.125 28.125 0 0 1 39.9375 0l225 225a28.125 28.125 0 0 1-39.9375 39.9375z"
+              p-id="3646"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </script>
+
   <script type="text/template" id="github">
 
     <div>
@@ -233,7 +268,7 @@
     </main>
   </script>
 
-  <script type="text/template" id="signIn">
+  <script type="text/template" id="signin">
 
     <main class="signIn" v-if="data.is" @click="data.is = !data.is">
 

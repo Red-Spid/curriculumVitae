@@ -1,34 +1,91 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta charset="utf-8">
-<title>Vue 测试实例 - 菜鸟教程(runoob.com)</title>
-<script src="https://unpkg.com/vue@next"></script>
-<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <meta charset="utf-8">
+  <title>Vue 测试实例 - 菜鸟教程(runoob.com)</title>
+  <script src="https://unpkg.com/vue@next"></script>
+  <script src="https://unpkg.com/vue-router@4"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
+
 <body>
-<div id="app">
-  {{ info }}
-</div>
+  <div id="app">
+    {{ info }}
+    <router-link to="/">Go to Home</router-link><br/>
+    <router-link to="/user/:id">Go to About</router-link><br/>
+    <router-link to="/user/:id/profile">Go to 组件2级UserProfile</router-link><br/>
+    <router-link to="/user/:id/posts">Go to 组件2级UserPosts</router-link><br/>
+    <router-link to="/user/:id/userhome">Go to userhome</router-link><br/>
 
-<script>
-const app = {
-  data() {
-    return {
-      info: 'Ajax 测试!!'
-    }
-  },
-  mounted () {
-    axios
-      .post('https://www.runoob.com/try/ajax/demo_axios_post.php')
-      .then(response => (this.info = response))
-      .catch(function (error) { // 请求失败处理
-        console.log(error);
-      });
-  }
-}
+    <!-- 路由出口 -->
+    <!-- 路由匹配到的组件将渲染在这里 -->
+    <router-view></router-view>
+  </div>
 
-Vue.createApp(app).mount('#app')
-</script>
+  <script>
+    // 1. 定义路由组件.
+    // 也可以从其他文件导入
+    const Home = { template: '<div>Home<router-view></router-view></div>' }
+    const About = { template: '<div>About<router-view></router-view></div>' }
+    const UserProfile = { template: '<div>组件2级UserProfile</div>' }
+    const UserPosts = { template: '<div>组件2级UserPosts</div>' }
+    const UserHome = { template: '<div>组件2级UserHome</div>' }
+
+
+    // 2. 定义一些路由
+    // 每个路由都需要映射到一个组件。
+    // 我们后面再讨论嵌套路由。
+    const routes = [
+      { path: '/', component: Home },
+      { path: '/user/:id', component: About,
+      
+        children: [
+          // 当 /user/:id 匹配成功，
+          // UserHome 会被渲染在 User 的 <router-view> 中
+          { path: 'userhome', component: UserHome },
+          {
+            // 当 /user/:id/profile 匹配成功，
+            // UserProfile 会被渲染在 User 的 <router-view> 中
+            path: 'profile',
+            component: UserProfile
+          },
+          {
+            // 当 /user/:id/posts 匹配成功
+            // UserPosts 会被渲染在 User 的 <router-view> 中
+            path: 'posts',
+            component: UserPosts
+          }
+        ]
+      },
+      
+    ]
+
+    // 3. 创建路由实例并传递 `routes` 配置
+    // 你可以在这里输入更多的配置，但我们在这里
+    // 暂时保持简单
+    const router = VueRouter.createRouter({
+      // 4. 内部提供了 history 模式的实现。为了简单起见，我们在这里使用 hash 模式。
+      history: VueRouter.createWebHashHistory(),
+      routes, // `routes: routes` 的缩写
+    })
+
+    // 5. 创建并挂载根实例
+    const app = Vue.createApp({
+      data() {
+        return {
+          info:"路由嵌套"
+        }
+      },
+    })
+    //确保 _use_ 路由实例使
+    //整个应用支持路由。
+    app.use(router)
+
+    app.mount('#app')
+
+// 现在，应用已经启动了！
+  </script>
 </body>
+
 </html>
