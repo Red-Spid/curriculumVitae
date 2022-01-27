@@ -30,7 +30,7 @@ const xRoutes = [
   { path: '/', name:"home",redirect:"/personal/dropBYdrop"},
   {
     name:"personal", path:"/personal", component:{
-      template: "<div><router-view></router-view></div>"
+      template: "<div id='personal'><router-view :key='Math.floor(Math.random() * (10000000 - 1)) + 1'></router-view></div>"
     },
     children: [
       { path: 'resume', name:"resume", component: curriculumvitae },
@@ -43,6 +43,7 @@ const xRoutes = [
 
 ]
 
+
 // 3. 创建路由实例并传递 `routes` 配置
 // 你可以在这里输入更多的配置，但我们在这里
 // 暂时保持简单
@@ -50,6 +51,15 @@ const router = VueRouter.createRouter({
   // 4. 内部提供了 history 模式的实现。为了简单起见，我们在这里使用 hash 模式。
   history: VueRouter.createWebHashHistory(),
   routes:xRoutes, // `routes: routes` 的缩写
+})
+
+
+router.beforeEach((to, from, next) => {
+  
+  to.params = {
+      music: to.fullPath == "/personal/comments" ? true : false
+  }
+  next();
 })
 
 export {

@@ -65,7 +65,7 @@
 
   <script type="text/template" id="abgm">
     <div class="install">
-      <div title="下载PDF简历" class="pfd">
+      <div title="下载PDF简历" class="pfd" v-if="!music">
         <svg viewBox="64 64 892 892" focusable="false" data-icon="download" width="1em" height="1em" fill="currentColor"
           aria-hidden="true">
           <path
@@ -73,7 +73,7 @@
           </path>
         </svg>
       </div>
-      <div class="audio" id="audio">
+      <div class="audio" id="audio" v-else>
         <img src="./img/ins.png"/>
         <!-- <audio src="./music/bgm.mp3" autoplay="" loop="" hidden="" id="music"></audio> -->
       </div>
@@ -115,7 +115,7 @@
       <div class="list">
         <ul>
           <li v-for="(item,index) in list " :key="index" :class="[ item.active ? 'active' : '11']" @click="this.$store.dispatch('forlist',index)">
-            <router-link :to="item.url" v-text="item.text"></router-link>
+            <router-link :to="item.url" v-text="item.text" v-trigger></router-link>
           </li>
         </ul>
       </div>

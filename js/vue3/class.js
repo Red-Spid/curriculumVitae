@@ -14,11 +14,9 @@ class methodCluster {
                     // console.log( this.$refs )
     
                 },
-    
                 onload(){
                     // console.log( this.$store );
                 },
-    
                 mounted() {
                     this.$store.dispatch('increment');
                     // console.log( this.$store.state.todos,this.$store.state.count );

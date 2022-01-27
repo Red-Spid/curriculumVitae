@@ -25,7 +25,16 @@ var cApi = [
     {
         name: "github", 
         lc:{
-            props: ["my", "list"], 
+            props: ["my", "list"],
+            directives:{
+                trigger:{
+                 inserted(el, binging){
+                    console.log(el,binging)
+                    el.id == 'nav0' ? el.click() : null // 只点击第一个，id是在循环中手动添加的
+                   // $(el).trigger('click')  // 所有都触发一次,然后就是最后一个
+                  }
+                }
+            },
         }
     },
     {
@@ -62,11 +71,17 @@ var cApi = [
             props:[],
             data(){
                 return {
-                    router:false
+                    music:false,
                 }
             },
+            beforeRouteLeave(to, from, next) {
+                // 导航离开该组件的对应路由时调用
+                // 可以访问组件实例 `this`
+                console.log( this )
+            },
             mounted() {
-              console.log( this.$router.options.history.location,this.$route )  
+                console.log( this.$route )
+                // console.log( this.$router.options.history.location,this.$route )  
             },
         }
     }

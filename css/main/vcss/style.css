@@ -52,6 +52,9 @@ body {
   justify-content: center;
   align-items: center;
 }
+#app #personal {
+  width: 100%;
+}
 .github-corner {
   width: 100%;
   display: flex;
