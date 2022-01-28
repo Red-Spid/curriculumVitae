@@ -30,7 +30,7 @@ const xRoutes = [
   { path: '/', name:"home",redirect:"/personal/dropBYdrop"},
   {
     name:"personal", path:"/personal", component:{
-      template: "<div id='personal'><router-view :key='Math.floor(Math.random() * (10000000 - 1)) + 1'></router-view></div>"
+      template: "<div id='personal'><router-view :key='Math.floor(Math.random() * (10000000 - 1)) + 1'></router-view><abgm></abgm></div>"
     },
     children: [
       { path: 'resume', name:"resume", component: curriculumvitae },

@@ -11,17 +11,14 @@ const xState = {
         {
             text:"简历",
             url:"/personal/resume",
-            active:false,
         },
         {
             text:"点滴",
             url:"/personal/dropBYdrop",
-            active:true,
         },
         {
             text:"留言",
             url:"/personal/comments",
-            active:false,
         }
 
     ],
