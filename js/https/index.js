@@ -1,5 +1,5 @@
-import { request } from './request'
-import { requestPost } from './request'
+import { request } from './request.js'
+import { requestPost } from './request.js'
 
 // 获取京东轮播
 export function getHomeBanner() {

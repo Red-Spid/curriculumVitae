@@ -11,6 +11,7 @@
   <script src="./js/vue/vuex.js"></script>
   <script src="./js/vue/vue-router.js"></script>
   <!-- <script src="./js/https/axios.js"></script> -->
+  <!-- <script src="./js/https/index.js" type="module"></script> -->
   <!-- <script src="./js/https/request.js" type="module"></script> -->
   
   <!-- 导入样式 -->
@@ -76,7 +77,7 @@
       </div>
       <div class="audio" id="audio" v-else-if=" $route.fullPath == '/personal/comments' ">
         <img src="./img/ins.png"/>
-        <audio src="./music/bgm.mp3" autoplay="" loop="" hidden="" id="music"></audio>
+        <audio src="./music/bgm.mp3" autoplay="autoplay" loop="" hidden="" ref="music" id="music"></audio>
       </div>
       <div id="topReurn">
         <a href="#" onclick="eventStop()" title="返回顶部">

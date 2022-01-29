@@ -1,5 +1,5 @@
 import axios from './axios'
-import { Loading } from 'element-ui';
+// import { Loading } from 'element-ui';
 
 export function request(config) {
     const instance = new axios.create({
@@ -8,13 +8,13 @@ export function request(config) {
     })
     // 请求拦截
     instance.interceptors.request.use(config => {
-        Loading.service();
+        // Loading.service();
         return config
     })
     // 响应拦截
     instance.interceptors.response.use(res => {
-        let loadingInstance = Loading.service();
-        loadingInstance.close();
+        // let loadingInstance = Loading.service();
+        // loadingInstance.close();
         // console.log(res.data)
         return res.data
     }, err => {
@@ -53,13 +53,13 @@ export function requestPost(config) {
     })
     // 请求拦截
     instance.interceptors.request.use(config => {
-        Loading.service();
+        // Loading.service();
         return config
     })
     // 响应拦截
     instance.interceptors.response.use(res => {
-        let loadingInstance = Loading.service();
-        loadingInstance.close();
+        // let loadingInstance = Loading.service();
+        // loadingInstance.close();
         // console.log(res.data)
         return res.data
     }, err => {
