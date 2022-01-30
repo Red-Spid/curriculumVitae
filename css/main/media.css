@@ -318,7 +318,6 @@ a:active, a:hover {
   position: absolute;
 }
 body {
-  max-width: 8rem;
   width: 100%;
   margin: 0.5rem auto 0;
 }
@@ -330,7 +329,420 @@ body {
   align-items: center;
 }
 #app #personal {
+  display: flex;
+  flex-direction: row;
   width: 100%;
+  justify-content: inherit;
+}
+#app #personal .install {
+  position: fixed;
+  top: 50%;
+  right: 10%;
+  height: 20vh;
+  width: 0.4rem;
+  z-index: 9999;
+}
+#app #personal .install div {
+  width: 0.4rem;
+  height: 0.4rem;
+  position: absolute;
+  border-radius: 50%;
+  background-color: white;
+  left: 0;
+  box-shadow: 0.01rem 0.01rem 0.08rem rgba(0, 0, 0, 0.15);
+}
+#app #personal .install div svg {
+  margin: 30% auto;
+  display: block;
+}
+#app #personal .install div:first-child {
+  top: 0;
+}
+#app #personal .install div:last-child {
+  bottom: 0;
+}
+#app #personal .install div:last-child svg {
+  width: 100%;
+  margin-top: 25%;
+  height: 50%;
+}
+#app #personal .install .audio {
+  cursor: pointer;
+  width: 0.48rem;
+  height: 0.48rem;
+  background-color: none;
+  box-shadow: none;
+}
+#app #personal .install .audio img {
+  width: 100%;
+  height: 100%;
+}
+#app #personal .bodylist {
+  padding: 0.2rem;
+  width: 80%;
+  color: #3f1c1c;
+  margin: 0.2rem 0;
+  box-shadow: 0.01rem 0.01rem 0.08rem rgba(0, 0, 0, 0.15);
+  background-color: white;
+}
+#app #personal .bodylist .head-sass {
+  padding-top: 0.2rem;
+}
+#app #personal .bodylist .head-sass h1 {
+  font-weight: 900;
+  font-size: 0.18rem;
+}
+#app #personal .bodylist .head-sass:first-child {
+  padding-top: 0;
+}
+#app #personal .bodylist .head-left h1 {
+  margin-left: -0.21rem;
+  padding-left: 0.15rem;
+  border-left: 0.05rem solid black;
+  text-align: left;
+}
+#app #personal .bodylist .btn {
+  margin-bottom: 0.2rem;
+}
+#app #personal .bodylist .bg-gray-lightest {
+  padding: 0.15rem;
+}
+#app #personal .bodylist .content {
+  margin-bottom: 0.2rem;
+  border: 0.02rem solid transparent;
+}
+#app #personal .bodylist .content > div {
+  background-color: #f5f5f5;
+}
+#app #personal .bodylist .content .pd {
+  padding: 0px 15px;
+  margin-top: 0.2rem;
+}
+#app #personal .bodylist .content .pd .row {
+  margin-right: -0.15rem;
+  margin-left: -0.15rem;
+  border-top-left-radius: 0.03rem !important;
+  border-top-right-radius: 0.03rem !important;
+  display: flex;
+  flex-direction: row;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+#app #personal .bodylist .content .pd .row:last-child {
+  border-bottom-left-radius: 0.03rem !important;
+  border-bottom-right-radius: 0.03rem !important;
+}
+#app #personal .bodylist .content .pd .line3 {
+  padding: 0.1rem 0.15rem;
+  -webkit-flex: 0 0 33.33333%;
+  flex: 0 0 33.33333%;
+  max-width: 33.33333%;
+  min-height: 0.01rem;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+@media screen and (max-width: 700px) {
+  #app #personal .bodylist .content .pd .line3 {
+    max-width: 100% !important;
+    flex: 0 0 100%;
+  }
+  #app #personal .bodylist .content .pd .line3 .row {
+    display: flex;
+    flex-direction: row;
+    margin-left: -0.15rem;
+    margin-right: -0.15rem;
+  }
+}
+#app #personal .bodylist .content .pd .bg-gray-lightest {
+  max-width: 100% !important;
+  flex: 0 0 100%;
+}
+#app #personal .bodylist .content .pd .bg-gray-lightest .row {
+  display: flex;
+  flex-direction: row;
+  margin-left: -0.15rem;
+  margin-right: -0.15rem;
+}
+#app #personal .bodylist .content .pd a:hover {
+  cursor: default;
+}
+#app #personal .bodylist .content .pd .hrefurl:hover {
+  color: #333;
+  cursor: pointer;
+  text-decoration: underline;
+}
+#app #personal .bodylist .content .pd b {
+  font-weight: 700;
+}
+#app #personal .bodylist .content .pd .Website {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+#app #personal .bodylist .content .pd:first-child {
+  margin-top: 0;
+}
+#app #personal .bodylist .margin {
+  padding-bottom: 0.2rem;
+}
+#app #personal .bodyList {
+  padding-left: 15%;
+  margin-top: 0.4rem;
+}
+#app #personal .bodyList .artical {
+  position: relative;
+  min-height: 0.3rem;
+}
+#app #personal .bodyList .artical .dotts {
+  left: 1.2%;
+  width: 0.16rem;
+  height: 0.16rem;
+  border: 0.02rem solid #e2e0dc;
+  position: absolute;
+  top: 0;
+  line-height: 0;
+  border-radius: 50%;
+  background: #fff;
+  margin-left: -0.08rem;
+  z-index: 10;
+}
+#app #personal .bodyList .artical .date {
+  display: block;
+  position: absolute;
+  top: -0.07rem;
+  margin-left: 0.45rem;
+  height: 0.3rem;
+  color: #948c76;
+  z-index: 10;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+#app #personal .bodyList .artical .date:hover {
+  margin-left: 0.4rem;
+}
+#app #personal .bodyList .artical .date:hover .dates {
+  background: #948c76;
+}
+#app #personal .bodyList .artical .date:hover .trig {
+  border-right: 0.16rem solid #948c76;
+}
+#app #personal .bodyList .artical .date .trig {
+  position: absolute;
+  left: -0.16rem;
+  top: 0;
+  border-right: 0.16rem solid #f7f3ee;
+  border-top: 0.15rem dashed transparent;
+  border-bottom: 0.16rem dashed transparent;
+  width: 0;
+  height: 0;
+  line-height: 0;
+}
+#app #personal .bodyList .artical .date .dates {
+  display: inline-block;
+  padding: 0 1em;
+  height: 0.3rem;
+  background: #f7f3ee;
+  font-size: 0.12rem;
+  vertical-align: top;
+  line-height: 0.25rem;
+}
+#app #personal .bodyList .artical .art-container {
+  width: 99%;
+  padding: 0 0 0 1%;
+  position: relative;
+}
+#app #personal .bodyList .artical .art-container .line {
+  width: 0.02rem;
+  height: 100%;
+  background: #f7f3ee;
+  position: absolute;
+  z-index: 0;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+#app #personal .bodyList .artical .art-container .art-content {
+  width: 94%;
+  padding: 0 0 6% 6%;
+  overflow: hidden;
+}
+#app #personal .bodyList .artical .art-container .art-content .art-title {
+  margin: 0.42rem 0 0.28rem;
+  font-size: 1em;
+}
+#app #personal .bodyList .artical .art-container .art-content .art-title a:hover {
+  text-decoration: underline;
+}
+#app #personal .bodyList .artical .art-container .art-content .art-img {
+  width: 30%;
+}
+#app #personal .bodyList .artical .art-container .art-content .art-img img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+}
+#app #personal .bodyList .artical .art-container .art-content .art-detail {
+  width: 85%;
+  line-height: 0.2rem;
+  margin-top: 0.22rem;
+  font-size: 0.12rem;
+}
+#app #personal .MessageBoard {
+  margin-top: 2em;
+  width: inherit;
+}
+#app #personal .MessageBoard h1 {
+  color: #111;
+  text-align: center;
+  font-size: 0.16rem;
+  font-weight: 400;
+}
+#app #personal .MessageBoard .Bjq {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-height: 2.1rem;
+  position: relative;
+  margin-bottom: 0.14rem;
+}
+#app #personal .MessageBoard .Bjq .editor_toolbar {
+  background: #f7f3ee;
+  line-height: 0.4rem;
+  width: 95%;
+  padding-left: 0.1rem;
+  position: absolute;
+  z-index: 2;
+  top: 0.32rem;
+  border-width: 0.01rem;
+  border-style: solid;
+  border-color: #ccc #ccc transparent #ccc;
+  border-top-left-radius: 0.1rem;
+  border-top-right-radius: 0.1rem;
+}
+#app #personal .MessageBoard .Bjq .editor_toolbar .userText {
+  padding: 0 0.15rem;
+}
+#app #personal .MessageBoard .Bjq .editor_toolbar .userText:hover {
+  text-decoration: underline;
+}
+#app #personal .MessageBoard .Bjq .editor_textarea {
+  margin-top: 0.32rem;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+#app #personal .MessageBoard .Bjq .editor_textarea .ant-input {
+  width: 95%;
+  z-index: 1;
+  padding: 0.5rem 2.5% 0;
+  height: 1.5rem;
+  border: solid 0.01rem #ccc;
+  border-radius: 0.1rem;
+}
+#app #personal .MessageBoard .CommentList {
+  width: 95%;
+  margin: 0 auto;
+  width: 90%;
+}
+#app #personal .MessageBoard .CommentList .spacing {
+  padding-right: 0.08rem;
+}
+#app #personal .MessageBoard .CommentList div .ant-comment {
+  margin-top: 0.15rem;
+}
+#app #personal .MessageBoard .CommentList div .ant-comment .ant-comment-inner {
+  border-bottom: 1px solid #e8e8e8;
+}
+#app #personal .MessageBoard .CommentList div .ant-comment .ant-comment-inner div {
+  display: flex;
+  width: 100%;
+}
+#app #personal .MessageBoard .CommentList div .ant-comment .ant-comment-inner div .redius {
+  background-color: #ed6f6d;
+  position: relative;
+  border-radius: 50%;
+  margin-right: 0.1rem;
+  width: 0.32rem;
+  height: 0.3rem;
+  flex-shrink: 0;
+}
+#app #personal .MessageBoard .CommentList div .ant-comment .ant-comment-inner div .redius div {
+  text-align: center;
+  line-height: 0.32rem;
+  width: 100%;
+  color: white;
+  cursor: default;
+  position: absolute;
+  top: 0;
+}
+#app #personal .MessageBoard .CommentList div .ant-comment .ant-comment-inner div div {
+  display: inline-block;
+}
+#app #personal .MessageBoard .CommentList div .ant-comment .ant-comment-inner div .right {
+  width: 90%;
+}
+#app #personal .MessageBoard .CommentList div .ant-comment .ant-comment-inner div .right span:first-child {
+  color: rgba(0, 0, 0, 0.45);
+  width: 5%;
+}
+#app #personal .MessageBoard .CommentList div .ant-comment .ant-comment-inner div .right span:nth-child(2) {
+  width: 5%;
+  color: #ccc;
+  white-space: nowrap;
+  cursor: auto;
+}
+#app #personal .MessageBoard .CommentList div .ant-comment .ant-comment-inner div .right div:nth-child(3) {
+  line-height: 24px;
+}
+#app #personal .MessageBoard .CommentList div .ant-comment .ant-comment-inner div .right div:nth-child(4) {
+  padding: 0.2rem 0 0.2rem 10%;
+  width: 90%;
+}
+#app #personal .MessageBoard .CommentList div .ant-comment .ant-comment-inner .ceng {
+  padding-left: 0.2rem;
+}
+#app #personal .MessageBoard .CommentList div .ant-comment .ant-divider-horizontal {
+  display: block;
+  clear: both;
+  width: 100%;
+  min-width: 100%;
+  height: 0.01rem;
+  margin: 0.24rem 0;
+}
+#app #personal .MessageBoard .ant-divider {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0.14rem;
+}
+#app #personal .MessageBoard .ant-divider .b1 {
+  line-height: 1.499;
+  position: relative;
+  display: inline-block;
+  font-weight: 400;
+  white-space: nowrap;
+  text-align: center;
+  background-image: none;
+  box-shadow: 0 0.02rem 0 rgba(0, 0, 0, 0.015);
+  -webkit-transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  height: 0.32rem;
+  padding: 0 0.15rem;
+  font-size: 0.14rem;
+  border-radius: 4px;
+  color: rgba(0, 0, 0, 0.65);
+  background-color: #fff;
+  border: 1px solid #d9d9d9;
+  line-height: 0.34rem;
+}
+#app #personal .MessageBoard .ant-divider .b1 .ant-btn {
+  background: none;
 }
 .github-corner {
   width: 100%;
@@ -383,426 +795,6 @@ body {
 }
 .list ul .active a:hover {
   color: #666;
-}
-.bodylist {
-  padding: 0.2rem;
-  width: 100%;
-  color: #3f1c1c;
-  margin: 0.2rem 0;
-  box-shadow: 0.01rem 0.01rem 0.08rem rgba(0, 0, 0, 0.15);
-  background-color: white;
-}
-.bodylist .head-sass {
-  padding-top: 0.2rem;
-}
-.bodylist .head-sass h1 {
-  font-weight: 900;
-  font-size: 0.18rem;
-}
-.bodylist .head-sass:first-child {
-  padding-top: 0;
-}
-.bodylist .head-left h1 {
-  margin-left: -0.21rem;
-  padding-left: 0.15rem;
-  border-left: 0.05rem solid black;
-  text-align: left;
-}
-.bodylist .btn {
-  margin-bottom: 0.2rem;
-}
-.bodylist .bg-gray-lightest {
-  padding: 0.15rem;
-}
-.bodylist .content {
-  margin-bottom: 0.2rem;
-  border: 0.02rem solid transparent;
-}
-.bodylist .content > div {
-  background-color: #f5f5f5;
-}
-.bodylist .content .pd {
-  padding: 0px 15px;
-  margin-top: 0.2rem;
-}
-.bodylist .content .pd .row {
-  margin-right: -0.15rem;
-  margin-left: -0.15rem;
-  border-top-left-radius: 0.03rem !important;
-  border-top-right-radius: 0.03rem !important;
-  display: flex;
-  flex-direction: row;
-  -webkit-flex-wrap: wrap;
-  flex-wrap: wrap;
-}
-.bodylist .content .pd .row:last-child {
-  border-bottom-left-radius: 0.03rem !important;
-  border-bottom-right-radius: 0.03rem !important;
-}
-.bodylist .content .pd .line3 {
-  padding: 0.1rem 0.15rem;
-  -webkit-flex: 0 0 33.33333%;
-  flex: 0 0 33.33333%;
-  max-width: 33.33333%;
-  min-height: 0.01rem;
-  width: 100%;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-@media screen and (max-width: 700px) {
-  .bodylist .content .pd .line3 {
-    max-width: 100% !important;
-    flex: 0 0 100%;
-  }
-  .bodylist .content .pd .line3 .row {
-    display: flex;
-    flex-direction: row;
-    margin-left: -0.15rem;
-    margin-right: -0.15rem;
-  }
-}
-.bodylist .content .pd .bg-gray-lightest {
-  max-width: 100% !important;
-  flex: 0 0 100%;
-}
-.bodylist .content .pd .bg-gray-lightest .row {
-  display: flex;
-  flex-direction: row;
-  margin-left: -0.15rem;
-  margin-right: -0.15rem;
-}
-.bodylist .content .pd a:hover {
-  cursor: default;
-}
-.bodylist .content .pd .hrefurl:hover {
-  color: #333;
-  cursor: pointer;
-  text-decoration: underline;
-}
-.bodylist .content .pd b {
-  font-weight: 700;
-}
-.bodylist .content .pd .Website {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-.bodylist .content .pd:first-child {
-  margin-top: 0;
-}
-.bodylist .margin {
-  padding-bottom: 0.2rem;
-}
-.install {
-  position: fixed;
-  top: 50%;
-  right: 10%;
-  height: 20vh;
-  width: 40px;
-  z-index: 9999;
-}
-.install div {
-  width: 40px;
-  height: 40px;
-  position: absolute;
-  border-radius: 50%;
-  background-color: white;
-  left: 0;
-  box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.15);
-}
-.install div svg {
-  margin: 30% auto;
-  display: block;
-}
-.install div:first-child {
-  top: 0;
-}
-.install div:last-child {
-  bottom: 0;
-}
-.install div:last-child svg {
-  width: 100%;
-  margin-top: 25%;
-  height: 50%;
-}
-.install .audio {
-  cursor: pointer;
-  width: 48px;
-  height: 48px;
-  background-color: none;
-  box-shadow: none;
-}
-.install .audio img {
-  width: 100%;
-  height: 100%;
-}
-.bodyList {
-  padding-left: 15%;
-  margin-top: 3em;
-}
-.bodyList .artical {
-  width: 100%;
-  position: relative;
-  min-height: 0.3rem;
-}
-.bodyList .artical .dotts {
-  left: 1.2%;
-  width: 1.2em;
-  height: 1.2em;
-  border: 0.143em solid #e2e0dc;
-  position: absolute;
-  top: 0;
-  line-height: 0;
-  border-radius: 50%;
-  background: #fff;
-  margin-left: -0.6em;
-  z-index: 10;
-}
-.bodyList .artical .date {
-  display: block;
-  position: absolute;
-  top: -0.5em;
-  margin-left: 3.5em;
-  height: 2.14em;
-  color: #948c76;
-  z-index: 10;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
-}
-.bodyList .artical .date:hover {
-  margin-left: 2.8em;
-}
-.bodyList .artical .date:hover .dates {
-  background: #948c76;
-}
-.bodyList .artical .date:hover .trig {
-  border-right: 16px solid #948c76;
-}
-.bodyList .artical .date .trig {
-  position: absolute;
-  left: -1.14em;
-  top: 0;
-  border-right: 16px solid #f7f3ee;
-  border-top: 15px dashed transparent;
-  border-bottom: 15px dashed transparent;
-  width: 0;
-  height: 0;
-  line-height: 0;
-}
-.bodyList .artical .date .dates {
-  display: inline-block;
-  padding: 0 1em;
-  height: 30px;
-  background: #f7f3ee;
-  font-size: 0.8em;
-  vertical-align: top;
-  line-height: 2.5em;
-}
-.bodyList .artical .art-container {
-  width: 99%;
-  padding: 0 0 0 1%;
-  position: relative;
-}
-.bodyList .artical .art-container .line {
-  width: 0.143em;
-  height: 100%;
-  background: #f7f3ee;
-  position: absolute;
-  z-index: 0;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
-}
-.bodyList .artical .art-container .art-content {
-  width: 94%;
-  padding: 0 0 6% 6%;
-  overflow: hidden;
-}
-.bodyList .artical .art-container .art-content .art-title {
-  margin: 3em 0 2em;
-  font-size: 1em;
-}
-.bodyList .artical .art-container .art-content .art-title a:hover {
-  text-decoration: underline;
-}
-.bodyList .artical .art-container .art-content .art-img {
-  width: 30%;
-}
-.bodyList .artical .art-container .art-content .art-img img {
-  width: auto;
-  height: auto;
-  max-width: 100%;
-  max-height: 100%;
-}
-.bodyList .artical .art-container .art-content .art-detail {
-  width: 85%;
-  line-height: 1.5em;
-  margin-top: 2em;
-  font-size: 0.8em;
-}
-.bodyList .artical .art-container .line {
-  width: 0.143em;
-  height: 100%;
-  background: #f7f3ee;
-  position: absolute;
-  z-index: 0;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
-}
-.MessageBoard {
-  margin-top: 2em;
-  width: 100%;
-}
-.MessageBoard h1 {
-  color: #111;
-  text-align: center;
-  font-size: 0.16rem;
-  font-weight: 400;
-}
-.MessageBoard .Bjq {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  max-height: 2.1rem;
-  position: relative;
-  margin-bottom: 0.14rem;
-}
-.MessageBoard .Bjq .editor_toolbar {
-  background: #f7f3ee;
-  line-height: 0.4rem;
-  width: 95%;
-  padding-left: 0.1rem;
-  position: absolute;
-  z-index: 2;
-  top: 0.32rem;
-  border-width: 0.01rem;
-  border-style: solid;
-  border-color: #ccc #ccc transparent #ccc;
-  border-top-left-radius: 0.1rem;
-  border-top-right-radius: 0.1rem;
-}
-.MessageBoard .Bjq .editor_toolbar .userText {
-  padding: 0 0.15rem;
-}
-.MessageBoard .Bjq .editor_toolbar .userText:hover {
-  text-decoration: underline;
-}
-.MessageBoard .Bjq .editor_textarea {
-  margin-top: 0.32rem;
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-}
-.MessageBoard .Bjq .editor_textarea .ant-input {
-  width: 95%;
-  z-index: 1;
-  padding: 0.5rem 2.5% 0;
-  height: 1.5rem;
-  border: solid 0.01rem #ccc;
-  border-radius: 0.1rem;
-}
-.MessageBoard .CommentList {
-  width: 95%;
-  margin: 0 auto;
-  width: 90%;
-}
-.MessageBoard .CommentList .spacing {
-  padding-right: 0.08rem;
-}
-.MessageBoard .CommentList div .ant-comment {
-  margin-top: 0.15rem;
-}
-.MessageBoard .CommentList div .ant-comment .ant-comment-inner {
-  border-bottom: 1px solid #e8e8e8;
-}
-.MessageBoard .CommentList div .ant-comment .ant-comment-inner div {
-  display: flex;
-  width: 100%;
-}
-.MessageBoard .CommentList div .ant-comment .ant-comment-inner div .redius {
-  background-color: #ed6f6d;
-  position: relative;
-  border-radius: 50%;
-  margin-right: 0.1rem;
-  width: 0.32rem;
-  height: 0.3rem;
-  flex-shrink: 0;
-}
-.MessageBoard .CommentList div .ant-comment .ant-comment-inner div .redius div {
-  text-align: center;
-  line-height: 0.32rem;
-  width: 100%;
-  color: white;
-  cursor: default;
-  position: absolute;
-  top: 0;
-}
-.MessageBoard .CommentList div .ant-comment .ant-comment-inner div div {
-  display: inline-block;
-}
-.MessageBoard .CommentList div .ant-comment .ant-comment-inner div .right {
-  width: 90%;
-}
-.MessageBoard .CommentList div .ant-comment .ant-comment-inner div .right span:first-child {
-  color: rgba(0, 0, 0, 0.45);
-  width: 5%;
-}
-.MessageBoard .CommentList div .ant-comment .ant-comment-inner div .right span:nth-child(2) {
-  width: 5%;
-  color: #ccc;
-  white-space: nowrap;
-  cursor: auto;
-}
-.MessageBoard .CommentList div .ant-comment .ant-comment-inner div .right div:nth-child(3) {
-  line-height: 24px;
-}
-.MessageBoard .CommentList div .ant-comment .ant-comment-inner div .right div:nth-child(4) {
-  padding: 0.2rem 0 0.2rem 10%;
-  width: 90%;
-}
-.MessageBoard .CommentList div .ant-comment .ant-comment-inner .ceng {
-  padding-left: 0.2rem;
-}
-.MessageBoard .CommentList div .ant-comment .ant-divider-horizontal {
-  display: block;
-  clear: both;
-  width: 100%;
-  min-width: 100%;
-  height: 0.01rem;
-  margin: 0.24rem 0;
-}
-.MessageBoard .ant-divider {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 0.14rem;
-}
-.MessageBoard .ant-divider .b1 {
-  line-height: 1.499;
-  position: relative;
-  display: inline-block;
-  font-weight: 400;
-  white-space: nowrap;
-  text-align: center;
-  background-image: none;
-  box-shadow: 0 0.02rem 0 rgba(0, 0, 0, 0.015);
-  -webkit-transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
-  transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
-  height: 0.32rem;
-  padding: 0 0.15rem;
-  font-size: 0.14rem;
-  border-radius: 4px;
-  color: rgba(0, 0, 0, 0.65);
-  background-color: #fff;
-  border: 1px solid #d9d9d9;
-  line-height: 0.34rem;
-}
-.MessageBoard .ant-divider .b1 .ant-btn {
-  background: none;
 }
 .signIn {
   position: fixed;

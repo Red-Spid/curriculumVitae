@@ -3,40 +3,7 @@
 class methodCluster {
 
     createApp( data={} ) { //挂载 data 数据
-        return Vue.createApp(
-            {
-                data() {
-                    return data
-                },
-    
-                created() {
-                    // console.log( this.$store );
-                    // console.log( this.$refs )
-    
-                },
-                onload(){
-                    // console.log( this.$store );
-                },
-                mounted() {
-                    this.$store.dispatch('increment');
-                    // console.log( this.$store.state.todos,this.$store.state.count );
-                    // console.log( VueRouter )
-                    // console.log(this)
-    
-                },
-    
-                methods: {
-                    // ...mapActions([
-                        // 'increment', // 将 `this.increment()` 映射为 `this.$store.dispatch('increment')`
-                        // `mapActions` 也支持载荷：
-                        // 'forlist' // 将 `this.incrementBy(amount)` 映射为 `this.$store.dispatch('incrementBy', amount)`
-                    // ]),
-                    // ...mapActions({
-                    // 	add: 'increment' // 将 `this.add()` 映射为 `this.$store.dispatch('increment')`
-                    // })
-                },
-            }
-        )
+        return Vue.createApp( data )
     }
 
     newVue( app="" ,id,arr=[] ){ //挂载 元素

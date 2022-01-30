@@ -7,6 +7,8 @@
   <meta http-equiv="X-UA-Compatible" content= "ie=edge">
   <title>点滴 » RedSpite Simon个人学习小站</title>
   <link rel="stylesheet" href="./css/main/media.css">
+  <!-- <link rel="stylesheet" href="./css/main/vcss/style.css"> -->
+
   <script src="./js/vue/vue.js"></script>
   <script src="./js/vue/vuex.js"></script>
   <script src="./js/vue/vue-router.js"></script>
@@ -15,9 +17,9 @@
   <!-- <script src="./js/https/request.js" type="module"></script> -->
   
   <!-- 导入样式 -->
-  <link rel="stylesheet" href="//unpkg.com/element-plus/dist/index.css" />
+  <!-- <link rel="stylesheet" href="//unpkg.com/element-plus/dist/index.css" /> -->
   <!-- 导入组件库 -->
-  <script src="//unpkg.com/element-plus"></script>
+  <!-- <script src="//unpkg.com/element-plus"></script> -->
   <!-- <script src="./js/temp/import.js" type="module"></script> -->
   <style>
     .github-corner:hover .octo-arm {
@@ -58,7 +60,7 @@
   <div id="app">
 
     <!-- <signin :data="$store.state.signIn"></signin> -->
-    <github :my="$store.state.my" :list="$store.state.list" class="github-corner"></github>
+    <github ref="headr" :my="$store.state.my" :list="$store.state.list" class="github-corner"></github>
     <router-view></router-view>
 
   </div>
