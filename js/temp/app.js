@@ -21,6 +21,7 @@ var vdata = {
     created() {
         // console.log( this.$store );
         // console.log( this.$refs )
+        console.log(this.personalInformation)
 
     },
     onload() {
