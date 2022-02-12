@@ -1,7 +1,7 @@
 
 import general from "../../global/index.js";
 
-console.log( general,11111 );
+// console.log( general,11111 );
 
 var cApi = [
     {

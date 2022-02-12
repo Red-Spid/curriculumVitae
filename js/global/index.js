@@ -1,9 +1,10 @@
 
+import { createApp } from "../module/eResources/vue.js";
 
 class methodCluster {
 
-    createApp( data={} ) { //挂载 data 数据
-        return Vue.createApp( data )
+    createVue( data={} ) { //挂载 data 数据
+        return createApp( data )
     }
 
     newVue( app="" ,id,arr=[] ){ //挂载 元素
