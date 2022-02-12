@@ -8,69 +8,14 @@
   <title>点滴 » RedSpite Simon个人学习小站</title>
   <link rel="stylesheet" href="./css/main/media.css">
   <!-- <link rel="stylesheet" href="./css/main/vcss/style.css"> -->
-
-  <!-- <script src="./js/vue/vue.js"></script>
-  <script src="./js/vue/vuex.js"></script>
-  <script src="./js/vue/vue-router.js"></script> -->
-  
-  <!-- <script src="./js/https/axios.js"></script> -->
-  <!-- <script src="./js/https/index.js" type="module"></script> -->
-  <!-- <script src="./js/https/request.js" type="module"></script> -->
-  
-  <!-- 导入样式 -->
-  <!-- <link rel="stylesheet" href="//unpkg.com/element-plus/dist/index.css" /> -->
-  <!-- 导入组件库 -->
-  <!-- <script src="//unpkg.com/element-plus"></script> -->
-  <!-- <script src="./js/temp/import.js" type="module"></script> -->
-  <style>
-    .github-corner:hover .octo-arm {
-      animation: octocat-wave 560ms ease-in-out
-    }
-
-    @keyframes octocat-wave {
-
-      0%,
-      100% {
-        transform: rotate(0)
-      }
-
-      20%,
-      60% {
-        transform: rotate(-25deg)
-      }
-
-      40%,
-      80% {
-        transform: rotate(10deg)
-      }
-    }
-
-    @media (max-width:500px) {
-      .github-corner:hover .octo-arm {
-        animation: none
-      }
-
-      .github-corner .octo-arm {
-        animation: octocat-wave 560ms ease-in-out
-      }
-    }
-  </style>
 </head>
 
 <body>
 
-  <!-- <div id="app">
-
-    <signin :data="$store.state.signIn"></signin>
-    <github ref="headr" :my="$store.state.my" :list="$store.state.list" class="github-corner"></github>
-    <router-view></router-view>
-
-  </div> -->
-
   <div id="app">
 
+    <!--  <signin :data="$store.state.signIn"></signin> -->
     <github ref="headr" :my="$store.state.my" :list="$store.state.list" class="github-corner"></github>
-
     <!-- <button-counter></button-counter> -->
     <router-view></router-view>
   
@@ -322,9 +267,6 @@
 
   </script>
 
-  <!-- <script src="js/https/axios.js"></script> -->
-  <!-- <script src="js/https/request.js"></script> -->
-  <!-- <script src="./js/temp/app.js" type="module"></script> -->
   <script src="app.js" type="module"></script>
 
 </body>
