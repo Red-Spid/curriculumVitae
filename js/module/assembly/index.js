@@ -1,61 +1,8 @@
 
-import { cluster } from '../vue3/class.js';
-import { xRoutes,router } from '../vue3/vue-router.js';
-import { xStore,xState } from '../vue3/vue3x.js';
-// import { axiosHtpps } from '../https/axios.js';
+import general from "../../global/index.js";
 
-// console.log(xStore,xState)
+console.log( general,11111 );
 
-var vdata = {
-
-    data() {
-        return {
-            message: 'Hello Vue!!',
-
-            personalInformation: {
-
-            },
-        }
-    },
-
-    created() {
-        // console.log( this.$store );
-        // console.log( this.$refs )
-        // console.log(this.personalInformation)
-
-    },
-    onload() {
-        // console.log( this.$store );
-    },
-    mounted() {
-        this.$store.dispatch('increment');
-        // console.log( this.$refs.headr.$el.scrollWidth );
-        // scrollWidth offsetWidth clientWidth
-        // console.log( this.$store.state.todos,this.$store.state.count );
-        // console.log( VueRouter )
-        // console.log(this)
-
-    },
-
-    methods: {
-        // ...mapActions([
-        // 'increment', // 将 `this.increment()` 映射为 `this.$store.dispatch('increment')`
-        // `mapActions` 也支持载荷：
-        // 'forlist' // 将 `this.incrementBy(amount)` 映射为 `this.$store.dispatch('incrementBy', amount)`
-        // ]),
-        // ...mapActions({
-        // 	add: 'increment' // 将 `this.add()` 映射为 `this.$store.dispatch('increment')`
-        // })
-    },
-
-}
-
-const _this = cluster.createApp(vdata);
-
-/*
-    生命周期 life cycle ----- 简写 lc
-    组件列队 componentApi queue ----- cq
-*/
 var cApi = [
     {
         name: "github", 
@@ -159,75 +106,14 @@ var cApi = [
         }
     }
 ]
+const assembly = function( _this = "" ){
 
-const vueApi = {
-    componentName : "",
-    props : "",
-    beforeCreate:{
+    cApi.forEach( value => {
+        general.tempDom(
+            _this, value.name, value.lc
+        )
+    })
 
-    },
-    created:{
-        
-    },
-    beforeMount:{
-
-    },
-    mounted:{
-
-    },
-    data(){
-        return{
-
-        }
-    },
-    methods: {
-        
-    },
-    beforeUpdate:{
-
-    },
-    updated:{
-
-    },
-    beforeDestroy:{
-
-    }
 }
 
-cApi.forEach( value => {
-    cluster.tempDom(
-        _this, value.name, value.lc
-    )
-})
-
-const _sed = cluster.newVue(_this, "app",[router,xStore]);
-
-// _this.config.globalProperties.$http = axios;
-console.log(_sed.$store);
-// console.log(_sed.$http)
-console.log(_sed)
-
-// const instance = axios.create({
-//     baseURL: 'https://www.runoob.com/',
-//     timeout: 1000,
-//     headers: {'X-Custom-Header': 'foobar'}
-// });
-// instance({
-//     url:"try/ajax/json_demo.json",
-// }).then(res=>{
-//     console.log(res);
-// })
-// _sed.$http.get('try/ajax/json_demo.json')
-// .then(response => (this.info = response))
-// .catch(function (error) { // 请求失败处理
-//   console.log(error);
-// });
-// axios.defaults.withCredentials=true
-// axios.defaults.crossDomain=true;
-// axios.defaults.withCredentials = false;
-// axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded'
-// axios.get('https://www.runoob.com/try/ajax/json_demo.json')
-//     .then(response => (this.info = response))
-//     .catch(function (error) { // 请求失败处理
-//     console.log(error);
-// })
+export default assembly;

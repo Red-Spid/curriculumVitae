@@ -8,9 +8,11 @@
   <title>点滴 » RedSpite Simon个人学习小站</title>
   <link rel="stylesheet" href="./css/main/media.css">
   <!-- <link rel="stylesheet" href="./css/main/vcss/style.css"> -->
-  <script src="./js/vue/vue.js"></script>
+
+  <!-- <script src="./js/vue/vue.js"></script>
   <script src="./js/vue/vuex.js"></script>
-  <script src="./js/vue/vue-router.js"></script>
+  <script src="./js/vue/vue-router.js"></script> -->
+  
   <!-- <script src="./js/https/axios.js"></script> -->
   <!-- <script src="./js/https/index.js" type="module"></script> -->
   <!-- <script src="./js/https/request.js" type="module"></script> -->
@@ -56,12 +58,22 @@
 </head>
 
 <body>
-  <div id="app">
 
-    <!-- <signin :data="$store.state.signIn"></signin> -->
+  <!-- <div id="app">
+
+    <signin :data="$store.state.signIn"></signin>
     <github ref="headr" :my="$store.state.my" :list="$store.state.list" class="github-corner"></github>
     <router-view></router-view>
 
+  </div> -->
+
+  <div id="app">
+
+    <github ref="headr" :my="$store.state.my" :list="$store.state.list" class="github-corner"></github>
+
+    <!-- <button-counter></button-counter> -->
+    <router-view></router-view>
+  
   </div>
 
   <script type="text/template" id="abgm">
@@ -312,7 +324,8 @@
 
   <!-- <script src="js/https/axios.js"></script> -->
   <!-- <script src="js/https/request.js"></script> -->
-  <script src="./js/temp/app.js" type="module"></script>
+  <!-- <script src="./js/temp/app.js" type="module"></script> -->
+  <script src="app.js" type="module"></script>
 
 </body>
 
