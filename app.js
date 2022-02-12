@@ -4,7 +4,6 @@ import store from "./js/module/sPackaging/vuex.js";
 import router from "./js/module/sPackaging/vueRouter.js";
 import assembly from "./js/module/assembly/index.js";
 import global from "./js/global/index.js";
-import { getTarget } from "./js/module/eResources/@vue/devtools-api/lib/esm/env.js";
 
 const _this = global.createVue(dataIndex)
 // 定义一个新全局组件
@@ -13,4 +12,4 @@ const app =  global.newVue( _this,"app",[store,router]  )
 
 app.$global = global;
 
-console.log(  app.config );
+console.log(  app, app.$store );
