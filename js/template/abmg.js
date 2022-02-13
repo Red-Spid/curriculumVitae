@@ -10,7 +10,7 @@ var abgm = `
         </div>
         <div class="audio" id="audio" @click="trans" v-else-if=" $route.fullPath == '/personal/comments' ">
             <img src="./img/ins.png" ref="audio" :style="{'transform': 'rotate(' + audiodeg + 'deg)' }"/>
-            <audio src="./music/bgm.mp3" autoplay="autoplay" loop="" hidden="" ref="music" id="music"></audio>
+            <audio :src="hierarchy+bgmusic" autoplay="autoplay" loop="" hidden="" ref="music" id="music"></audio>
         </div>
         <div id="topReurn">
             <a href="#" @click="eventStop()" title="返回顶部">
@@ -32,7 +32,9 @@ var a = {
     data() {
         return {
             music: false,
-            audiodeg:0
+            audiodeg:0,
+            hierarchy:"./",
+            bgmusic:"music/bgm.mp3",
         }
     },
     beforeRouteLeave(to, from, next) {
