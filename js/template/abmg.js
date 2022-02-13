@@ -51,14 +51,14 @@ var a = {
             if (music !== null) {
                 //检测播放是否已暂停.audio.paused 在播放器播放时返回false.
                 // if (music.paused) {
-                // console.log( "没有播放" )
-                // music.play(); //audio.play();// 这个就是播放
-                // clearInterval(interval)
-                // interval = setInterval(func, 10);
-                // }else {
-                // console.log( "暂停" )
-                // clearInterval(interval)
-                // music.pause();// 这个就是暂停
+                //     console.log("没有播放")
+                //     music.play(); //audio.play();// 这个就是播放
+                //     clearInterval(interval)
+                //     interval = setInterval(func, 10);
+                // } else {
+                //     console.log("暂停")
+                //     clearInterval(interval)
+                //     music.pause();// 这个就是暂停
                 // }
             }
             // console.log(music)
