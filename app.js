@@ -8,8 +8,8 @@ import global from "./js/global/index.js";
 const _this = global.createVue(dataIndex)
 // 定义一个新全局组件
 assembly(_this);
-const app =  global.newVue( _this,"app",[store,router]  )
 
+const app =  global.newVue( _this,"app",[store,router]  )
 app.$global = global;
 
-console.log(  app, app.$global );
+// console.log(  app, app.$global );

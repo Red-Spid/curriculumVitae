@@ -8,11 +8,13 @@ var abgm = `
                 </path>
             </svg>
         </div>
-        <div class="audio" id="audio" @click="trans" v-else-if=" $route.fullPath == '/personal/comments' ">
+        <div class="audio" id="audio" @click="trans()" v-else-if=" $route.fullPath == '/personal/comments' ">
             <img src="./img/ins.png" ref="audio" :style="{'transform': 'rotate(' + audiodeg + 'deg)' }"/>
-            <audio :src="hierarchy+bgmusic" autoplay="autoplay" loop="" hidden="" ref="music" id="music"></audio>
+            <audio autoplay preload="auto" ref="music" id="music">
+                <source :src="hierarchy+bgmusic" type="audio/mpeg">
+            </audio>
         </div>
-        <div id="topReurn">
+        <div id="topReurn" v-runoob="this">
             <a href="#" @click="eventStop()" title="返回顶部">
                 <svg t="1565238236954" fill="currentColor" viewBox="0 0 1024 1024" version="1.1"
                     xmlns="http://www.w3.org/2000/svg" p-id="3644" width="200" height="200">
@@ -26,6 +28,14 @@ var abgm = `
     </div>`
 
 var a = {
+    directives:{
+        runoob:{
+            mounted(el, binging ){
+                binging.instance.trans();
+                console.log(el, binging )
+            }
+        }
+    },
     name: "abgm",
     template: abgm,
     props: [],
@@ -35,24 +45,20 @@ var a = {
             audiodeg:0,
             hierarchy:"./",
             bgmusic:"music/bgm.mp3",
+            routeris:false
         }
     },
-    beforeRouteLeave(to, from, next) {
-        // 导航离开该组件的对应路由时调用
-        // 可以访问组件实例 `this`
-        console.log(this)
-    },
     mounted() {
-        console.log(this.$route);
-        this.trans();
+        this.routeris = this.$route.fullPath == '/personal/comments' ? true : false;
+        console.log(this.$route.fullPath);
         // console.log( this.$router.options.history.location,this.$route )  
     },
     methods: {
         trans() {
             const music = this.$refs.music;
-            const audio = this.$refs.audio;
-            var interval = function(){};
+            console.log("触发",music)
 
+            var interval = function(){};
             var func = () => {
                 this.audiodeg++;
                 if (this.audiodeg >= 360 && !music.paused ) {
@@ -62,11 +68,10 @@ var a = {
                 }else if(music.paused){
                     clearInterval(interval)
                 }
-                audio.setAttribute("style", "transform: rotate(" + a + "deg);")
                 // console.log('aaa')
             }
 
-            if (music !== null) {
+            if (music !== undefined) {
                 //检测播放是否已暂停.audio.paused 在播放器播放时返回false.
                 if (music.paused) {
                 //     console.log("没有播放")
@@ -79,6 +84,10 @@ var a = {
                     clearInterval(interval);
                     music.pause();// 这个就是暂停
                 }
+            }else{
+                setTimeout(()=>{
+                    this.trans();
+                },1000)
             }
         }
     }

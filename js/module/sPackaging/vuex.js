@@ -584,21 +584,21 @@ const mutations = {
       let yearDiff=Math.floor(monthDiff/12);//获取相差的年份
       if(yearDiff>=1){
           val.interpolation=yearDiff+"年前";
-          console.log( val.interpolation )
+        //   console.log( val.interpolation )
           return val.interpolation
       }
       
       //获取相差的月份
       if (monthDiff<12 && monthDiff > 0){
           val.interpolation=monthDiff+"个月前";//获取相差的月份
-          console.log( val.interpolation )
+        //   console.log( val.interpolation )
           return val.interpolation
       }
 
       // 获取相差的天数
       if( dayDiff>=1 ){
           val.interpolation = dayDiff + "天前";
-          console.log( val.interpolation )
+        //   console.log( val.interpolation )
           return val.interpolation
           console.log(" 相差 "+dayDiff+"天 "+hours+"小时 "+minutes+" 分钟"+seconds+" 秒")
       }
@@ -606,19 +606,19 @@ const mutations = {
       // 获取相差的小时
       if( hours >=1 ){
           val.interpolation = hours + "小时前";
-          console.log( val.interpolation )
+        //   console.log( val.interpolation )
           return val.interpolation
       }
 
       if( minutes >= 1){
           val.interpolation = minutes + "小时前";
-          console.log( val.interpolation )
+        //   console.log( val.interpolation )
           return val.interpolation
       }
 
       if( seconds >=1 ){
           val.interpolation = "刚刚发布";
-          console.log( val.interpolation )
+        //   console.log( val.interpolation )
           return val.interpolation;
           // console.log(dateDiff+"时间差的毫秒数",dayDiff+"计算出相差天数",leave1+"计算天数后剩余的毫秒数"
           // ,hours+"计算出小时数",minutes+"计算相差分钟数",seconds+"计算相差秒数");

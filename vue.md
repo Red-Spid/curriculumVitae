@@ -32,8 +32,15 @@
 
 ## destroyed
 - vue实例中的数据不可用了。
-
-
+~~~js
+created : 在绑定元素的属性或事件监听器被应用之前调用。
+beforeMount : 指令第一次绑定到元素并且在挂载父组件之前调用。。
+mounted : 在绑定元素的父组件被挂载后调用。。
+beforeUpdate: 在更新包含组件的 VNode 之前调用。。
+updated: 在包含组件的 VNode 及其子组件的 VNode 更新后调用。
+beforeUnmount: 当指令与在绑定元素父组件卸载之前时，只调用一次。
+unmounted: 当指令与元素解除绑定且父组件已卸载时，只调用一次。
+~~~
 # 基本数据类型 数组/对象(复制/拷贝)
 - 基本的数据类型：String, Number, boolean, Null, Undefined,Symbol(ES6新增)
 - 对象数据类型(也称为引用数据类型)：Array,Object,Function
