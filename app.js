@@ -12,4 +12,4 @@ const app =  global.newVue( _this,"app",[store,router]  )
 
 app.$global = global;
 
-console.log(  app, app.$store );
+console.log(  app, app.$global );

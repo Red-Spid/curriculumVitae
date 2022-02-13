@@ -11,12 +11,6 @@ class methodCluster {
         return app.use( arr[0] ).use( arr[1] ).mount('#'+id);
     }
 
-    tempDom( app="", name = '', obj = {} ){ // 挂载 组件
-        obj.template = "#"+name;
-        app.component( name, obj )
-        // console.log(app)
-    }
-
     dtype( data="", condition="" ){// Data type prototype 数据类型 原型is true/false
         /*
             data = 数据类型
