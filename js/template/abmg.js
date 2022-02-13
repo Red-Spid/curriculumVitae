@@ -8,12 +8,12 @@ var abgm = `
                 </path>
             </svg>
         </div>
-        <div class="audio" id="audio" v-else-if=" $route.fullPath == '/personal/comments' ">
-            <img src="./img/ins.png" />
+        <div class="audio" id="audio" @click="trans" v-else-if=" $route.fullPath == '/personal/comments' ">
+            <img src="./img/ins.png" ref="audio" :style="{'transform': 'rotate(' + audiodeg + 'deg)' }"/>
             <audio src="./music/bgm.mp3" autoplay="autoplay" loop="" hidden="" ref="music" id="music"></audio>
         </div>
         <div id="topReurn">
-            <a href="#" onclick="eventStop()" title="返回顶部">
+            <a href="#" @click="eventStop()" title="返回顶部">
                 <svg t="1565238236954" fill="currentColor" viewBox="0 0 1024 1024" version="1.1"
                     xmlns="http://www.w3.org/2000/svg" p-id="3644" width="200" height="200">
                     <path d="M483.875 230.75a28.125 28.125 0 0 1 56.25 0v590.625a28.125 28.125 0 0 1-56.25 0z" p-id="3645"></path>
@@ -32,6 +32,7 @@ var a = {
     data() {
         return {
             music: false,
+            audiodeg:0
         }
     },
     beforeRouteLeave(to, from, next) {
@@ -47,38 +48,36 @@ var a = {
     methods: {
         trans() {
             const music = this.$refs.music;
-            console.log(music);
+            const audio = this.$refs.audio;
+            var interval = function(){};
+
+            var func = () => {
+                this.audiodeg++;
+                if (this.audiodeg >= 360 && !music.paused ) {
+                    this.audiodeg = 1;
+                    clearInterval(interval)
+                    interval = setInterval(func, 10);
+                }else if(music.paused){
+                    clearInterval(interval)
+                }
+                audio.setAttribute("style", "transform: rotate(" + a + "deg);")
+                // console.log('aaa')
+            }
+
             if (music !== null) {
                 //检测播放是否已暂停.audio.paused 在播放器播放时返回false.
-                // if (music.paused) {
+                if (music.paused) {
                 //     console.log("没有播放")
-                //     music.play(); //audio.play();// 这个就是播放
-                //     clearInterval(interval)
-                //     interval = setInterval(func, 10);
-                // } else {
+                    music.play(); //audio.play();// 这个就是播放
+                    clearInterval(interval);
+                    interval = setInterval(func, 10); //启动,func不能使用括号
+                    // interval = setInterval(func, 10);
+                } else {
                 //     console.log("暂停")
-                //     clearInterval(interval)
-                //     music.pause();// 这个就是暂停
-                // }
+                    clearInterval(interval);
+                    music.pause();// 这个就是暂停
+                }
             }
-            // console.log(music)
-
-            // var interval = setInterval(func, 10); //启动,func不能使用括号
-            // // setTimeout(()=>{
-            // //   audio.onclick()
-            // // },200)
-            // function func() {
-            //     a++;
-            //     if (a >= 360) {
-            //     a = 1;
-            //     clearInterval(interval)
-            //     interval = setInterval(func, 10);
-            //     }
-            //     audio.setAttribute("style", "transform: rotate(" + a + "deg);")
-            //     // console.log(audio)
-            //     // console.log('aaa')
-            // }
-
         }
     }
 }
