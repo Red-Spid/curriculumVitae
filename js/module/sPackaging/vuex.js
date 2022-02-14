@@ -2,7 +2,7 @@
 
 import { createStore }  from "../eResources/vuex.js";
 import dataJson from "../../../json/index.js";
-console.log(dataJson)
+// console.log(dataJson)
 // 创建一个新的 store 实例
 
 const xState = dataJson;

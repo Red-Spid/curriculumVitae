@@ -1,9 +1,11 @@
-import axios from './axios'
+// import axios from './axios'
 // import { Loading } from 'element-ui';
 
 export function request(config) {
+    console.log( axios )
+    axios.defaults.headers.get['Content-Type'] = 'application/x-www-form-urlencoded'
     const instance = new axios.create({
-        baseURL: "http://106.12.85.17:8090",
+        baseURL: "https://www.runoob.com/try",
         timeout: 5000
     })
     // 请求拦截
@@ -16,7 +18,7 @@ export function request(config) {
         // let loadingInstance = Loading.service();
         // loadingInstance.close();
         // console.log(res.data)
-        return res.data
+        return res
     }, err => {
         console.log(err)
         return { code: 500, msg: 'timeout' }
@@ -48,7 +50,7 @@ export function requestCity(config) {
 export function requestPost(config) {
     axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded'
     const instance = new axios.create({
-        baseURL: "http://106.12.85.17:8090",
+        baseURL: "https://www.runoob.com/try/",
         method: 'post'
     })
     // 请求拦截

@@ -1,6 +1,12 @@
 import { request } from './request.js'
 import { requestPost } from './request.js'
 
+export function getaxios(){
+    return request({
+        url:"/ajax/json_demo.json"
+    })
+}
+
 // 获取京东轮播
 export function getHomeBanner() {
     return request({

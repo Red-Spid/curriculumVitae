@@ -41,9 +41,18 @@ var curriculumvitae = `<main class="bodylist bodyHtml" ref="add">
 </section>
 
 </main>`
-var a = {
+export default {
   name: "curriculumvitae",
   template: curriculumvitae,
   props: ["infor"],
+  data() {
+    return {
+      info: ""
+    }
+  },
+  mounted() {
+
+   
+
+  }
 }
-export default a;

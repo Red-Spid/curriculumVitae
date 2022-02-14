@@ -55,9 +55,9 @@ var a = {
         this.originImage = this.$store.state.origin + this.$store.state.image;
         this.originMusic = this.$store.state.origin + this.$store.state.music;
 
-        console.log(this.$store.state.origin)
+        // console.log(this.$store.state.origin)
         this.routeris = this.$route.fullPath == '/personal/comments' ? true : false;
-        console.log(this.$route.fullPath);
+        // console.log(this.$route.fullPath);
         // console.log( this.$router.options.history.location,this.$route )  
     },
     methods: {
