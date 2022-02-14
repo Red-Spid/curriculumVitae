@@ -9,9 +9,9 @@ var abgm = `
             </svg>
         </div>
         <div class="audio" id="audio" @click="trans()" v-else-if=" $route.fullPath == '/personal/comments' ">
-            <img src="./img/ins.png" ref="audio" :style="{'transform': 'rotate(' + audiodeg + 'deg)' }"/>
+            <img :src="originImage + 'ins.png' " ref="audio" :style="{'transform': 'rotate(' + audiodeg + 'deg)' }"/>
             <audio autoplay preload="auto" ref="music" id="music">
-                <source :src="hierarchy+bgmusic" type="audio/mpeg">
+                <source :src="originMusic + bgmusic" type="audio/mpeg">
             </audio>
         </div>
         <div id="topReurn" v-runoob="this">
@@ -31,8 +31,10 @@ var a = {
     directives:{
         runoob:{
             mounted(el, binging ){
-                binging.instance.trans();
-                console.log(el, binging )
+                if( binging.instance.routeris ){
+                    binging.instance.trans();
+                    console.log(el, binging )
+                }
             }
         }
     },
@@ -43,12 +45,17 @@ var a = {
         return {
             music: false,
             audiodeg:0,
-            hierarchy:"./",
-            bgmusic:"music/bgm.mp3",
-            routeris:false
+            bgmusic:"bgm.mp3",
+            routeris:false,
+            originImage:"",
+            originMusic:""
         }
     },
     mounted() {
+        this.originImage = this.$store.state.origin + this.$store.state.image;
+        this.originMusic = this.$store.state.origin + this.$store.state.music;
+
+        console.log(this.$store.state.origin)
         this.routeris = this.$route.fullPath == '/personal/comments' ? true : false;
         console.log(this.$route.fullPath);
         // console.log( this.$router.options.history.location,this.$route )  

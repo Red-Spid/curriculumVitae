@@ -13,7 +13,7 @@ var dropBYdrop = `<div class="bodyList">
             v-text="item.tips"></a>
         </p>
         <div class="art-img">
-          <img :src="item.img" :alt="item.alt" />
+          <img :src="originImage + item.img" :alt="item.alt" />
         </div>
         <div class="art-detail">
           <p v-text="item.introduce"></p>
@@ -27,4 +27,13 @@ export default {
   name: "dropBYdrop",
   template: dropBYdrop,
   props: ["data"],
+  data(){
+    return{
+      originImage:""
+    }
+  },
+  mounted() {
+    this.originImage = this.$store.state.origin + this.$store.state.image;
+    console.log(this.$store.state.originImage)
+  },
 }

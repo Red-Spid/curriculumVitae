@@ -68,5 +68,5 @@ var comments = `<main class="MessageBoard">
 export default {
   name: "comments",
   template: comments,
-  props: ["data", "list", "isdom"],
+  props: ["data", "list", "isdom"]
 }
