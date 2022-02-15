@@ -1,0 +1,107 @@
+*{
+    margin:0;
+    padding:0;
+}
+html{
+    font-size:12px;
+}
+body{
+    font-size:1rem;
+    font-family:"微软雅黑";
+    .rotate{
+        // transform:rotate(40deg);
+        background-color:red;
+        width:2rem;
+        margin:2rem 0 0 2rem;
+        height:2rem;
+        border-radius: 2em 1em 4em / 0.5em 3em;
+        // border-radius:1rem 1rem 1rem;
+    }
+    #borderimg1 { 
+        border: 10px solid transparent;
+        padding: 15px;
+        -webkit-border-image: url(../../image/../../image/border.png) 30 round; /* Safari 3.1-5 */
+        -o-border-image: url(../../image/border.png) 30 round; /* Opera 11-12.1 */
+        border-image: url(../../image/border.png) 30 round;
+    }
+    
+    #borderimg2 { 
+        border: 10px solid transparent;
+        padding: 15px;
+        -webkit-border-image: url(../../image/border.png) 30 stretch; /* Safari 3.1-5 */
+        -o-border-image: url(../../image/border.png) 30 stretch; /* Opera 11-12.1 */
+        border-image: url(../../image/border.png) 30 stretch;
+        box-shadow: 2rem 0.1rem 5px #888888;
+    }
+    #example1 {
+        // background-image: url("../../image/img_flwr.gif"), url("../../image/paper.gif");
+        // background-position: right bottom, left top;
+        // background-repeat: no-repeat, repeat;
+        background: url("../../image/img_flwr.gif") right bottom no-repeat, url("../../image/paper.gif") left top repeat;
+        padding: 15px;
+    }
+    .backgroundSize{
+        background:url("../../image/img_flwr.gif");
+        background-size:6.66rem 5rem;
+        background-repeat:no-repeat;
+        padding-top:6.66rem;
+    }
+
+    .origin{
+
+        div{
+            border:10px solid black;
+            padding:35px;
+            background-image:url('../../image/smiley.gif');
+            background-repeat:no-repeat;
+            background-position:left;
+        }
+        
+        .div1{
+            background-origin:border-box;
+        }
+        .div2{
+            background-origin:content-box;
+        }
+        .div3{
+            background-origin:padding-box;
+        }
+    }
+
+    .backgroundClip{
+        .example1 {
+            border: 10px dotted black;
+            padding:35px;
+            background: yellow;
+        }
+        
+        .example2 {
+            border: 10px dotted black;
+            padding:35px;
+            background: yellow;
+            background-clip: padding-box;
+        }
+        
+        .example3 {
+            border: 10px dotted black;
+            padding:35px;
+            background: yellow;
+            background-clip: content-box;
+        }
+    }
+    .linearGradient{
+        .grad1{
+            height: 200px;
+            background-image: radial-gradient(red, yellow, green);
+            // background-image: repeating-linear-gradient(red, yellow 10%, green 20%);
+            // background-image: linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet);
+            // background-image: linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1));
+            // background-image: linear-gradient(to bottom right, red , yellow);
+            // background-image: linear-gradient(0deg, blue, green 40%, red);
+            // background-image: linear-gradient(45deg, red, yellow, blue);
+            // background-image: linear-gradient(to left top, red, yellow, blue);
+
+        }
+    }
+
+}

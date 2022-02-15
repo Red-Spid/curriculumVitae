@@ -3,7 +3,7 @@ import { createRouter,createWebHashHistory } from "../eResources/vue-router.js";
 
 
 
-const curriculumvitae = { 
+let curriculumvitae = { 
   template: '<curriculumvitae :infor="$store.state.personalInformation" ></curriculumvitae>',
   data() {
     return {
@@ -26,24 +26,25 @@ const curriculumvitae = {
   },
 }
 
-const dropBYdrop = { template: '<dropBYdrop :data="$store.state.dropBYdrop">11111</dropBYdrop>' };
-
-const comments = { template: '<comments :data="$store.state.comments" :list=" $store.state.commentsUer " :isdom=" $store.state.signIn "></comments>' };
+let dropBYdrop = { template: '<dropBYdrop :data="$store.state.dropBYdrop">11111</dropBYdrop>' };
+let comments = { template: '<comments :data="$store.state.comments" :list=" $store.state.commentsUer " :isdom=" $store.state.signIn "></comments>' };
+let home = { template : '<github ref="headr" :my="$store.state.my" :list="$store.state.list" class="github-corner"></github><router-view></router-view>' }
 
 const xRoutes = [
-  { path: '/', name:"home",redirect:"/personal/dropBYdrop"},
-  {
-    name:"personal", path:"/personal", component:{
-      template: "<div id='personal'><router-view :key='Math.floor(Math.random() * (10000000 - 1)) + 1'></router-view><abgm></abgm></div>"
-    },
-    children: [
-      { path: 'resume', name:"resume", component: curriculumvitae },
-      { path: 'dropBYdrop', name:"LeavingAmessage", component: dropBYdrop },
-      { path: 'comments', name:"shareExperience", component: comments }
+  { path: '/', name:"home", component: home, redirect:"/personal/dropBYdrop",
+    children:[
+      {
+        name:"personal", path:"personal", component:{
+          template: "<div id='personal'><router-view :key='Math.floor(Math.random() * (10000000 - 1)) + 1'></router-view><abgm></abgm></div>"
+        },
+        children: [
+          { path: 'resume', name:"resume", component: curriculumvitae },
+          { path: 'dropBYdrop', name:"LeavingAmessage", component: dropBYdrop },
+          { path: 'comments', name:"shareExperience", component: comments }
+        ]
+      },
     ]
   },
-  
-  
 
 ]
 
