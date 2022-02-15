@@ -2,7 +2,7 @@
 import dataIndex from "./js/module/sPackaging/vuedata.js"
 import store from "./js/module/sPackaging/vuex.js";
 import router from "./js/module/sPackaging/vueRouter.js";
-import assembly from "./js/module/assembly/index.js";
+import assembly from "./js/assembly/template.js";
 import global from "./js/global/index.js";
 // import {getaxios} from "./js/https/index.js";
 

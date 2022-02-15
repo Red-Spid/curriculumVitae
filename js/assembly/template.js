@@ -13,5 +13,11 @@ import comments from "../template/comments.js";
 import signin from "../template/signin.js";
 
 let temp = [ abmgTemp, github, curriculumvitae, dropBYdrop, comments, signin ]
-// console.log( temp,1111 );
-export default temp;
+
+export default function( _this = "" ){
+
+    temp.forEach( value => {
+        _this.component( value.name, value )
+    })
+
+}

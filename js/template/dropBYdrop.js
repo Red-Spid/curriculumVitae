@@ -34,6 +34,6 @@ export default {
   },
   mounted() {
     this.originImage = this.$store.state.origin + this.$store.state.image;
-    console.log(this.$store.state.originImage)
+    console.log(this.originImage)
   },
 }
