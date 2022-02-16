@@ -21,7 +21,7 @@ var curriculumvitae = `<main class="bodylist bodyHtml" ref="add">
           <span v-else-if="value.url && value.bold != true  ">
 
             {{ value.tips + (value.sex ? val.push + value.sex + val.push : value.push ? value.push : val.push) }}
-            <a :href="value.url" target="_blank" class="hrefurl" :title="value.val"> {{value.val}}</a>
+            <a :href=" value.url == 'selfRouting' ? $store.state[ value.url ] : value.url " target="_blank" class="hrefurl" :title=" value.val == 'selfRouting' ? $store.state[ value.url ] : value.val "> {{ value.val == 'selfRouting' ? $store.state[ value.val ] : value.val  }}</a>
 
           </span>
 

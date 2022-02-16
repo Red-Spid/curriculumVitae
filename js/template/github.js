@@ -45,4 +45,9 @@ export default {
       }
     }
   },
+  mounted() {
+    this.my.url = this.$store.state[ this.$store.state.my.url ] || this.my.url;
+
+    // console.log( this.my.url )
+  },
 }
