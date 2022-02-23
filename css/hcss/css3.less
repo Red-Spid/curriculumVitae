@@ -90,8 +90,34 @@ body{
         }
     }
     .linearGradient{
+        display: grid;
+        grid:
+            'header header header header header header'
+            'menu main main main right right'
+            'menu footer footer footer footer footer';
+        grid-gap: 1rem;
+        background-color: #fff;
+        padding: 1rem;
+        .article1{
+            grid-area:header;
+        }
+        .article2{
+            grid-area:menu;
+        }
+        .article3{
+            grid-area:main;
+        }
+        .article4{
+            grid-area:footer;
+        }
+        article{
+            height:10rem;
+            grid-row: inherit;
+            div{
+                height:inherit;
+            }
+        }    
         .grad1{
-            height: 200px;
             background-image: radial-gradient(red, yellow, green);
             // background-image: repeating-linear-gradient(red, yellow 10%, green 20%);
             // background-image: linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet);
@@ -101,6 +127,18 @@ body{
             // background-image: linear-gradient(45deg, red, yellow, blue);
             // background-image: linear-gradient(to left top, red, yellow, blue);
 
+        }
+        .grad2{
+            background-color: red; /* 浏览器不支持的时候显示 */
+            background-image: repeating-linear-gradient(90deg,red,yellow 7%,green 10%);
+        }
+        .grad3{
+            background-color: red; /* 浏览器不支持的时候显示 */
+            background-image: radial-gradient(red, green, blue); 
+        }
+        .grad4{
+            background-color: red; /* 浏览器不支持的时候显示 */
+            background-image: radial-gradient(red 5%, yellow 15%, green 60%);
         }
     }
 

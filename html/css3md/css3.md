@@ -86,6 +86,10 @@ border-bottom-left-radius: 1em 3em;
 
 ~~~
 
+##### 渐变repeating-linear-gradient() 线性
+~~~css
+    background-image: repeating-linear-gradient(red, yellow 10%, green 20%);
+~~~
 #### background-size
 > background-size: length|percentage cover/contain;
 ~~~css
