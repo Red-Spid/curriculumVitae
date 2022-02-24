@@ -102,6 +102,7 @@ body .linearGradient article {
   grid-row: inherit;
 }
 body .linearGradient article div {
+  width: 10rem;
   height: inherit;
 }
 body .linearGradient .grad1 {
