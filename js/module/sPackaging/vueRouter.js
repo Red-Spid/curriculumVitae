@@ -28,7 +28,9 @@ let curriculumvitae = {
 
 let dropBYdrop = { template: '<dropBYdrop :data="$store.state.dropBYdrop">11111</dropBYdrop>' };
 let comments = { template: '<comments :data="$store.state.comments" :list=" $store.state.commentsUer " :isdom=" $store.state.signIn "></comments>' };
-let home = { template : '<github ref="headr" :my="$store.state.my" :list="$store.state.list" class="github-corner"></github><router-view></router-view>' }
+let home = { template : `
+<github ref="headr" class="github-corner"></github>
+<router-view></router-view>` }
 
 const xRoutes = [
   { path: '/', name:"home", component: home, redirect:"/personal/dropBYdrop",

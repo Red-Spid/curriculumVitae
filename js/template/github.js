@@ -30,10 +30,11 @@ var github = `<div>
 export default {
   name: "github",
   template: github,
-  props: ["my", "list"],
+  // props: ["my", "list"],
   data() {
     return {
-
+      my:"",
+      list:""
     }
   },
   directives: {
@@ -46,8 +47,8 @@ export default {
     }
   },
   mounted() {
-    this.my.url = this.$store.state[ this.$store.state.my.url ] || this.my.url;
-
+    this.my = this.$store.state.my;
+    this.list = this.$store.state.list;
     // console.log( this.my.url )
   },
 }

@@ -24,10 +24,11 @@ var abgm = `
                         p-id="3646"></path>
                 </svg>
             </a>
-        </div>
-    </div>`
+    </div>
+</div>`
 
-var a = {
+export default {
+    name: "abgm",
     directives:{
         runoob:{
             mounted(el, binging ){
@@ -38,7 +39,6 @@ var a = {
             }
         }
     },
-    name: "abgm",
     template: abgm,
     props: [],
     data() {
@@ -61,6 +61,9 @@ var a = {
         // console.log( this.$router.options.history.location,this.$route )  
     },
     methods: {
+        eventStop(){
+            // 返回顶部事件
+        },
         trans() {
             const music = this.$refs.music;
             console.log("触发",music)
@@ -99,4 +102,3 @@ var a = {
         }
     }
 }
-export default a;

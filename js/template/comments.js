@@ -24,7 +24,7 @@ var comments = `<main class="MessageBoard">
             </div>
             <div class="right">
               <span v-text="item.user.name.slice(0,1)" class="spacing"></span>
-              <del v-if="item.user.is">{{this.$store.dispatch('computedDate',item.user)}}</del>
+              <del v-if="item.user.is">{{$store.dispatch('computedDate',item.user)}}</del>
               <span v-text=" item.user.interpolation "></span>
               <div v-text="item.user.content"></div>
               <div><a href="" style="color:rgba(0,0,0,.45);" v-text="item.floor.reply"></a></div>
@@ -40,7 +40,7 @@ var comments = `<main class="MessageBoard">
 
             <div class="right">
               <span v-text="value.user.name.slice(0,1)" class="spacing"></span>
-              <del v-if="value.user.is" v-text="this.$store.dispatch('computedDate',value.user)"></del>
+              <del v-if="value.user.is" v-text="$store.dispatch('computedDate',value.user)"></del>
               <span v-text=" value.user.interpolation "></span>
               <div v-text="value.user.content" ></div>
               <div><a href="" style="color:rgba(0,0,0,.45);" v-text="value.floor.reply"></a></div>
