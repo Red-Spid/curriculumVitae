@@ -1,6 +1,8 @@
 // import axios from './axios'
 // import { Loading } from 'element-ui';
 
+console.log(axios)
+
 export function request(config) {
     console.log( axios )
     axios.defaults.headers.get['Content-Type'] = 'application/x-www-form-urlencoded'

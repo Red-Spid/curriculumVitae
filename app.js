@@ -4,6 +4,8 @@ import store from "./js/module/sPackaging/vuex.js";
 import router from "./js/module/sPackaging/vueRouter.js";
 import assembly from "./js/assembly/template.js";
 import global from "./js/global/index.js";
+import { defaultRequest } from "./js/https/index.js";
+console.log( defaultRequest )
 // import {getaxios} from "./js/https/index.js";
 
 // getaxios().then((value) => {

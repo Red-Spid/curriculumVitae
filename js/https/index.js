@@ -1,6 +1,22 @@
 import { request } from './request.js'
 import { requestPost } from './request.js'
 
+export function defaultRequest(){
+    axios.get('https://red-spid.github.io/resources/jsonUrl/index.json')
+    .then(function (response) {
+        // handle success
+        console.log(response);
+    })
+    .catch(function (error) {
+        // handle error
+        console.log(error);
+    })
+    .then(function () {
+        // always executed
+    });
+}
+
+
 export function getaxios(){
     return request({
         url:"/ajax/json_demo.json"
