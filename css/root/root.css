@@ -1,0 +1,94 @@
+:root {
+  /* 基础颜色变量 */
+  --ui-blue: #2a80eb;
+  --ui-dark-blue: #0057c3;
+  --ui-dark: #4c5161;
+  --ui-gray: #a2a9b6;
+  --ui-dark-gray: #b6bbc6;
+  --ui-light: #f7f9fa;
+  --ui-white: #ffffff;
+  --ui-green: #1cad70;
+  --ui-orange: #f59b00;
+  --ui-red: #eb4646;
+  /* hover的颜色 */
+  --ui-list-hover: #f0f7ff;
+  /* selected的颜色 */
+  --ui-list-selected: #e0f0ff;
+  /* disabled禁用色 */
+  --ui-disabled: #ccd0d7;
+  /* 边框颜色 */
+  --ui-border: #d0d0d5;
+  /* 深一点的边框颜色 */
+  --ui-dark-border: #ababaf;
+  /* 浅一点的边框颜色 */
+  --ui-light-border: #ededef;
+  /* 透明度 */
+  --ui-opacity: 0.4;
+  /* 圆角变量 */
+  --ui-radius: 4px;
+  /* 基础字号 */
+  --ui-font: 14px;
+  /* 动画时间 */
+  --ui-animate-time: 0.2s;
+  /* 基本尺寸单元 */
+  --ui-line-height: 20px;
+  --ui-component-height: 40px;
+  --precentage: 0%;
+  --fColor: var(--precentage);
+}
+/*
+    调用方法
+    h1{
+        background-color: var(--ui-blue);
+        background-position-x: calc( 100% -  var(--fColor) )
+
+    }
+    [id$=\-1]{
+        background-color: antiquewhite;
+    }
+
+    E:enabled伪类选锋器用来指定当元素处于可用状态时的样式。
+    E:disabled伪类选择器用来指定当元素处于不可用状态时的样式。
+    input[type="text"]:enabled{
+        background-color:yellow; 
+    }
+    input[type="text"]:disabled{
+        background-color:purple;
+    }
+
+    如果在content属性中通过attr(属性名)这种形式来指定attr属性值，可以将某个属性的属性值显示出来。
+    .img:after {
+        content: attr(alt);
+        content: url(mark.png)
+        text-align: center;
+        margin-top: 5px;
+    }
+
+    E::selection伪类选择器用来指定当元素处于选中状态时的样式。 选中文字
+    ::selection ::-moz-selection
+
+    E:read-only伪类选择器与E:read-write伪类选择器
+        E:read-only伪类选择器用来指定当元素处于只读状态时的样式。
+        E:read-write伪类选择器用来指定当元素处于非只读状态时的样式。
+
+
+    伪类选择器：E:checked 、E:default和E: indeterminate
+    
+        E:indeterminate伪类选择器用来指定当页面打开时，如果一组单选框中任何一个单选框都没有被设定为选取状态时整组单选框的样式，如果用户选取了其中任何一个单选框，则该样式被取消指定。
+    input[type="radio"]:indeterminate{
+        outline: solid 3px blue;
+    }
+        E:default选择器用来指定当页面打开时默认处于选取状态的单选框或复选框控件的样式。需要注意的是，即使用户将该单选框或复选框控件的选取状态设定为非选取状态，E:default选择器中指定的样式仍然有效。
+        E:checked伪类选择器用来指定当表单中的radio单选框或checkbox复选框处于选取状态时的样式。
+
+
+*/
+[id*=section1] {
+  background-color: yellow;
+}
+[id^=section1] {
+  background-color: cyan;
+}
+body *:not(h1) {
+  background-color: yellow;
+}
