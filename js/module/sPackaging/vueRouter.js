@@ -1,56 +1,23 @@
 
 import { createRouter,createWebHashHistory } from "../eResources/vue-router.js";
-// import { dropBYdrop, comments, home, curriculumvitae, personal } from "../router/index.js";
-
-let curriculumvitae = { 
-  template: '<curriculumvitae :infor="$store.state.personalInformation" ></curriculumvitae>',
-  data() {
-    return {
-      a:10,
-      // wis:true,
-    }
-  },
-  mounted() {
-    // if( this.$refs.add.$el.offsetWidth > 800){
-    //   this.wis = false
-    // }else{
-    //   this.wis = true;
-    // }
-		// console.log( this.$refs.add.$el.clinetWidth )
-		// console.log( this.$refs.add.$el.clinetHeight )
-		// console.log( this.$refs.add.$el )
-		// console.log( this.$refs.add.$el.offsetHeight )
-		// console.log( this.$refs.add.$el.offsetWidth )
-
-  },
-}
-
-let dropBYdrop = { template: '<dropBYdrop :data="$store.state.dropBYdrop">11111</dropBYdrop>' };
-let comments = { template: '<comments :data="$store.state.comments" :list=" $store.state.commentsUer " :isdom=" $store.state.signIn "></comments>' };
-let home = { template : `
-<github ref="headr" class="github-corner"></github>
-<router-view></router-view>` }
-
-let personal = {
-  template : `<div id='personal'><router-view :key='Math.floor(Math.random() * (10000000 - 1)) + 1'></router-view><abgm></abgm></div>`
-}
+import { dropBYdrop, comments, home, curriculumvitae, personal } from "../router/index.js";
 
 const xRoutes = [
-  { path: '/', name:"home", component: home, redirect:"/personal/dropBYdrop",
+  { path: '/', name:"home", component: home(), redirect:"/personal/dropBYdrop",
     children:[
       
       {
-        name:"personal", path:"personal", component: personal,
+        name:"personal", path:"personal", component: personal(),
         children: [
-          { path: 'resume', name:"resume", component: curriculumvitae },
-          { path: 'dropBYdrop', name:"LeavingAmessage", component: dropBYdrop },
-          { path: 'comments', name:"shareExperience", component: comments }
+          { path: 'resume', name:"resume", component: curriculumvitae() },
+          { path: 'dropBYdrop', name:"LeavingAmessage", component: dropBYdrop() },
+          { path: 'comments', name:"shareExperience", component: comments() }
         ]
       },
 
-      {
-        name:"", path: "", component: "", 
-      }
+      // {
+      //   name:"", path: "", component: "", 
+      // }
     ]
   },
 
