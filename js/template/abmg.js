@@ -9,7 +9,7 @@ var abgm = `
             </svg>
         </div>
         <div class="audio" id="audio" @click="trans()" v-else-if=" $route.fullPath == '/personal/comments' ">
-            <img :src="originImage + 'ins.png' " ref="audio" :style="{'transform': 'rotate(' + audiodeg + 'deg)' }"/>
+            <img :src="originImage + 'Cproject/ins.png' " ref="audio" :style="{'transform': 'rotate(' + audiodeg + 'deg)' }"/>
             <audio autoplay preload="auto" ref="music" id="music">
                 <source :src="originMusic + bgmusic" type="audio/mpeg">
             </audio>

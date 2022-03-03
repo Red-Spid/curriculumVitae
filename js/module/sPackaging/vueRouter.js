@@ -1,7 +1,6 @@
 
 import { createRouter,createWebHashHistory } from "../eResources/vue-router.js";
-
-
+// import { dropBYdrop, comments, home, curriculumvitae, personal } from "../router/index.js";
 
 let curriculumvitae = { 
   template: '<curriculumvitae :infor="$store.state.personalInformation" ></curriculumvitae>',
@@ -32,19 +31,26 @@ let home = { template : `
 <github ref="headr" class="github-corner"></github>
 <router-view></router-view>` }
 
+let personal = {
+  template : `<div id='personal'><router-view :key='Math.floor(Math.random() * (10000000 - 1)) + 1'></router-view><abgm></abgm></div>`
+}
+
 const xRoutes = [
   { path: '/', name:"home", component: home, redirect:"/personal/dropBYdrop",
     children:[
+      
       {
-        name:"personal", path:"personal", component:{
-          template: "<div id='personal'><router-view :key='Math.floor(Math.random() * (10000000 - 1)) + 1'></router-view><abgm></abgm></div>"
-        },
+        name:"personal", path:"personal", component: personal,
         children: [
           { path: 'resume', name:"resume", component: curriculumvitae },
           { path: 'dropBYdrop', name:"LeavingAmessage", component: dropBYdrop },
           { path: 'comments', name:"shareExperience", component: comments }
         ]
       },
+
+      {
+        name:"", path: "", component: "", 
+      }
     ]
   },
 
