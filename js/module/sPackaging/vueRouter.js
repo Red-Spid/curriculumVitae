@@ -14,12 +14,13 @@ const xRoutes = [
           { path: 'comments', name:"shareExperience", component: comments() }
         ]
       },
-
-      // {
-      //   name:"", path: "", component: "", 
-      // }
     ]
   },
+  {
+    name:"detall", path: "/detail", component: {
+      template:"<h1>11111</h1>"
+    }, 
+  }
 
 ]
 

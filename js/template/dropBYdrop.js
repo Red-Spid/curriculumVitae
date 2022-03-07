@@ -9,8 +9,7 @@ var dropBYdrop = `<div class="bodyList">
       <div class="line"></div>
       <div class="art-content">
         <p class="art-title">
-          <a href="/detail?id=5e9efd26601bd82819211a1e"
-            v-text="item.tips"></a>
+          <router-link to="/detail" v-text="item.tips"></router-link>
         </p>
         <div class="art-img">
           <img :src="originImage + item.img" :alt="item.alt" />
