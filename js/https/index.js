@@ -2,20 +2,17 @@ import { request } from './request.js'
 import { requestPost } from './request.js'
 
 export function defaultRequest(){
-    axios.get('https://red-spid.github.io/resources/jsonUrl/index.json')
-    .then(function (response) {
-        // handle success
-        console.log(response);
+    return axios.get('https://red-spid.github.io/resources/jsonUrl/index.json').then((value) => {
+        if(value.status == 200){
+            return value.data
+        }
     })
-    .catch(function (error) {
-        // handle error
-        console.log(error);
-    })
-    .then(function () {
-        // always executed
-    });
 }
-
+export function getphp(){
+    return request({
+        url:"http://127.0.0.1:5500/frameTemplate/php/index.php?fname=Runoob&age=3"
+    })
+}
 
 export function getaxios(){
     return request({

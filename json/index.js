@@ -1,4 +1,4 @@
-export default {
+export default{
     "count": 0,
     "origin":"https://red-spid.github.io/resources/",
     "image":"image/",

@@ -5,7 +5,7 @@ import router from "./js/module/sPackaging/vueRouter.js";
 import assembly from "./js/assembly/template.js";
 import global from "./js/global/index.js";
 import { defaultRequest } from "./js/https/index.js";
-console.log( defaultRequest )
+// console.log( defaultRequest )
 // import {getaxios} from "./js/https/index.js";
 
 // getaxios().then((value) => {
@@ -32,13 +32,15 @@ assembly(_this);
 const app =  global.newVue( _this,"app",[store,router]  )
 app.$global = global;
 
-// 获取远端图片
-// axios({
-//     method:'get',
-//     url:'/curriculumvitae/json/index.json',
-//     // responseType:'stream'
-// }).then(function(response) {
-//     console.log( response )
-// });
-
-// console.log(  app, app.$global );
+defaultRequest().then((value) => {
+  app.$store.replaceState(value);
+})
+  // December 17, 2022 03:24:46
+var a,b;
+// a = global.isDateVaild( new Date() )
+// b = global.dayDif( new Date(), new Date("2022-2-1") )
+a = global.string_lice("aa sssss dddd vvvv ffff bb ccc", 20)
+console.log( 
+  a,
+  // b
+)

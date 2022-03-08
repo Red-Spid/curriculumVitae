@@ -24,7 +24,69 @@ class methodCluster {
         }
 
     }
+    romanToInt( val ){
+        const symbolValues = new Map();
+        symbolValues.set('I', 1);
+        symbolValues.set('V', 5);
+        symbolValues.set('X', 10);
+        symbolValues.set('L', 50);
+        symbolValues.set('C', 100);
+        symbolValues.set('D', 500);
+        symbolValues.set('M', 1000);  
+        let ans = 0;
+        const n = val.length;
+        for (let i = 0; i < n; ++i) {
+            const value = symbolValues.get(val[i]);
+            if (i < n - 1 && value < symbolValues.get(val[i + 1])) {
+                ans -= value;
+            } else {
+                ans += value;
+            }
+        }
+        return ans;
+    }
+    
+    isDateVaild( ...val ){
+        // 检测日期是否有效 isDateVaild( new Date() )
+        return !Number.isNaN( new Date(...val).valueOf() )
+    }
 
+    dayDif( date1, date2){
+        // 计算两个日期之间的间隔 dayDif( new Date(), new Date("2022-2-1") )
+        return Math.ceil( Math.abs(date1.getTime() - date2.getTime()) / 86400000 );
+    }
+
+    upperCase( str ){
+        // 首字母大写 upperCase("aa bb ccc")
+        return str.charAt(0).toUpperCase()+ str.slice(1);
+    }
+
+    string_lice( string, length ){
+        // 截断字符串 string_lice("aa sssss dddd vvvv ffff bb ccc", 20)
+        return string.length < length
+            ? string
+            : `${string.slice( 0, length-3 ) }...`
+    }
+
+    arr_duplicate_remova( arr ){
+        // 数组去重
+        return [...new Set(arr)];
+    }
+    
+    arr_isNotEmpty( arr ){
+        // 判断数组是不是为空
+        return Array.isArray(arr) & arr.length > 0;
+    }
+
+    arr_average( ...args ){
+        // 平均值
+        return args.reduce( (a, b) = a + b ) / args.length;
+    }
+
+    number_random( min, max){
+        // 两个整数之间的随机数
+        return Math.floor( Math.random() * (max  - min + 1) + min )
+    }
 }
 // General method
 var cluster = new methodCluster();
