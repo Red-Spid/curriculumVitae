@@ -48,7 +48,12 @@ export default {
   },
   mounted() {
     this.my = this.$store.state.my;
+    this.my.url = 
+      this.$store.state.my.url == "selfRouting" ?
+      this.$store.state.selfRouting : 
+      this.$store.state.my.url;
+    
     this.list = this.$store.state.list;
-    // console.log( this.my.url )
+    // console.log( this.my )
   },
 }
