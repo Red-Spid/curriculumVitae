@@ -37,10 +37,24 @@ defaultRequest().then((value) => {
 })
   // December 17, 2022 03:24:46
 var a,b;
-// a = global.isDateVaild( new Date() )
-// b = global.dayDif( new Date(), new Date("2022-2-1") )
-a = global.string_lice("aa sssss dddd vvvv ffff bb ccc", 20)
+/* a = global.isDateVaild( new Date() )
+ b = global.dayDif( new Date(), new Date("2022-2-1") )
+ string_lice("aa sssss dddd vvvv ffff bb ccc", 20)
+ arr_average(1,2,3,4,5,6,7,8,9)
+ arr_merge( arr1, arr2, arr3, arr4 )
+ arr_deleteHead( arr1 )
+*/
+var arr1 = [1,2,3];
+var arr2 = [4,5,6];
+var arr3 = [7,8,9];
+var arr4 = [10,11,12];
+
+
+a = global.arr_deleteTail( arr1 )
 console.log( 
   a,
   // b
+)
+console.log( 
+  arr1
 )

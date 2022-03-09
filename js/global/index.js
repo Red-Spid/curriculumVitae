@@ -80,13 +80,49 @@ class methodCluster {
 
     arr_average( ...args ){
         // 平均值
-        return args.reduce( (a, b) = a + b ) / args.length;
+        return args.reduce( (total, currentValue, currentIndex, arr) =>{ 
+           return total + currentValue
+         } ) / args.length;
     }
 
     number_random( min, max){
         // 两个整数之间的随机数
         return Math.floor( Math.random() * (max  - min + 1) + min )
     }
+
+    arr_merge(  ){
+        var a = [];
+        
+        for(let i = 0; i< arguments.length; i++) {
+            // a = a.concat( arguments[i] )
+            a.push( ...arguments[i] )
+
+        }
+        a[0] = 3;
+        return a;
+    }
+
+    arr_deleteHead( arr ){
+        // arr.shift();
+        // arr.slice(1)
+        // arr.splice(0,1);
+        arr.filter( (val, index, arr)=>{
+            console.log(val, index, arr)
+            return index !== 0;
+        })
+        // console.log(arr)
+        arr[0] = 3;
+        return arr
+    }
+
+    arr_deleteTail( arr ){
+        // arr.pop();
+        //  arr = arr.slice(0,arr.length-1)
+        // arr = arr.splice(0,arr.length-1)
+        arr = arr.splice(0,arr.length-1)
+        return arr;
+    }
+
 }
 // General method
 var cluster = new methodCluster();
