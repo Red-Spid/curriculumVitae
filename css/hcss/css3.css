@@ -20,28 +20,28 @@ body .rotate {
 body #borderimg1 {
   border: 10px solid transparent;
   padding: 15px;
-  -webkit-border-image: url("https://red-spid.github.io/resources/image/border.png") 30 round;
+  -webkit-border-image: url("https://red-spid.github.io/resources/image/Cproject/border.png") 30 round;
   /* Safari 3.1-5 */
-  -o-border-image: url("https://red-spid.github.io/resources/image/border.png") 30 round;
+  -o-border-image: url("https://red-spid.github.io/resources/image/Cproject/border.png") 30 round;
   /* Opera 11-12.1 */
-  border-image: url("https://red-spid.github.io/resources/image/border.png") 30 round;
+  border-image: url("https://red-spid.github.io/resources/image/Cproject/border.png") 30 round;
 }
 body #borderimg2 {
   border: 10px solid transparent;
   padding: 15px;
-  -webkit-border-image: url("https://red-spid.github.io/resources/image/border.png") 30 stretch;
+  -webkit-border-image: url("https://red-spid.github.io/resources/image/Cproject/border.png") 30 stretch;
   /* Safari 3.1-5 */
-  -o-border-image: url("https://red-spid.github.io/resources/image/border.png") 30 stretch;
+  -o-border-image: url("https://red-spid.github.io/resources/image/Cproject/border.png") 30 stretch;
   /* Opera 11-12.1 */
-  border-image: url("https://red-spid.github.io/resources/image/border.png") 30 stretch;
+  border-image: url("https://red-spid.github.io/resources/image/Cproject/border.png") 30 stretch;
   box-shadow: 2rem 0.1rem 5px #888888;
 }
 body #example1 {
-  background: url("https://red-spid.github.io/resources/image/img_flwr.gif") right bottom no-repeat, url("https://red-spid.github.io/resources/image/img_flwr.gif") left top repeat;
+  background: url("https://red-spid.github.io/resources/image/Cproject/img_flwr.gif") right bottom no-repeat, url("https://red-spid.github.io/resources/image/Cproject/img_flwr.gif") left top repeat;
   padding: 15px;
 }
 body .backgroundSize {
-  background: url("https://red-spid.github.io/resources/image/img_flwr.gif");
+  background: url("https://red-spid.github.io/resources/image/Cproject/img_flwr.gif");
   background-size: 6.66rem 5rem;
   background-repeat: no-repeat;
   padding-top: 6.66rem;
@@ -49,7 +49,7 @@ body .backgroundSize {
 body .origin div {
   border: 10px solid black;
   padding: 35px;
-  background-image: url('https://red-spid.github.io/resources/image/smiley.gif');
+  background-image: url('https://red-spid.github.io/resources/image/Cproject/smiley.gif');
   background-repeat: no-repeat;
   background-position: left;
 }

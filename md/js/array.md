@@ -40,11 +40,18 @@ var children = hege.concat(stale,kai);
 
 ### **indexOf()**
 >搜索数组中的元素，并返回它所在的位置
+> 语法 Array.indexOf(searchElement, fromIndex)
 ~~~js
 var fruits = ["Banana", "Orange", "Apple", "Mango"];
 var a = fruits.indexOf("Apple");//2
 ~~~
-
+### **lastIndexOf()**
+>搜索数组中的元素，并返回它最后出现的位置
+> 语法 lastIndexOf(searchElement, fromIndex)
+~~~js
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+var a = fruits.lastIndexOf("Apple");//2
+~~~
 ### **isArray()**
 >判断对象是否为数组
 ~~~js
@@ -54,6 +61,7 @@ Array.isArray(fruits);// true
 
 ### **join()**
 >把数组的所有元素放入一个字符串
+> 语法 Array.join(separator)
 ~~~js
 var fruits = ["Banana", "Orange", "Apple", "Mango"];
 var energy = fruits.join();//Banana,Orange,Apple,Mango
@@ -73,18 +81,37 @@ for(let key of ['a', 'b'].keys()){
 console.log([...[,'a'].keys()]); // [0, 1]
 ~~~
 
-### **lastIndexOf()**
->搜索数组中的元素，并返回它最后出现的位置
-~~~js
-var fruits = ["Banana", "Orange", "Apple", "Mango"];
-var a = fruits.lastIndexOf("Apple");//2
-~~~
+#### **values()**
+>遍历键值
 
+~~~js
+for(let key of ['a', 'b'].values()){
+    console.log(key);
+}
+// 0
+// 1
+ 
+// 数组含空位
+console.log([...[,'a'].values()]); // [undefined, "a"]
+~~~
 ### **map()**
 >通过指定函数处理数组的每个元素，并返回处理后的数组
+> 语法 .map((value, index, array) => {})
 ~~~js
 var numbers = [4, 9, 16, 25];
 numbers.map(Math.sqrt);//2,3,4,5
+~~~
+
+### **forEach()**
+>查找数组中符合条件的元素索引，若有多个符合条件的元素，则返回第一个元素索引
+> 语法 .forEach((currentValue, index, array) => {})
+~~~js
+function(currentValue, index, arr)	
+函数参数:
+参数	描述
+currentValue	必需。当前元素
+index	可选。当前元素的索引值。
+arr	可选。当前元素所属的数组对象。
 ~~~
 
 ### **pop()**
@@ -101,6 +128,20 @@ var fruits = ["Banana", "Orange", "Apple"];
 fruits.push("1");//Banana,Orange,Apple,1
 ~~~
 
+### **shift()**
+>删除并返回数组的第一个元素
+~~~js
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.shift()//Orange,Apple,Mango
+~~~
+
+### **unshify()**
+>把数组转换为字符串，并返回结果
+~~~js
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.unshift("Lemon","Pineapple");
+//Lemon,Pineapple,Banana,Orange,Apple,Mango
+~~~
 ### **reduce()**
 >将数组元素计算为一个值（从左到右）
 ~~~js
@@ -112,7 +153,7 @@ function getSum(total, num) {
 numbers.reduce(getSum);//125
 ~~~
 
-### **reduce()**
+### **reduceRight()**
 >将数组元素计算为一个值（从右到左）
 ~~~js
 var numbers = [65, 44, 12, 4];
@@ -131,13 +172,6 @@ fruits.reverse();
 //Mango,Apple,Orange,Banana
 ~~~
 
-### **shift()**
->删除并返回数组的第一个元素
-~~~js
-var fruits = ["Banana", "Orange", "Apple", "Mango"];
-fruits.shift()//Orange,Apple,Mango
-~~~
-
 ### **slice()**
 >选取数组的一部分，并返回一个新数组
 ~~~js
@@ -145,6 +179,12 @@ var fruits = ["Banana", "Orange", "Apple", "Mango"];
 fruits.slice(1,3)//Orange,Apple
 ~~~
 
+### **splice()**
+>从数组中添加或删除元素
+~~~js
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.splice(2,0,"Lemon","Kiwi");//Banana,Orange,Lemon,Kiwi,Apple,Mango
+~~~
 ### **some()**
 >检测数组元素中是否有元素符合指定条件
 ~~~js
@@ -163,26 +203,11 @@ var points = [40,100,1,5,25,10];
 points.sort(function(a,b){return a-b});//1,5,10,25,40,100
 ~~~
 
-### **splice()**
->从数组中添加或删除元素
-~~~js
-var fruits = ["Banana", "Orange", "Apple", "Mango"];
-fruits.splice(2,0,"Lemon","Kiwi");//Banana,Orange,Lemon,Kiwi,Apple,Mango
-~~~
-
 ### **toString()**
 >把数组转换为字符串，并返回结果
 ~~~js
 var fruits = ["Banana", "Orange", "Apple", "Mango"];
 fruits.toString();//Banana,Orange,Apple,Mango
-~~~
-
-### **unshify()**
->把数组转换为字符串，并返回结果
-~~~js
-var fruits = ["Banana", "Orange", "Apple", "Mango"];
-fruits.unshift("Lemon","Pineapple");
-//Lemon,Pineapple,Banana,Orange,Apple,Mango
 ~~~
 
 ### **valueOf()**
@@ -285,18 +310,6 @@ console.log(arr.findIndex(item => item == 2)); // 1
 // 数组空位处理为 undefined
 console.log([, 1].findIndex(n => true)); //0
 ~~~
-
-### **forEach()**
->查找数组中符合条件的元素索引，若有多个符合条件的元素，则返回第一个元素索引
-~~~js
-function(currentValue, index, arr)	
-函数参数:
-参数	描述
-currentValue	必需。当前元素
-index	可选。当前元素的索引值。
-arr	可选。当前元素所属的数组对象。
-~~~
-
 ### **Array.of**
 > 将参数中所有值作为元素形成数组
 ~~~js
@@ -307,13 +320,13 @@ console.log( Arrayof );
 ### **Array.from**
 >Array.from(arrayLike[, mapFn[, thisArg]]);将参数中所有值作为元素形成数组
 ~~~js
-console.log(Array.of(1, 2, 3, 4)); // [1, 2, 3, 4]
+console.log(Array.from(1, 2, 3, 4)); // [1, 2, 3, 4]
  
 // 参数值可为不同类型
-console.log(Array.of(1, '2', true)); // [1, '2', true]
+console.log(Array.from(1, '2', true)); // [1, '2', true]
  
 // 参数为空时返回空数组
-console.log(Array.of()); // []
+console.log(Array.from()); // []
 ~~~
 #### **arrayLike**
 ~~~js
@@ -335,7 +348,6 @@ console.log(Array.from(arrayLike, function (n){
     return this.do(n);
 }, map)); // [2, 4, 6]
 ~~~
-
 #### **类数组对象**
 
 >一个类数组对象必须含有 length 属性，且元素属性名必须是数值或者可转换为数值的字符
@@ -365,40 +377,6 @@ let array1 = Array.from({
 console.log(array1); // [undefined, undefined]
 ~~~
 ### **扩展的方法**
-
-#### **entries()**
->遍历键值对
-
-~~~js
-for(let [key, value] of ['a', 'b'].entries()){
-    console.log(key, value);
-}
-// 0 "a"
-// 1 "b"
- 
-// 不使用 for... of 循环
-let entries = ['a', 'b'].entries();
-console.log(entries.next().value); // [0, "a"]
-console.log(entries.next().value); // [1, "b"]
- 
-// 数组含空位
-console.log([...[,'a'].entries()]); // [[0, undefined], [1, "a"]]
-~~~
-
-#### **values()**
->遍历键值
-
-~~~js
-for(let key of ['a', 'b'].values()){
-    console.log(key);
-}
-// 0
-// 1
- 
-// 数组含空位
-console.log([...[,'a'].values()]); // [undefined, "a"]
-~~~
-
 #### **includes()**
 >数组是否包含指定值！注意：与 Set 和 Map 的 has 方法区分；Set 的 has 方法用于查找值；Map 的 has 方法用于查找键名
 
