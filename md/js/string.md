@@ -51,14 +51,6 @@ var str = "HELLO WORLD";
 str.charAt(2)// L
 ~~~
 
-### **charAt()**
-> 返回在指定的位置的字符的 Unicode 编码
-
-~~~js
-var str = "HELLO WORLD";
-str.charCodeAt(0)// 72
-~~~
-
 ### **charCodeAt()**
 > 返回在指定的位置的字符的 Unicode 编码
 
@@ -85,7 +77,7 @@ str.endsWith("world")   // 返回 true
 str.endsWith("World")   // 返回 false
 ~~~
 
-### **endsWith()**
+### **fromCharCode()**
 > 将 Unicode 编码转为字符
 
 ~~~js
@@ -158,7 +150,7 @@ var str="Visit a!";
 var n=str.search("a");//6
 ~~~
 
-### **search()**
+### **slice()**
 > 提取字符串的片断，并在新的字符串中返回被提取的部分
 
 ~~~js
@@ -166,7 +158,7 @@ var str="Hello world!";
 var n=str.slice(1,5);// ello
 ~~~
 
-### **search()**
+### **split()**
 > 把字符串分割为字符串数组
 
 ~~~js
@@ -175,7 +167,7 @@ var n=str.split(" ");
 //How,are,you,doing,today?
 ~~~
 
-### **search()**
+### **startsWith()**
 > 查看字符串是否以指定的子字符串开头
 
 ~~~js
@@ -183,7 +175,7 @@ var str = "Hello world, welcome to the Runoob.";
 var n = str.startsWith("Hello");// true
 ~~~
 
-### **search()**
+### **substr()**
 > 从起始索引号提取字符串中指定数目的字符
 
 ~~~js
@@ -191,7 +183,7 @@ var str="Hello world!";
 var n=str.substr(2,3)// llo
 ~~~
 
-### **search()**
+### **substring()**
 > 提取字符串中两个指定的索引号之间的字符
 
 ~~~js

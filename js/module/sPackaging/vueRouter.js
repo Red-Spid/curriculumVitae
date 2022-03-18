@@ -3,15 +3,15 @@ import { createRouter,createWebHashHistory } from "../eResources/vue-router.js";
 import { dropBYdrop, comments, home, curriculumvitae, personal } from "../router/index.js";
 
 const xRoutes = [
-  { path: '/', name:"home", component: home(), redirect:"/personal/dropBYdrop",
+  { path: '/', name:"home", component: home(), redirect:"/personal/dropBYdrop/:id",
     children:[
       
       {
         name:"personal", path:"personal", component: personal(),
         children: [
-          { path: 'resume', name:"resume", component: curriculumvitae() },
-          { path: 'dropBYdrop', name:"LeavingAmessage", component: dropBYdrop() },
-          { path: 'comments', name:"shareExperience", component: comments() }
+          { path: 'resume/:id', name:"resume", component: curriculumvitae() },
+          { path: 'dropBYdrop/:id', name:"LeavingAmessage", component: dropBYdrop() },
+          { path: 'comments/:id', name:"shareExperience", component: comments() }
         ]
       },
     ]
@@ -38,7 +38,8 @@ const router = createRouter({
 router.beforeEach((to, from, next) => {
   
   to.params = {
-      music: to.fullPath == "/personal/comments" ? true : false
+      music: to.fullPath == "/personal/comments" ? true : false,
+      id:111
   }
   next();
 })

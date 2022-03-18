@@ -19,13 +19,36 @@ export function home(){
 
 export function curriculumvitae(){
     return { 
-        template: '<curriculumvitae :infor="$store.state.personalInformation" ></curriculumvitae>',
+        template: '<curriculumvitae :infor="$store.state.personalInformation" name="1" ></curriculumvitae>',
         
     };
 }
 
 export function personal(){
     return { 
-        template : `<div id='personal'><router-view :key='Math.floor(Math.random() * (10000000 - 1)) + 1'></router-view><abgm></abgm></div>`
+        template : `<div id='personal'><router-view :key='Math.floor(Math.random() * (10000000 - 1)) + 1'></router-view><abgm></abgm></div>
+        export default {
+            name: "personal",
+            data() {
+              return {
+                info: ""
+              }
+            },
+            created(){
+              console.log(this.$listeners)
+          
+            },
+            mounted() {
+          
+            //  console.log(this.$route.params)
+          
+            },
+            methods:{
+              aaa(){
+          
+              }
+            }
+          }
+        `
     };
 }

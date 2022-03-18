@@ -108,7 +108,7 @@ var d = new Date();
 d.getDay();
 ~~~
 
-### **getDay()**
+### **getFullYear()**
 >从 Date 对象以四位数字返回年份
 
 ~~~js
@@ -126,7 +126,7 @@ var d = new Date().getHours();
 var d = new Date("July 21, 1983 01:15:00").getHours();
 ~~~
 
-### **getHours()**
+### **getMilliseconds()**
 >返回 Date 对象的毫秒(0 ~ 999)
 
 ~~~js

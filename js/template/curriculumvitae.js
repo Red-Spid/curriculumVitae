@@ -50,9 +50,19 @@ export default {
       info: ""
     }
   },
+  created(){
+    console.log(this.$attrs)
+    console.log(this.$listeners)
+
+  },
   mounted() {
 
-   
+  //  console.log(this.$route.params)
 
+  },
+  methods:{
+    aaa(){
+
+    }
   }
 }

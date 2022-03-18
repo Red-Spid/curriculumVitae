@@ -21,7 +21,7 @@ var github = `<div>
 <div class="list">
   <ul>
     <li v-for="(item,index) in list " :key="index" :class="[ $route.fullPath == item.url ? 'active' : '11']" @click="$store.dispatch('forlist',index)">
-      <router-link :to="item.url" v-text="item.text" v-trigger></router-link>
+      <router-link :to="item.url+'/11'" v-text="item.text" v-trigger></router-link>
     </li>
   </ul>
 </div>
