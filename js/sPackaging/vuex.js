@@ -4,7 +4,7 @@
 
 import { createStore }  from "../eResources/vuex.js";
 // import state from "../vuex/store/index.js";
-import dataJson from "../../../json/index.js";
+import dataJson from "../../json/index.js";
 
 import getters from "../vuex/getters/index.js";
 import mutations from "../vuex/mutations/index.js";
