@@ -1,5 +1,7 @@
 
 import { createApp } from "../eResources/vue.js";
+// import { createApp } from "https://cdn.jsdelivr.net/npm/vue@3.2.31/dist/vue.esm-browser.js";
+
 
 class methodCluster {
 
