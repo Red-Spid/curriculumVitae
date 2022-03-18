@@ -1,6 +1,5 @@
 
 var curriculumvitae = `<main class="bodylist bodyHtml" ref="add">
-      
 <section class="head-sass head-left" v-for="( val,index  ) in infor" :key="index">
   <h1 class="btn" v-text="val.name"></h1>
 
@@ -50,9 +49,19 @@ export default {
       info: ""
     }
   },
+  created(){
+    console.log(this.$attrs)
+    console.log(this.$listeners)
+
+  },
   mounted() {
 
-   
+  //  console.log(this.$route.params)
 
+  },
+  methods:{
+    aaa(){
+
+    }
   }
 }

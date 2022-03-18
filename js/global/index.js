@@ -1,5 +1,5 @@
 
-import { createApp } from "../module/eResources/vue.js";
+import { createApp } from "../eResources/vue.js";
 
 class methodCluster {
 

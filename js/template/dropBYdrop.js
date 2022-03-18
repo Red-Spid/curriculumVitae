@@ -34,5 +34,6 @@ export default {
   mounted() {
     this.originImage = this.$store.state.origin + this.$store.state.image;
     console.log(this.originImage)
+  //  console.log(this.$route.params)
   },
 }

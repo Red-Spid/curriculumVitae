@@ -20,8 +20,8 @@ var github = `<div>
 
 <div class="list">
   <ul>
-    <li v-for="(item,index) in list " :key="index" :class="[ $route.fullPath == item.url ? 'active' : '11']" @click="$store.dispatch('forlist',index)">
-      <router-link :to="item.url" v-text="item.text" v-trigger></router-link>
+    <li v-for="(item,index) in list " :key="index" :class="[ $route.name == item.name ? 'active' : '11']" @click="$store.dispatch('forlist',index)">
+      <router-link :to="item.url+'/11'" v-text="item.text" v-trigger></router-link>
     </li>
   </ul>
 </div>
@@ -40,13 +40,14 @@ export default {
   directives: {
     trigger: {
       inserted(el, binging) {
-        console.log(el, binging)
+        // console.log(el, binging,'??????')
         el.id == 'nav0' ? el.click() : null // 只点击第一个，id是在循环中手动添加的
         // $(el).trigger('click')  // 所有都触发一次,然后就是最后一个
       }
     }
   },
   mounted() {
+    // console.log(this.$route,'-----------',this.$route.name)
     this.my = this.$store.state.my;
     this.my.url = 
       this.$store.state.my.url == "selfRouting" ?

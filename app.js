@@ -1,7 +1,7 @@
 
-import dataIndex from "./js/module/sPackaging/vuedata.js"
-import store from "./js/module/sPackaging/vuex.js";
-import router from "./js/module/sPackaging/vueRouter.js";
+import dataIndex from "./js/sPackaging/vuedata.js"
+import store from "./js/sPackaging/vuex.js";
+import router from "./js/sPackaging/vueRouter.js";
 import assembly from "./js/assembly/template.js";
 import global from "./js/global/index.js";
 import { defaultRequest } from "./js/https/index.js";
@@ -34,6 +34,7 @@ app.$global = global;
 
 defaultRequest().then((value) => {
   app.$store.replaceState(value);
+  console.log(value)
 })
   // December 17, 2022 03:24:46
 var a,b;

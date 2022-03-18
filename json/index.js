@@ -19,14 +19,17 @@ export default{
     "list": [
         {
             "text": "简历",
+            "name":"resume",
             "url": "/personal/resume"
         },
         {
             "text": "点滴",
+            "name":"dropBYdrop",
             "url": "/personal/dropBYdrop"
         },
         {
             "text": "留言",
+            "name":"comments",
             "url": "/personal/comments"
         }
     ],
