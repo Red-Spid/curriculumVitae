@@ -5,6 +5,7 @@ import router from "./js/sPackaging/vueRouter.js";
 import assembly from "./js/assembly/template.js";
 import global from "./js/global/index.js";
 import { defaultRequest } from "./js/https/index.js";
+import { createLogger } from "./js/eResources/vuex.js";
 // console.log( defaultRequest )
 // import {getaxios} from "./js/https/index.js";
 
@@ -52,10 +53,42 @@ var arr4 = [10,11,12];
 
 
 a = global.arr_deleteTail( arr1 )
-console.log( 
-  a,
-  // b
-)
-console.log( 
-  arr1
-)
+// console.log( 
+//   a,
+//   // b
+// )
+// console.log( 
+//   arr1
+// )
+
+var name = "a";
+(function(){
+  console.log(name)
+  if(typeof name === "undefined"){
+    var name = "Jack";
+    console.log("Goodbye" + name)
+  }else{
+    console.log("hello" + name)
+
+  }
+})()
+
+// var ary = [0,1,2];
+// ary[10] = 10;
+// ary.filter(function(x){
+//   return x === undefined
+// })
+// console.log(ary)
+
+
+// var END = Math.pow(2,53);
+// var START = END - 100;
+// var conunt = 0;
+// for(var i=START; i<=END;i++){
+//   conunt++;
+// }
+// console.log(conunt)
+
+
+// var val = 'smtg';
+// console.log('first'+ (val ==='smtg')? 'ss':'nn')
